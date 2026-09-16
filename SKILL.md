@@ -1,6 +1,6 @@
 ---
 name: gameplus-oyun-detay-brief-icerik
-description: gameplus.com.tr (GeForce NOW powered by GAME+ Türkiye) oyun detay sayfaları için içerik briefi ve sayfa içeriği üretir. Brief, oyun başına tek satır olarak ortak Excel'e eklenir (Main KW ve hacim, ikincil kelimeler, alt başlıklar, içerik kurgusu, iç linkler, PAA kaynaklı SSS soruları, yanıt biçimi); içerik 750-800 kelimelik, H2 ile başlayan Türkçe gövde ve 20-60 kelimelik answer-first SSS yanıtlarından oluşur. Şu durumlarda mutlaka kullan: kullanıcı bir oyun adı verip "detay sayfası briefi", "oyun briefi", "oyun sayfası içeriği", "bu oyun için içerik yaz", "brief hazırla" dediğinde · GFN kütüphanesindeki bir oyun için SEO içeriği, alt başlık planı, SSS ya da anahtar kelime seti istendiğinde · var olan bir oyun briefini revize etmek ya da Excel'e yeni oyun satırı eklemek istendiğinde · kullanıcı yalnız oyun adı yazıp içerik beklediğinde. Kategori sayfaları (gfn/oyunlar/*) için gameplus-category-content, blog yazıları için gameplus-blog-enrich-v2 kullanılır; bu skill yalnız tek oyunluk detay sayfaları içindir.
+description: gameplus.com.tr (GeForce NOW powered by GAME+ Türkiye) oyun detay sayfaları için içerik briefi ve sayfa içeriği üretir. Brief, oyun başına tek satır olarak ortak Excel'e eklenir (Main KW ve hacim, ikincil kelimeler, alt başlıklar, içerik kurgusu, iç linkler, PAA kaynaklı SSS soruları, yanıt biçimi); içerik 750-850 kelimelik Türkçe gövde (başlıksız kısa giriş + H2 bölümleri) ve 20-60 kelimelik answer-first SSS yanıtlarından oluşur. Şu durumlarda mutlaka kullan: kullanıcı bir oyun adı verip "detay sayfası briefi", "oyun briefi", "oyun sayfası içeriği", "bu oyun için içerik yaz", "brief hazırla" dediğinde · GFN kütüphanesindeki bir oyun için SEO içeriği, alt başlık planı, SSS ya da anahtar kelime seti istendiğinde · var olan bir oyun briefini revize etmek ya da Excel'e yeni oyun satırı eklemek istendiğinde · kullanıcı yalnız oyun adı yazıp içerik beklediğinde. Kategori sayfaları (gfn/oyunlar/*) için gameplus-category-content, blog yazıları için gameplus-blog-enrich-v2 kullanılır; bu skill yalnız tek oyunluk detay sayfaları içindir.
 ---
 
 # Gameplus Oyun Detay Sayfası: Brief ve İçerik
@@ -12,7 +12,7 @@ Bu skill, GeForce NOW kütüphanesindeki bir oyun için **iki çıktı** üretir
 
 İkisi ayrı ayrı da istenebilir. Kullanıcı yalnız "brief" derse içeriği yazma; yalnız "içerik" derse brief satırını atla ama araştırma adımlarını yine de yap, çünkü içerik doğrulanmış veriye dayanır.
 
-Sayfa tipi şu an sitede yok; kurallar sıfırdan üretim için yazılmıştır. Sayfada H1 oyun adı olarak bulunduğundan **gövde metni her zaman H2 ile başlar**.
+Sayfa tipi şu an sitede yok; kurallar sıfırdan üretim için yazılmıştır. Sayfada H1 oyun adı olarak bulunduğundan gövdeye ikinci bir H1 yazılmaz: metin **başlıksız kısa bir girişle** açılır, oyunu bir iki paragrafta tanıtır, ardından H2'ler gelir.
 
 ## Ne zaman devreye girer
 
@@ -67,7 +67,8 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 
 `references/icerik-kurallari.md` yapıyı, tonu ve bölüm bölüm ne yazılacağını anlatır. Özet:
 
-- Gövde H2 ile başlar, ortalama 750-800 kelime.
+- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama 750-850 kelime.
+- Genel geçer bilgiler geniş zamanla yazılır ("yer alır", "gerekmez"); şimdiki zaman yalnız gerçekten süregelen durumlar için kullanılır. Metnin tamamını `-iyor` ile yazmak sayfayı tek düzeleştiriyor.
 - Her H2'nin ilk cümlesi o başlığın sorusunu doğrudan yanıtlar. Yapay zeka yanıtlarında alıntılanabilirlik buna bağlı.
 - Ton marka sesidir: "sen" dili, geniş zaman, somut değerler. İçerik Dili Rehberi bu çıktıya uygulanmaz, o rehber müşteriye giden rapor ve sunumlar içindir.
 - Teknik değer kümeleri (bağlantı hızı, sistem gereksinimleri) tabloyla verilir, paragrafa gömülmez.

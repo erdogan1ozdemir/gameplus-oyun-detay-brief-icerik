@@ -35,7 +35,7 @@ hikâye modu gibi).
 ```
 TON: Sayfanın kime, hangi beklentiyle yazıldığı.
 
-AÇILIŞ: Gövde doğrudan ilk H2 ile başlar; sayfada H1 bulunduğu için H2 öncesine paragraf konmaz.
+AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel olarak tanıtır, sayfada H1 bulunduğu için bu girişe başlık konmaz.
 
 H2 · Başlık: Bu bölümde ne anlatılır, hangi kelime nerede karşılanır, hangi biçim kullanılır.
 H2 · Başlık: ...

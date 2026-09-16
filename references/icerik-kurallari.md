@@ -14,15 +14,35 @@ yanıtlarında alıntılanabilirlik de buna bağlı: alıntılanan şey neredeys
 Sıfatla değil değerle anlatılır. "Muhteşem grafikler" yerine "4K HDR akış", "çok hızlı" yerine
 "30 milisaniyenin altında gecikme".
 
+## Zaman kipi
+
+Metnin tamamını şimdiki zamanla ("açılıyor", "sunuyor", "gerekiyor") yazmak, sayfayı tek düze ve
+anlık bir habere benzetiyor. Genel geçer bilgiler **geniş zamanla** yazılır: "oyun kütüphanede yer
+alır", "indirme gerekmez", "Reflex gecikmeyi düşürür", "REDSEC ücretsiz oynanır". Bunlar her zaman
+doğru olan şeyler, geniş zaman onları kalıcı bir tanım gibi okutuyor.
+
+Şimdiki zaman, gerçekten süregelen ve değişmekte olan durumlar için saklanır: "haritalar sezon
+güncellemeleriyle genişlemeye devam ediyor", "oyun zaman içinde büyüyor". Okuyucunun yaptığı işler
+ikinci tekil geniş zamanla verilir: "oynamaya başlarsın", "REDSEC'e girebilirsin", "Oynat'a bastığın
+anda savaş alanına girersin".
+
+Pratik ölçü: gövdedeki `-iyor` çekimlerini say. Battlefield 6 metninde 60'tan 3'e indi ve kalan üçü
+de gerçekten süregelen durumları anlatıyor. Bu oran iyi bir hedef.
+
 ## Yapı
 
-Gövde **H2 ile başlar**, H2 öncesine giriş paragrafı konmaz; sayfada H1 zaten oyun adı olarak var.
+Gövde, **başlıksız kısa bir girişle açılır**: oyunu genel olarak tanıtan bir ya da iki paragraf.
+Sayfada H1 zaten oyun adı olduğu için bu girişe başlık konmaz, doğrudan metin gelir. Giriş oyunun ne
+olduğunu, kim yaptığını, ne zaman çıktığını ve seri içindeki yerini söyler; erişim ve "nasıl oynanır"
+anlatısı girişte değil, ilk H2'de başlar. Böylece oyunu tanımayan okuyucu da sayfaya bir yerden giriyor.
 
 Ortalama **750-800 kelime**, 5-6 H2. Bölüm başına düşen 120-150 kelime, bir konuyu gerçekten
 anlatmaya yetiyor; daha fazla başlık koyarsan her bölüm madde listesine dönüşüyor.
 
 Tipik iskelet (oyuna göre değişir):
 
+0. **Giriş (başlıksız, 1-2 paragraf)** - oyunun ne olduğu, stüdyo, çıkış, seri içindeki yeri,
+   eleştirmen puanı ve resmi dil desteği.
 1. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - erişim yanıtı + oyunun tek cümlelik tanımı + künye
    bilgileri (stüdyo, çıkış, Metacritic, dil desteği).
 2. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, modlar, tek oyunculu taraf.
