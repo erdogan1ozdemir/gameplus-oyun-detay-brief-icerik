@@ -5,7 +5,7 @@
 - [ ] Main KW hacmi 12 aylık ortalama mı, sütunda sayı olarak mı duruyor?
 - [ ] Yeni çıkmış oyunda son üç ayın ortalaması DİKKAT satırına yazıldı mı?
 - [ ] İkincil kelimelerde fiyat, satın alma, platform ve anahtar kelimeleri var mı? (olmamalı)
-- [ ] Başlık sayısı 750-800 kelimeye uygun mu? (5-6 H2, H3 yok ya da çok az)
+- [ ] Başlık sayısı 1200-1500 kelimeye uygun mu? (7-9 H2, az sayıda H3)
 - [ ] İçerik kurgusunda başlık yanına kelime sayısı yazılmış mı? (yazılmamalı)
 - [ ] Hangi GAME+ paketinin gerektiğine dair başlık, soru ya da cümle var mı? (olmamalı)
 - [ ] Link sayısı en az 4 mü, hepsi tam URL mi, 200 dönüyor mu?
@@ -18,7 +18,7 @@
 ## İçerik
 
 - [ ] Gövde H2 ile mi başlıyor, belgede H1 var mı? (olmamalı)
-- [ ] Kelime sayısı 750-850 bandında mı?
+- [ ] Kelime sayısı 1200-1500 bandında mı?
 - [ ] Gövde başlıksız 1-2 paragraflık girişle mi açılıyor, giriş ilk H2'nin işini üstlenmiş mi?
 - [ ] Sınıflar, modlar ve puanlar madde listesine alındı mı, yoksa paragrafa mı sıkıştırıldı?
 - [ ] Sıra taşımayan liste madde imli (`mad`), yalnız başlama adımları numaralı (`li`) mi?
@@ -37,6 +37,15 @@
 - [ ] Sunucu sınıfı yazıldıysa paketler sayfasından teyit edildi mi?
 - [ ] SSS yanıtları 60 kelimeyi aşıyor mu? İlk cümleler doğrudan yanıt mı?
 - [ ] Linkler gövdede belirtilen bölümlere yerleşti mi?
+- [ ] **Anchor'ı sil, cümle hâlâ anlamlı mı?** "…listesine göz atabilirsin" biçiminde link taşımak için kurulmuş cümle var mı?
+- [ ] Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini aldı mı?
+- [ ] Bölüm başına iki üç kalın vurgu var mı, yoksa her paragraf kalınla mı dolu?
+- [ ] SSS'den önce kapanış çağrısı var mı?
+- [ ] GFN optimizasyon durumu yazılmış mı? (yazılmamalı)
+- [ ] Mağaza listesi katalogdaki variants alanıyla birebir mi? Katalogda olmayan mağaza yazılmış mı?
+- [ ] Okuyucunun bilgisayarı olduğu varsayılmış mı? ("bilgisayarında … olmalı" yerine "bilgisayardan oynayanlarda")
+- [ ] Bilgi cümleleri konuşma diline kaçan geçmiş zamanla mı yazılmış? ("besteledi" yerine "bestelemiştir")
+- [ ] Belgenin altına kaynak notu basılmış mı? (basılmamalı, sohbette söylenir)
 
 ## Biçim taraması
 

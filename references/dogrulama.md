@@ -13,7 +13,8 @@ aşağıdaki sıra izlenir. Üstteki kaynak alttakini ezer.
 | Metacritic puanı | metacritic.com platform dökümündeki **PC** satırı | Steam `metacritic` alanı (zaten PC) | Sayfa başlığındaki puan PC'ninki olmayabilir |
 | Hikâye modu süresi | HowLongToBeat | Oyun basını (GamesRadar, IGN) | İki bağımsız kaynak örtüşmüyorsa süre yazılmaz |
 | GFN paket ve sunucu değerleri | `gameplus.com.tr/gfn/paketler` | - | **Tek geçerli kaynak budur** |
-| GFN'de var mı, optimize mi | GFN oyun kataloğu (`katalog.py`) | nvidia.com GFN sayfası | Katalog "Tam optimize / Tam optimize değil" verir |
+| GFN'de var mı | GFN oyun kataloğu (`katalog.py`) | nvidia.com GFN sayfası | Optimizasyon durumu iç bilgidir, içeriğe yazılmaz |
+| Hangi mağazadan oynanabilir | Katalogdaki `Mağazalar` / `variants` alanı | - | Oyun başka mağazada satılsa da GFN o kopyayı açmıyor olabilir |
 | Oyunun modları, hikâyesi, mekanikleri | Markanın kendi blog yazısı | Yayıncı sayfası | Blog varsa önce o okunur, ton ve terim tutarlılığı için |
 | Çıkış tarihi | Katalog + Steam | - | GFN yayın tarihi ile mağaza satış tarihi farklı olabilir |
 | Ödüller ve adaylıklar | Törenin resmi kazanan listesi | Wikipedia oyun sayfası `Awards` bölümü | "Aday gösterildi" ile "kazandı" ayrımı tek tek kontrol edilir |
@@ -64,6 +65,14 @@ taşır (`counter_strike_4`, `fallout_03a`). Aratılacak ad `title` alanından �
 **Steam'in geliştirici alanı katalogdan farklı olabilir.** Battlefield 6'da Steam "Battlefield Studios",
 katalog "Electronic Arts DICE" diyor. İkisi de doğru; resmi mağaza kaydı esas alınır, gerekirse
 ikisi birlikte yazılır ("DICE'ın başını çektiği Battlefield Studios").
+
+**Mağaza listesi katalogdan gelir, mağazadan değil.** Battlefield 6 Epic Games Store'da da satılıyor,
+ama GFN kataloğunda yalnız EA App ve Steam variantları var; Epic'ten alınan kopya GeForce NOW'da
+açılmıyor. "Şu mağazada da var" bilgisi oyunun satıldığı yerden değil, **katalogdaki variants
+alanından** okunur. Yanlış mağaza yazmak, okuyucunun oynayamayacağı bir kopyayı satın almasına yol açar.
+
+**GFN optimizasyon durumu içeriğe yazılmaz.** Katalogdaki "Tam optimize / Tam optimize değil" alanı
+iç bilgidir; okuyucuya bir şey ifade etmiyor ve NVIDIA bu durumu sessizce değiştirebiliyor.
 
 **Sezon içeriği yazılmaz.** Sezon adı ve o sezonun haritaları yazılırsa sayfa her sezonda eskir.
 "Haritalar sezon güncellemeleriyle genişliyor" düzeyinde genel kalınır.

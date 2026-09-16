@@ -1,4 +1,33 @@
-# İç link seçimi
+# İç link seçimi ve yerleşimi
+
+## Link metne sonradan eklenmez, metnin içinden çıkar
+
+En sık yapılan hata, bölümün sonuna "Kütüphanedeki diğer FPS oyunları listesine göz atabilirsin"
+gibi bir cümle iliştirip linki oraya koymak. Bu cümle metne bir şey katmıyor, okuyucu onu atlıyor
+ve sayfa reklam panosu gibi duruyor.
+
+Doğrusu şu: **önce anchor'ın geçtiği cümlenin metinde zaten bulunması gerekir.** Yoksa o cümle
+yazılır, ama linki taşımak için değil, gerçekten bir şey anlattığı için. Battlefield 6 örneği:
+
+| Yerine | Böyle |
+|---|---|
+| "Kütüphanedeki diğer [FPS oyunları] listesine göz atabilirsin." | "Savaşı merkezine alan [FPS oyunları] arasında en çok rağbet gören çok oyunculu yapımlardan biridir." |
+| "Türün diğer yapımlarını merak ediyorsan [en iyi battle royale oyunları] listemize göz atabilirsin." | "Serinin yıkım ve araç mekanikleri burada da geçerli olduğu için REDSEC, [en iyi battle royale oyunları] arasında kendine ayrı bir yer açıyor." |
+
+İkinci sütundaki cümleler link kaldırılsa bile ayakta kalıyor. Ölçü bu: **anchor'ı sil, cümle hâlâ
+anlamlı mı?** Değilse cümle linki taşımak için kurulmuş demektir, yeniden yazılır.
+
+## Anchor, aranan terimin kendisi olur
+
+Anchor seçilirken hedef sayfanın adı değil, **insanların gerçekten arattığı terim** esas alınır.
+"FPS savaş oyunu" kimsenin aramadığı bir tamlama; "FPS oyunları" ise hem kategori sayfasının konusu
+hem de hacmi olan bir kelime. Tür, platform ve tarz kelimeleri (FPS, battle royale, aksiyon RPG,
+bulut oyun, ücretsiz oyunlar) metne bu yüzden doğal hâlleriyle girer: hem okuyucu için anlaşılır
+kalır hem de sayfanın kelime kapsamını genişletir.
+
+Cümleyi kurarken tür kelimesini yamamak yerine oyunun konumunu anlatan bir ifadeye yerleştir:
+"savaşı merkezine alan FPS oyunları", "hikâye odaklı aksiyon RPG oyunları" gibi.
+
 
 ## Kurallar
 

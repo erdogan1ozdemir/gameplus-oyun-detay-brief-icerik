@@ -25,7 +25,7 @@ Seçim ölçütü: sayfanın gerçekten karşılayabileceği niyet. Erişim, oyn
 sorular alınır. Fiyat, satın alma, platform (ps5/xbox), anahtar/key, yama gibi kelimeler mağaza ve
 üçüncü taraf sayfalarının alanıdır, alınmaz. Hacim verisi olmayan ama hedeflenen kelime `(-)` ile yazılır.
 
-**Alt Başlıklar** - `H2: Başlık` ve gerekiyorsa `H3: Başlık` satırları. Sayı 750-800 kelimeye göre
+**Alt Başlıklar** - `H2: Başlık` ve gerekiyorsa `H3: Başlık` satırları. Sayı 1200-1500 kelimeye göre
 belirlenir: 5-6 H2, H3'e girilmez ya da en çok bir iki tane. Fazla başlık, her bölümü 80 kelimeye
 düşürüp metni listeye çeviriyor. İlişkili konular tek H2'de birleştirilir (modlar + battle royale +
 hikâye modu gibi).
@@ -42,8 +42,8 @@ H2 · Başlık: ...
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
 
-BİÇİM: Sınıflar, modlar ve puanlar madde listesiyle; teknik değer kümeleri tabloyla verilir. Oynanış bölümünün sonunda oyunun tonu, sanat tasarımı, müziği ve ödülleri kısa bir paragrafta toplanır. Hikâyeden spoiler verilmeden bahsedilir.
-UZUNLUK: Ortalama 750-850 kelime gövde. Paragraf en fazla 3-4 cümle; teknik değerler rakamla.
+BİÇİM: Sınıflar, modlar, puanlar ve öne çıkan özellikler madde listesiyle; teknik değer kümeleri tabloyla verilir. Önemli terim ve değerler kalın yazılır. Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini alır; hikâyeden spoiler verilmeden bahsedilir. Son bölümün ardından kısa bir kapanış çağrısı gelir.
+UZUNLUK: Ortalama 1200-1500 kelime gövde. Paragraf en fazla 3-4 cümle; teknik değerler rakamla.
 DİKKAT: Yazılmayacaklar, doğrulanacaklar, hacim uyarısı.
 ```
 
@@ -57,8 +57,9 @@ sonuna kalın yazılır; `brief_satiri.py` bunu `kurgu_kalin` alanıyla basar.
    H2 · Bölüm adı bölümünde, hangi cümlede.
 ```
 
-Anchor, hedef sayfanın kendi kelimesidir. Tam URL yazılır. Seçim kuralları
-`ic-link-haritasi.md`'de.
+Anchor, insanların arattığı terimin kendisidir ("FPS oyunları", "en iyi battle royale oyunları").
+Tam URL yazılır. Linkin yerleşeceği satırda, anchor'ın hangi cümlenin içinde geçeceği belirtilir;
+link taşımak için ayrı cümle kurulmaz. Seçim ve yerleştirme kuralları `ic-link-haritasi.md`'de.
 
 **SSS'ler** - numaralı soru, altında `Yanıtta:` satırı. Sorular Google'ın "Bunlar da sorulmuş"
 kutusundan ve arama önerilerinden gelir; uydurulmaz. 8-10 soru yeterli. Yanıtları içerik ekibi yazar,

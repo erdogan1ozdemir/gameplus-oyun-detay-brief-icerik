@@ -1,6 +1,6 @@
 ---
 name: gameplus-oyun-detay-brief-icerik
-description: gameplus.com.tr (GeForce NOW powered by GAME+ Türkiye) oyun detay sayfaları için içerik briefi ve sayfa içeriği üretir. Brief, oyun başına tek satır olarak ortak Excel'e eklenir (Main KW ve hacim, ikincil kelimeler, alt başlıklar, içerik kurgusu, iç linkler, PAA kaynaklı SSS soruları, yanıt biçimi); içerik 750-850 kelimelik Türkçe gövde (başlıksız kısa giriş + H2 bölümleri) ve 20-60 kelimelik answer-first SSS yanıtlarından oluşur. Şu durumlarda mutlaka kullan: kullanıcı bir oyun adı verip "detay sayfası briefi", "oyun briefi", "oyun sayfası içeriği", "bu oyun için içerik yaz", "brief hazırla" dediğinde · GFN kütüphanesindeki bir oyun için SEO içeriği, alt başlık planı, SSS ya da anahtar kelime seti istendiğinde · var olan bir oyun briefini revize etmek ya da Excel'e yeni oyun satırı eklemek istendiğinde · kullanıcı yalnız oyun adı yazıp içerik beklediğinde. Kategori sayfaları (gfn/oyunlar/*) için gameplus-category-content, blog yazıları için gameplus-blog-enrich-v2 kullanılır; bu skill yalnız tek oyunluk detay sayfaları içindir.
+description: gameplus.com.tr (GeForce NOW powered by GAME+ Türkiye) oyun detay sayfaları için içerik briefi ve sayfa içeriği üretir. Brief, oyun başına tek satır olarak ortak Excel'e eklenir (Main KW ve hacim, ikincil kelimeler, alt başlıklar, içerik kurgusu, iç linkler, PAA kaynaklı SSS soruları, yanıt biçimi); içerik 1200-1500 kelimelik Türkçe gövde (başlıksız kısa giriş + H2 bölümleri) ve 20-60 kelimelik answer-first SSS yanıtlarından oluşur. Şu durumlarda mutlaka kullan: kullanıcı bir oyun adı verip "detay sayfası briefi", "oyun briefi", "oyun sayfası içeriği", "bu oyun için içerik yaz", "brief hazırla" dediğinde · GFN kütüphanesindeki bir oyun için SEO içeriği, alt başlık planı, SSS ya da anahtar kelime seti istendiğinde · var olan bir oyun briefini revize etmek ya da Excel'e yeni oyun satırı eklemek istendiğinde · kullanıcı yalnız oyun adı yazıp içerik beklediğinde. Kategori sayfaları (gfn/oyunlar/*) için gameplus-category-content, blog yazıları için gameplus-blog-enrich-v2 kullanılır; bu skill yalnız tek oyunluk detay sayfaları içindir.
 ---
 
 # Gameplus Oyun Detay Sayfası: Brief ve İçerik
@@ -54,7 +54,7 @@ Bunun üstüne, içerikte kullanacağın her sayı için `references/dogrulama.m
 
 - **Main KW** oyunun adıdır; hacim 12 aylık ortalamadır. Yeni çıkmış oyunlarda bu ortalama çıkış zirvesiyle şişer, son üç ayı da kontrol edip DİKKAT satırına yaz.
 - **İkincil kelimeler** erişim ve oynanış niyetini taşıyanlardan seçilir. Fiyat, satın alma, platform ve anahtar (key) kelimeleri mağaza sayfalarının alanıdır, alınmaz.
-- **Alt başlıklar** 750-800 kelimeye sığacak sayıda olur: pratikte 5-6 H2, H3'e girilmez ya da çok az girilir. İlişkili konular tek H2'de birleştirilir.
+- **Alt başlıklar** 1200-1500 kelimeye sığacak sayıda olur: pratikte 7-9 H2 ve az sayıda H3. Hikâye, oynanış, atmosfer ve öne çıkan özellikler kendi bölümlerini alır.
 - **İçerik kurgusu** TON, AÇILIŞ, her H2 için bir satır, SSS, UZUNLUK, DİKKAT sırasıyla yazılır. **Başlıkların yanına kelime sayısı yazılmaz.**
 - **Linkler** tam URL ile, altında yerleşeceği bölüm belirtilerek verilir. En az 4, yaklaşık 5-6 link. Seçim kuralları `references/ic-link-haritasi.md`'de.
 - **SSS** soruları PAA ve arama önerilerinden gelir; yanıtları içerik ekibi yazar, brief yalnız soruyu ve yanıtta geçmesi gerekeni verir.
@@ -69,7 +69,10 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 
 `references/icerik-kurallari.md` yapıyı, tonu ve bölüm bölüm ne yazılacağını anlatır. Özet:
 
-- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama 750-850 kelime. Giriş oyunu tanıtır ve puanları madde listesiyle verir; erişim anlatısı ilk H2'de başlar.
+- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama **1200-1500 kelime**, 7-9 H2. Giriş oyunu tanıtır ve puanları madde listesiyle verir; erişim anlatısı ilk H2'de başlar.
+- Sayfa teknik kart değil: **hikâye, oynanış, atmosfer-ses-müzik ve öne çıkan özellikler** kendi bölümlerini alır. Son bölümün ardından, SSS'den önce kısa bir kapanış çağrısı gelir.
+- **İç link metnin içinden çıkar:** anchor'ı sildiğinde cümle hâlâ anlamlı olmalı. "Şu listeye göz atabilirsin" biçiminde link taşımak için cümle kurulmaz; anchor, insanların arattığı terimin kendisidir.
+- Önemli terim ve değerler **kalın** yazılır (bölüm başına iki üç vurgu). Kaynak notu belgeye basılmaz.
 - Sayılabilir ve paralel şeyler (sınıflar, modlar, puanlar) madde listesiyle verilir, paragrafa sıkıştırılmaz. Numaralı liste yalnız sıralı adımlar içindir.
 - Oynanış bölümünün sonunda oyunun tonu, sanat tasarımı, müziği ve ödülleri kısa bir paragrafta toplanır; kazanılan ödül ile adaylık ayrı yazılır.
 - Hikâyeden spoiler verilmeden bahsedilir: kurulum, oynanan birlik, geçtiği yerler ve süre yazılır; olay örgüsü yazılmaz.
@@ -100,6 +103,8 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 - **Hangi GAME+ paketinin gerektiği hiçbir yerde yazılmaz.** Ne başlıkta, ne SSS'de, ne gövdede. Paketlerin ne sunduğu anlatılabilir, "bu oyun için X paketi gerekir" denmez.
 - **Tek oyunculu moddan "kampanya" diye bahsedilmez.** "Hikâye modu", "campaign" ya da oyunun kendi kullandığı ad tercih edilir. Sebebi: kampanya kelimesi promosyon kampanyasıyla karışıyor.
 - **Türkçe dil desteği yalnız resmi ve modsuz destek varsa bölüm olur.** Destek yoksa ayrı H2 ve SSS sorusu açılmaz, gövdede tek cümleyle belirtilir.
+- **GFN optimizasyon durumu hiçbir oyunda yazılmaz.** Katalogdaki bu alan iç bilgidir.
+- **Mağaza listesi katalogdaki `variants` alanından gelir.** Oyun başka mağazada satılsa da GFN o kopyayı açmıyor olabilir.
 - **Sayfa oyunun PC sürümünü anlatır.** GeForce NOW PC sürümünü akıtıyor; Metacritic puanı, sistem gereksinimleri, kurulum boyutu ve dil listesi PC sütunundan alınır, konsol değeri yazılmaz.
 - **Ödül, puan ve özel ad kulaktan yazılmaz.** Kazanılan ödül ile adaylık ayrılır, Metacritic puanının hangi platforma ait olduğu bilinir, birlik ve karakter adları kaynaktaki yazımıyla geçer.
 - **Doğrulanamayan sayı yazılmaz.** Sızıntı ve söylenti kaynaklı rakam kullanılmaz; alan boş bırakılır ya da cümle çıkarılır, durum kullanıcıya söylenir.

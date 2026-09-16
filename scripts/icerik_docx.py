@@ -12,10 +12,11 @@ icerik.json biçimi:
   "linkler": {"LINK1": ["anchor metni", "https://gameplus.com.tr/..."]},
   "govde": [["H2","Başlık"], ["p","Paragraf, içinde [LINK1] geçebilir"],
             ["H3","Alt başlık"], ["li","Numaralı madde"], ["mad","Madde imli madde"],
+            ["p","Vurgu için **kalın metin** kullanılabilir"],
             ["tablo", [["Sütun","Sütun"],["satır","satır"]]]],
-  "sss": [["Soru?","Yanıt"]],
-  "not": "Kaynak ve karar notları"
+  "sss": [["Soru?","Yanıt"]]
 }
+Kaynak notu belgeye basılmaz; kullanıcıya sohbette söylenir.
 Gövde H2 ile başlar; sayfada H1 oyun adı olarak bulunduğu için belgeye H1 yazılmaz.
 """
 import argparse, json, re
@@ -46,13 +47,17 @@ def koprü(p, metin, url):
 
 
 def metni_bas(p, metin, linkler, boyut=10.5):
+    """[LINKn] köprüye, **...** kalın metne çevrilir."""
     from docx.shared import Pt
-    parcalar = re.split(r"(\[LINK\d+\])", metin)
+    parcalar = re.split(r"(\[LINK\d+\]|\*\*[^*]+\*\*)", metin)
     for parca in parcalar:
         m = re.fullmatch(r"\[(LINK\d+)\]", parca)
         if m and m.group(1) in linkler:
             ad, url = linkler[m.group(1)]
             koprü(p, ad, url)
+        elif parca.startswith("**") and parca.endswith("**") and len(parca) > 4:
+            r = p.add_run(parca[2:-2]); r.bold = True
+            r.font.name = FN; r.font.size = Pt(boyut); renk(r, TEAL)
         elif parca:
             r = p.add_run(parca); r.font.name = FN; r.font.size = Pt(boyut); renk(r, TEAL)
 
@@ -128,13 +133,8 @@ def main():
             p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(4)
             r = p.add_run(yanit); r.font.size = Pt(10.5); r.font.name = FN; renk(r, TEAL)
 
-    if d.get("not"):
-        p = doc.add_paragraph(); p.paragraph_format.space_before = Pt(18)
-        r = p.add_run("Not: "); r.bold = True; r.font.size = Pt(8.5); r.font.name = FN; renk(r, CORAL)
-        r = p.add_run(d["not"]); r.font.size = Pt(8.5); r.font.name = FN; renk(r, "5A6B68")
-
     doc.save(a.out)
-    kelime = sum(len(re.sub(r"\[LINK\d+\]", "x", i).split())
+    kelime = sum(len(re.sub(r"\*\*", "", re.sub(r"\[LINK\d+\]", "x", i)).split())
                  for t, i in d["govde"] if t in ("p", "li", "mad"))
     print(f"yazıldı: {a.out} · gövde {kelime} kelime · "
           f"{sum(1 for t,_ in d['govde'] if t=='H2')} H2 · {sum(1 for t,_ in d['govde'] if t=='H3')} H3 · "

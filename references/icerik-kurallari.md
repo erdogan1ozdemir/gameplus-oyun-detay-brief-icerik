@@ -27,6 +27,7 @@ reyon var:
 |---|---|---|
 | Tanım, kural, her zaman geçerli olan | Geniş zaman | "REDSEC ücretsiz oynanır", "Engineer dost araçları onarır" |
 | Kaynağı olan veri ve tespit | `-mektedir / -maktadır` | "Ana hikâyeyi bitirmek yaklaşık 6 saat sürmektedir", "13 dil desteklenmektedir" |
+| Doğrulanmış olay ve başarı | `-mıştır` | "Müziği Henry Jackman bestelemiştir", "En İyi Ses Tasarımı ödülünü kazanmıştır" |
 | Anlatı, atmosfer, deneyim | Şimdiki zaman | "Hikâye yakın bir alternatif gelecekte geçiyor", "çatışma daha akıcı bir his veriyor" |
 | Okuyucuya seslenen yönerge | İkinci tekil geniş zaman | "Oynat'a bas", "paketlerden birini seçebilirsin" |
 
@@ -35,9 +36,12 @@ Hikâye ve oynanış anlatılırken **birinci çoğul** da kullanılabilir; oyun
 bölümleriyle sınırlı kalır; erişim ve başlama adımlarında ikinci tekile ("sen") dönülür, çünkü
 orada okuyucuya doğrudan bir iş tarif ediliyor.
 
-Ölçü sayı değil dağılım: gövdede her dört kip de görünüyorsa metin insan yazmış gibi okunuyor.
-Battlefield 6 metninde 865 kelimede 8 `-iyor`, 4 `-mektedir` ve geri kalanı geniş zaman var;
-bu oran iyi bir hedef. Tek bir kip toplamın belirgin çoğunluğuysa metin yeniden okunur.
+Bilgi aktaran cümlelerde konuşma diline kaçan geçmiş zamandan ("besteledi", "kazandı") kaçınılır;
+bunlar doğrulanmış tespit olduğu için `-mıştır` ile yazılır. Anlatı içindeki geçmiş zaman serbesttir.
+
+Ölçü sayı değil dağılım: gövdede her kip de görünüyorsa metin insan yazmış gibi okunuyor.
+Battlefield 6 metninde 1.326 kelimede 28 `-iyor`, 5 `-mektedir` ve 6 `-mıştır` var, geri kalanı
+geniş zaman; bu dağılım iyi bir hedef. Tek bir kip toplamın belirgin çoğunluğuysa metin yeniden okunur.
 
 ## Yapı
 
@@ -46,9 +50,14 @@ Sayfada H1 zaten oyun adı olduğu için bu girişe başlık konmaz, doğrudan m
 olduğunu, kim yaptığını, ne zaman çıktığını ve seri içindeki yerini söyler; erişim ve "nasıl oynanır"
 anlatısı girişte değil, ilk H2'de başlar. Böylece oyunu tanımayan okuyucu da sayfaya bir yerden giriyor.
 
-Ortalama **750-850 kelime**, 5-6 H2. Bölüm başına düşen 120-150 kelime, bir konuyu gerçekten
-anlatmaya yetiyor; daha fazla başlık koyarsan her bölüm madde listesine dönüşüyor. Madde listeleri
-paragraftan hızlı okunduğu için listeli metinlerde bandın üst ucuna yaklaşmak sorun değil.
+Ortalama **1200-1500 kelime**, 7-9 H2 ve az sayıda H3. Bölüm başına 130-180 kelime düşer; bu,
+bir konuyu gerçekten anlatmaya yetiyor. Başlık sayısı kelime bütçesiyle orantılı tutulur: daha
+fazla başlık koyarsan her bölüm madde listesine döner, daha az koyarsan paragraflar okunmaz hâle gelir.
+
+Sayfa yalnız "oynanır mı, nasıl oynanır" sorusunu yanıtlayan bir teknik kart değil; oyunun
+**ne anlattığını, nasıl hissettirdiğini ve neyle ayrıştığını** da anlatır. Hikâye, oynanış, atmosfer
+ve öne çıkan özellikler kendi bölümlerini alır. Okuyucu sayfayı kapattığında oyunun GeForce NOW'da
+çalıştığını değil, oyunun ne olduğunu da biliyor olmalı.
 
 Tipik iskelet (oyuna göre değişir):
 
@@ -59,10 +68,15 @@ Tipik iskelet (oyuna göre değişir):
 1. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - yalnız erişim yanıtı: oyun kütüphanede mi, hangi mağaza
    hesabıyla bağlanıyor, kurulum gerekiyor mu, ücretsiz mod varsa şartı ne. Künye bilgisi girişte
    verildiği için burada tekrarlanmaz.
-2. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, modlar, atmosfer ve müzik, tek oyunculu taraf.
-3. **GeForce NOW ile {Oyun} Deneyimi** - bulutun ne değiştirdiği, cihaz çeşitliliği, bağlantı hızı tablosu.
-4. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
-5. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli + numaralı başlama adımları.
+2. **{Oyun} Hikâyesi** - kurulum, oynanan karakter ya da birlik, geçtiği yerler, anlatı biçimi, süre.
+3. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, araçlar, harita yapısı, modlar; alt
+   başlıkta çok oyunculu taraf ve varsa ücretsiz mod.
+4. **{Oyun} Atmosferi, Ses Tasarımı ve Müziği** - ton, sanat tasarımı, ses, besteci, ödüller.
+5. **{Oyun}'da Öne Çıkan Özellikler** - oyunu ayıran başlıklar 6-8 maddelik listede.
+6. **GeForce NOW ile {Oyun} Deneyimi** - bulutun ne değiştirdiği, cihaz çeşitliliği, bağlantı hızı tablosu.
+7. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
+8. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
+   adımları ve kapanış çağrısı.
 
 Türkçe dil desteği yalnız **resmi ve modsuz** destek varsa kendi H2'sini alır. Destek yoksa ayrı
 bölüm açılmaz, birinci bölümde tek cümleyle belirtilir. Okuyucunun bunu öğrenmek için sayfayı
@@ -100,6 +114,23 @@ birlik, bölümlerin geçtiği yerler, anlatı biçimi, HowLongToBeat süresi.
 
 Yazılmayacaklar: dönüm noktaları, kimin öldüğü, sonun nasıl bağlandığı, karakterlerin kimliğine dair
 açığa çıkan bilgiler. Ölçü şu: cümleyi oyunu oynamamış biri okuduğunda merakı artmalı, kapanmamalı.
+
+## Kalın vurgu
+
+Sayfa taranarak okunuyor; gözün takılacağı yerler olmazsa okuyucu paragrafın ortasındaki değeri
+göremiyor. Bölüm başına **iki üç vurgu** yeterli: oyunun kendi sistem adları (Kinesthetic Combat
+System, Tactical Destruction), ödül adı, puan, ücretsiz olma durumu, okuyucunun aradığı net cevap
+("kurulum beklemeden", "satın almış olman yeterlidir").
+
+Kalın yazılmayacaklar: tam cümleler, bölüm başına gelen ilk birkaç kelime, zaten başlıkta geçen
+ifadeler. Her paragrafta kalın varsa hiçbiri vurgu değildir.
+
+## Kapanış çağrısı
+
+Son bölümün ardından, SSS'den önce iki üç cümlelik bir kapanış gelir: oyunun ne olduğunu bir
+cümlede toparlar ve okuyucuyu GeForce NOW üzerinden oynamaya çağırır. Çağrı somut bir eylemle
+biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil. Hangi paketin gerektiği burada
+da yazılmaz.
 
 ## Tablo kullanımı
 
@@ -148,6 +179,18 @@ SSS'de yer almaz, bilgi gövdede tek cümleyle geçer.
 ## Yazarken kaçınılacaklar
 
 - Fiyat, indirim, kampanya bilgisi ve sezon adı: hepsi sayfayı eskitir.
+- **GFN optimizasyon durumu:** "tam optimize edilmiş oyunlar arasında" gibi ifadeler hiçbir oyunda
+  yazılmaz. Katalogdaki bu alan iç bilgidir, okuyucuya bir şey söylemez ve değiştiğinde sayfa yanılır.
+- **Okuyucunun bilgisayarı olduğu varsayımı:** "bilgisayarında Secure Boot açık olmalı" denmez;
+  okuyucu bulutta oynuyor olabilir. Doğrusu: "bilgisayardan oynayanlarda açık olmalıdır, GeForce NOW
+  ile oynuyorsan bunları düşünmene gerek kalmaz."
+- **Olumsuzla kurulan koşullar:** "ikinci kez satın alman gerekmez" yerine "satın almış olman
+  yeterlidir". Okuyucu ne yapmayacağını değil, ne yapması gerektiğini arıyor.
+- **Öznesiz cümleler:** "Tanklar ve helikopterler oynanışın merkezinde" değil, "Battlefield 6'da
+  tanklar ve helikopterler oynanışın merkezinde". Sayfa tek bir oyunu anlatsa da özne düşürülmez.
+- **Katalogda olmayan mağaza:** oyun başka bir mağazada satılıyor olabilir, ama GeForce NOW yalnız
+  katalogdaki `variants` alanında yazan mağazaların kopyasını açar. Orada olmayan mağaza yazılmaz.
+- **Kaynak notu belgeye yazılmaz;** hangi bilginin nereden geldiği kullanıcıya sohbette söylenir.
 - Eleştirmen alıntısı ve uzun puan dökümü: Metacritic tek sayı olarak yeterli.
 - Doğrulanmamış süre, boyut ve oyuncu sayısı.
 - Marka sembolleri (® ™), emoji, uzun tire.
