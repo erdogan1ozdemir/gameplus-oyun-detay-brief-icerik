@@ -16,20 +16,28 @@ Sayfa oyunun **PC sürümünü** anlatır; GeForce NOW akışa aldığı sürüm
 Sıfatla değil değerle anlatılır. "Muhteşem grafikler" yerine "4K HDR akış", "çok hızlı" yerine
 "30 milisaniyenin altında gecikme".
 
-## Zaman kipi
+## Zaman kipi ve anlatım
 
-Metnin tamamını şimdiki zamanla ("açılıyor", "sunuyor", "gerekiyor") yazmak, sayfayı tek düze ve
-anlık bir habere benzetiyor. Genel geçer bilgiler **geniş zamanla** yazılır: "oyun kütüphanede yer
-alır", "indirme gerekmez", "Reflex gecikmeyi düşürür", "REDSEC ücretsiz oynanır". Bunlar her zaman
-doğru olan şeyler, geniş zaman onları kalıcı bir tanım gibi okutuyor.
+Metnin tamamını tek kiple yazmak, hangi kip olursa olsun, sayfayı makine çıktısına benzetiyor.
+Baştan sona `-iyor` anlık bir habere, baştan sona `-mektedir` kurumsal rapora, baştan sona geniş
+zaman ansiklopedi maddesine dönüyor. Doğru olan, **kipin cümlenin işine göre değişmesi**. Dört
+reyon var:
 
-Şimdiki zaman, gerçekten süregelen ve değişmekte olan durumlar için saklanır: "haritalar sezon
-güncellemeleriyle genişlemeye devam ediyor", "oyun zaman içinde büyüyor". Okuyucunun yaptığı işler
-ikinci tekil geniş zamanla verilir: "oynamaya başlarsın", "REDSEC'e girebilirsin", "Oynat'a bastığın
-anda savaş alanına girersin".
+| Cümle ne yapıyor | Kip | Örnek |
+|---|---|---|
+| Tanım, kural, her zaman geçerli olan | Geniş zaman | "REDSEC ücretsiz oynanır", "Engineer dost araçları onarır" |
+| Kaynağı olan veri ve tespit | `-mektedir / -maktadır` | "Ana hikâyeyi bitirmek yaklaşık 6 saat sürmektedir", "13 dil desteklenmektedir" |
+| Anlatı, atmosfer, deneyim | Şimdiki zaman | "Hikâye yakın bir alternatif gelecekte geçiyor", "çatışma daha akıcı bir his veriyor" |
+| Okuyucuya seslenen yönerge | İkinci tekil geniş zaman | "Oynat'a bas", "paketlerden birini seçebilirsin" |
 
-Pratik ölçü: gövdedeki `-iyor` çekimlerini say. Battlefield 6 metninde 60'tan 3'e indi ve kalan üçü
-de gerçekten süregelen durumları anlatıyor. Bu oran iyi bir hedef.
+Hikâye ve oynanış anlatılırken **birinci çoğul** da kullanılabilir; oyun basınının doğal dili bu:
+"Dagger 1-3 timiyle oyuna başlıyoruz", "farklı cephelerde savaşıyoruz". Bu kullanım anlatı
+bölümleriyle sınırlı kalır; erişim ve başlama adımlarında ikinci tekile ("sen") dönülür, çünkü
+orada okuyucuya doğrudan bir iş tarif ediliyor.
+
+Ölçü sayı değil dağılım: gövdede her dört kip de görünüyorsa metin insan yazmış gibi okunuyor.
+Battlefield 6 metninde 865 kelimede 8 `-iyor`, 4 `-mektedir` ve geri kalanı geniş zaman var;
+bu oran iyi bir hedef. Tek bir kip toplamın belirgin çoğunluğuysa metin yeniden okunur.
 
 ## Yapı
 

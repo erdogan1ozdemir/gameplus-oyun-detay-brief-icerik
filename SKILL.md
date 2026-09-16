@@ -73,7 +73,7 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 - Sayılabilir ve paralel şeyler (sınıflar, modlar, puanlar) madde listesiyle verilir, paragrafa sıkıştırılmaz. Numaralı liste yalnız sıralı adımlar içindir.
 - Oynanış bölümünün sonunda oyunun tonu, sanat tasarımı, müziği ve ödülleri kısa bir paragrafta toplanır; kazanılan ödül ile adaylık ayrı yazılır.
 - Hikâyeden spoiler verilmeden bahsedilir: kurulum, oynanan birlik, geçtiği yerler ve süre yazılır; olay örgüsü yazılmaz.
-- Genel geçer bilgiler geniş zamanla yazılır ("yer alır", "gerekmez"); şimdiki zaman yalnız gerçekten süregelen durumlar için kullanılır. Metnin tamamını `-iyor` ile yazmak sayfayı tek düzeleştiriyor.
+- **Kip cümlenin işine göre değişir:** tanım ve kurallar geniş zaman, kaynaklı veri `-mektedir/-maktadır`, anlatı ve atmosfer şimdiki zaman, okuyucuya yönerge ikinci tekil. Hikâye anlatılırken birinci çoğul da kullanılabilir ("oyuna başlıyoruz"). Tek kipe kilitlenen metin makine çıktısı gibi okunuyor.
 - Her H2'nin ilk cümlesi o başlığın sorusunu doğrudan yanıtlar. Yapay zeka yanıtlarında alıntılanabilirlik buna bağlı.
 - Ton marka sesidir: "sen" dili, geniş zaman, somut değerler. İçerik Dili Rehberi bu çıktıya uygulanmaz, o rehber müşteriye giden rapor ve sunumlar içindir.
 - Teknik değer kümeleri (bağlantı hızı, sistem gereksinimleri) tabloyla verilir, paragrafa gömülmez.

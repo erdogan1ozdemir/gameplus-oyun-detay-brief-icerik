@@ -25,7 +25,8 @@
 - [ ] Ton, sanat tasarımı, müzik ve ödüller için kısa bir paragraf var mı? Kazanılan ödül ile adaylık ayrılmış mı?
 - [ ] Hikâyeden bahsedilirken olay örgüsü açığa çıkmış mı? (çıkmamalı: kurulum, mekân ve süre yeterli)
 - [ ] Özel adlar (birlik, karakter, mod, harita) kaynaktaki yazımıyla mı geçiyor?
-- [ ] Metin baştan sona `-iyor` ile mi yazılmış? Genel geçer bilgiler geniş zamana çevrildi mi?
+- [ ] Gövdede dört kip de görünüyor mu (geniş zaman, `-mektedir`, şimdiki zaman, ikinci tekil), yoksa tek kipe mi kilitlenmiş?
+- [ ] Anlatı bölümlerindeki birinci çoğul, erişim ve başlama adımlarına sızmış mı? (sızmamalı)
 - [ ] Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlıyor mu?
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
 - [ ] Türkçe dil desteği yoksa gövdede tek cümleyle belirtildi mi, ayrı H2 ve SSS sorusu açılmadı mı?
