@@ -7,6 +7,7 @@ Topladıkları:
   2. Uzun kuyruk kelimeler ve aylık hacimleri (Keyword Planner tabanlı)
   3. Steam mağaza verisi - resmi dil listesi, sistem gereksinimleri, Metacritic, çıkış, stüdyo
   4. gameplus.com.tr blog sitemap taraması - iç link adayları
+  5. Wikipedia oyun sayfası - hikâye kurulumu, oynanış, besteci ve müzik, ödül tablosu
 
 Kullanım:
     python3 arastirma.py "battlefield 6" --cikti bf6.json [--steam-appid 2807960]
@@ -104,6 +105,32 @@ def steam(appid=None, ad=None):
     }
 
 
+def wikipedia(ad):
+    """Oynanış, hikâye kurulumu, müzik ve ödül bölümlerini ham wikitext olarak getirir.
+
+    Ödül ve besteci bilgisi başka hiçbir kaynakta tek yerde toplanmıyor; Wikipedia'nın
+    Awards tablosu kazanan/aday ayrımını da taşıdığı için bu ayrımı kaybetmeden okunabiliyor.
+    Yine de yazmadan önce ödül törenin kendi kazanan listesinden teyit edilir.
+    """
+    baslik = ad.strip().replace(" ", "_")
+    ham = get(f"https://en.wikipedia.org/w/index.php?title={baslik}&action=raw")
+    if not ham or "#REDIRECT" in ham[:60].upper():
+        return {"bulundu": False, "baslik": baslik}
+    def bolum(adlar, sinir=3500):
+        for b in adlar:
+            m = re.search(r"==+\s*" + b + r"\s*==+", ham)
+            if m:
+                g = ham[m.end():m.end() + sinir]
+                g = re.sub(r"<ref[^>]*>.*?</ref>|<ref[^>]*/>", "", g, flags=re.S)
+                return re.sub(r"\[\[([^\]|]*\|)?([^\]]*)\]\]", r"\2", g).strip()
+        return ""
+    return {"bulundu": True, "baslik": baslik,
+            "oynanis": bolum(["Gameplay"]),
+            "hikaye": bolum(["Plot", "Synopsis", "Premise"], 2200),
+            "muzik": bolum(["Music", "Audio"], 1800),
+            "oduller": bolum(["Awards", "Accolades"], 4000)}
+
+
 def blog_envanteri(anahtarlar):
     x = get("https://gameplus.com.tr/sitemap-blog.xml")
     sluglar = [u.rsplit("/", 1)[-1] for u in re.findall(r"<loc>(.*?)</loc>", x)]
@@ -122,27 +149,32 @@ def main():
     ap.add_argument("--steam-appid")
     ap.add_argument("--blog-anahtar", nargs="*", default=[],
                     help="blog sitemap'inde aranacak ek kelimeler")
+    ap.add_argument("--wiki", help="İngilizce Wikipedia sayfa başlığı; boşsa oyun adı kullanılır")
     a = ap.parse_args()
 
     auth = kimlik()
     veri = {"kelime": a.kelime}
-    print("1/4 SERP ve PAA...", flush=True)
+    print("1/5 SERP ve PAA...", flush=True)
     veri["serp"] = serp(a.kelime, auth)
     time.sleep(2)
-    print("2/4 kelime kümesi...", flush=True)
+    print("2/5 kelime kümesi...", flush=True)
     veri["kelimeler"] = kelimeler(a.kelime, auth)
     time.sleep(2)
-    print("3/4 Steam...", flush=True)
+    print("3/5 Steam...", flush=True)
     veri["steam"] = steam(a.steam_appid, a.kelime)
-    print("4/4 blog envanteri...", flush=True)
+    print("4/5 blog envanteri...", flush=True)
     kok = a.kelime.split()[0].lower()
     veri["blog"] = blog_envanteri(list({kok, *[x.lower() for x in a.blog_anahtar],
                                         "fps", "battle-royale", "cloud", "en-iyi"}))
+    print("5/5 Wikipedia...", flush=True)
+    veri["wikipedia"] = wikipedia(a.wiki or a.kelime.title())
     json.dump(veri, open(a.cikti, "w"), ensure_ascii=False, indent=2)
     print(f"\nyazıldı: {a.cikti}")
     print(f"  PAA sorusu: {len(veri['serp']['paa'])} | kelime: {len(veri['kelimeler']['liste'])}"
           f" | Türkçe destek: {veri['steam'].get('turkce_destek')}"
-          f" | Metacritic: {(veri['steam'].get('metacritic') or {}).get('score')}")
+          f" | Metacritic: {(veri['steam'].get('metacritic') or {}).get('score')}"
+          f" | Wikipedia: {'var' if veri['wikipedia']['bulundu'] else 'yok'}"
+          f" | ödül bölümü: {'var' if veri['wikipedia'].get('oduller') else 'yok'}")
 
 
 if __name__ == "__main__":

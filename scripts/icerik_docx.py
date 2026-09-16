@@ -11,7 +11,7 @@ icerik.json biçimi:
   "meta": "Gövde 827 kelime · 5 H2, 4 H3 · 2 tablo · 6 iç link · 8 SSS",
   "linkler": {"LINK1": ["anchor metni", "https://gameplus.com.tr/..."]},
   "govde": [["H2","Başlık"], ["p","Paragraf, içinde [LINK1] geçebilir"],
-            ["H3","Alt başlık"], ["li","Numaralı madde"],
+            ["H3","Alt başlık"], ["li","Numaralı madde"], ["mad","Madde imli madde"],
             ["tablo", [["Sütun","Sütun"],["satır","satır"]]]],
   "sss": [["Soru?","Yanıt"]],
   "not": "Kaynak ve karar notları"
@@ -110,8 +110,8 @@ def main():
                     else:
                         renk(rr, TEAL)
             doc.add_paragraph()
-        elif tip == "li":
-            p = doc.add_paragraph(style="List Number")
+        elif tip in ("li", "mad"):
+            p = doc.add_paragraph(style="List Number" if tip == "li" else "List Bullet")
             p.paragraph_format.space_after = Pt(3)
             metni_bas(p, icerik, linkler)
         else:
@@ -135,7 +135,7 @@ def main():
 
     doc.save(a.out)
     kelime = sum(len(re.sub(r"\[LINK\d+\]", "x", i).split())
-                 for t, i in d["govde"] if t in ("p", "li"))
+                 for t, i in d["govde"] if t in ("p", "li", "mad"))
     print(f"yazıldı: {a.out} · gövde {kelime} kelime · "
           f"{sum(1 for t,_ in d['govde'] if t=='H2')} H2 · {sum(1 for t,_ in d['govde'] if t=='H3')} H3 · "
           f"{len(d.get('sss',[]))} SSS")

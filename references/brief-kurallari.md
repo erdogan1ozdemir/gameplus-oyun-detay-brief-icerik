@@ -35,14 +35,15 @@ hikâye modu gibi).
 ```
 TON: Sayfanın kime, hangi beklentiyle yazıldığı.
 
-AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel olarak tanıtır, sayfada H1 bulunduğu için bu girişe başlık konmaz.
+AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel olarak tanıtır, puanlar madde listesiyle verilir, resmi dil desteği tek cümleyle belirtilir. Sayfada H1 bulunduğu için bu girişe başlık konmaz.
 
 H2 · Başlık: Bu bölümde ne anlatılır, hangi kelime nerede karşılanır, hangi biçim kullanılır.
 H2 · Başlık: ...
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
 
-UZUNLUK: Ortalama 750-800 kelime gövde. Paragraf en fazla 3-4 cümle; teknik değerler rakamla.
+BİÇİM: Sınıflar, modlar ve puanlar madde listesiyle; teknik değer kümeleri tabloyla verilir. Oynanış bölümünün sonunda oyunun tonu, sanat tasarımı, müziği ve ödülleri kısa bir paragrafta toplanır. Hikâyeden spoiler verilmeden bahsedilir.
+UZUNLUK: Ortalama 750-850 kelime gövde. Paragraf en fazla 3-4 cümle; teknik değerler rakamla.
 DİKKAT: Yazılmayacaklar, doğrulanacaklar, hacim uyarısı.
 ```
 

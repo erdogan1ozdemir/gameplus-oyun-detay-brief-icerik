@@ -36,16 +36,20 @@ Sayfada H1 zaten oyun adı olduğu için bu girişe başlık konmaz, doğrudan m
 olduğunu, kim yaptığını, ne zaman çıktığını ve seri içindeki yerini söyler; erişim ve "nasıl oynanır"
 anlatısı girişte değil, ilk H2'de başlar. Böylece oyunu tanımayan okuyucu da sayfaya bir yerden giriyor.
 
-Ortalama **750-800 kelime**, 5-6 H2. Bölüm başına düşen 120-150 kelime, bir konuyu gerçekten
-anlatmaya yetiyor; daha fazla başlık koyarsan her bölüm madde listesine dönüşüyor.
+Ortalama **750-850 kelime**, 5-6 H2. Bölüm başına düşen 120-150 kelime, bir konuyu gerçekten
+anlatmaya yetiyor; daha fazla başlık koyarsan her bölüm madde listesine dönüşüyor. Madde listeleri
+paragraftan hızlı okunduğu için listeli metinlerde bandın üst ucuna yaklaşmak sorun değil.
 
 Tipik iskelet (oyuna göre değişir):
 
-0. **Giriş (başlıksız, 1-2 paragraf)** - oyunun ne olduğu, stüdyo, çıkış, seri içindeki yeri,
-   eleştirmen puanı ve resmi dil desteği.
-1. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - erişim yanıtı + oyunun tek cümlelik tanımı + künye
-   bilgileri (stüdyo, çıkış, Metacritic, dil desteği).
-2. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, modlar, tek oyunculu taraf.
+0. **Giriş (başlıksız, 1-2 paragraf)** - birinci paragraf oyunun ne olduğunu, kimin yaptığını, ne
+   zaman çıktığını ve seri içindeki yerini söyler. İkinci paragraf oyunun kapsamını (çok oyunculu +
+   tek oyunculu) verir, puanları **madde listesiyle** yazar ve resmi dil desteğini tek cümleyle
+   belirtir.
+1. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - yalnız erişim yanıtı: oyun kütüphanede mi, hangi mağaza
+   hesabıyla bağlanıyor, kurulum gerekiyor mu, ücretsiz mod varsa şartı ne. Künye bilgisi girişte
+   verildiği için burada tekrarlanmaz.
+2. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, modlar, atmosfer ve müzik, tek oyunculu taraf.
 3. **GeForce NOW ile {Oyun} Deneyimi** - bulutun ne değiştirdiği, cihaz çeşitliliği, bağlantı hızı tablosu.
 4. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
 5. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli + numaralı başlama adımları.
@@ -53,6 +57,39 @@ Tipik iskelet (oyuna göre değişir):
 Türkçe dil desteği yalnız **resmi ve modsuz** destek varsa kendi H2'sini alır. Destek yoksa ayrı
 bölüm açılmaz, birinci bölümde tek cümleyle belirtilir. Okuyucunun bunu öğrenmek için sayfayı
 taraması gerekmemeli.
+
+## Madde listesi kullanımı
+
+Sayılabilir ve paralel yapıdaki şeyler paragrafa gömülmez, **madde listesiyle** verilir: sınıflar,
+oyun modları, puanlar, adımlar, paket farkları. Dört sınıfı tek paragrafta noktalı virgülle sıralamak
+okuyucuyu aradığını taramaya zorluyor; liste hem hızlı okunuyor hem de yapay zeka yanıtlarında
+bütün olarak alınabiliyor.
+
+Biçim: `Ad: tek cümlelik tanım.` Madde başına bir fikir, 10-20 kelime. Liste öncesinde onu tanıtan
+kısa bir cümle bulunur ("Serinin dört klasik sınıfı geri döndü:"). İki maddelik liste yapılmaz,
+altı maddeyi geçen liste bölünür.
+
+Numaralı liste yalnız **sıralı adımlar** için kullanılır (başlama adımları). Sıra taşımayan her şey
+madde imli listedir. `icerik_docx.py` içinde numaralı liste `li`, madde imli liste `mad` tipidir.
+
+## Atmosfer, müzik ve ödüller
+
+Teknik anlatım tek başına oyunun neye benzediğini anlatmıyor. Oynanış bölümünün sonunda, oyunun
+**tonu, sanat tasarımı, müziği ve aldığı ödüller** kısa bir paragrafta toplanır. Sıfat yığmadan,
+somut örnekle: "yıkılan binanın tozu, çatışma ilerledikçe değişen harita silueti ve sesin geldiği yön"
+gibi. Besteci adı yazılır, ödül adı ve yılı tam verilir, kazanılan ödül ile adaylık ayrı ayrı belirtilir.
+
+Ödül yoksa bölüm zorlanmaz; ton ve sanat tasarımı tek cümleyle geçilir. Uydurma ödül ya da
+"övgü topladı" gibi kaynaksız genelleme yazılmaz.
+
+## Hikâyeden spoiler vermeden bahsetmek
+
+Hikâye modu olan oyunlarda okuyucu "ne anlatıyor ve ne kadar sürüyor" sorusunun yanıtını bekliyor;
+olay örgüsünü değil. Yazılabilecekler: kurulum (hangi yıl, hangi çatışma, kime karşı), oynadığın
+birlik, bölümlerin geçtiği yerler, anlatı biçimi, HowLongToBeat süresi.
+
+Yazılmayacaklar: dönüm noktaları, kimin öldüğü, sonun nasıl bağlandığı, karakterlerin kimliğine dair
+açığa çıkan bilgiler. Ölçü şu: cümleyi oyunu oynamamış biri okuduğunda merakı artmalı, kapanmamalı.
 
 ## Tablo kullanımı
 
@@ -72,7 +109,8 @@ bağlanıyor. Sonra oyunun ne olduğu tek cümlede. Ardından stüdyo, çıkış
 resmi dil desteği. Uzun giriş yazılmaz.
 
 **Oynanış bölümü.** Oyunun kendi terimleriyle anlatılır (sistem adları, sınıf adları, mod adları
-İngilizce kalır). Tek oyunculu taraftan **"kampanya" diye bahsedilmez**; "hikâye modu", "campaign"
+İngilizce kalır). Sınıflar ve modlar madde listesiyle verilir; bölümün sonunda ton, sanat tasarımı,
+müzik ve ödüller kısa bir paragrafta toplanır. Tek oyunculu taraftan **"kampanya" diye bahsedilmez**; "hikâye modu", "campaign"
 ya da oyunun kendi adı kullanılır. Sebebi kampanya kelimesinin promosyon kampanyasıyla karışması.
 Hikâye süresi doğrulanabiliyorsa kaynağıyla yazılır.
 

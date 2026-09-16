@@ -18,7 +18,14 @@
 ## İçerik
 
 - [ ] Gövde H2 ile mi başlıyor, belgede H1 var mı? (olmamalı)
-- [ ] Kelime sayısı 750-800 bandında mı?
+- [ ] Kelime sayısı 750-850 bandında mı?
+- [ ] Gövde başlıksız 1-2 paragraflık girişle mi açılıyor, giriş ilk H2'nin işini üstlenmiş mi?
+- [ ] Sınıflar, modlar ve puanlar madde listesine alındı mı, yoksa paragrafa mı sıkıştırıldı?
+- [ ] Sıra taşımayan liste madde imli (`mad`), yalnız başlama adımları numaralı (`li`) mi?
+- [ ] Ton, sanat tasarımı, müzik ve ödüller için kısa bir paragraf var mı? Kazanılan ödül ile adaylık ayrılmış mı?
+- [ ] Hikâyeden bahsedilirken olay örgüsü açığa çıkmış mı? (çıkmamalı: kurulum, mekân ve süre yeterli)
+- [ ] Özel adlar (birlik, karakter, mod, harita) kaynaktaki yazımıyla mı geçiyor?
+- [ ] Metin baştan sona `-iyor` ile mi yazılmış? Genel geçer bilgiler geniş zamana çevrildi mi?
 - [ ] Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlıyor mu?
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
 - [ ] Türkçe dil desteği yoksa gövdede tek cümleyle belirtildi mi, ayrı H2 ve SSS sorusu açılmadı mı?

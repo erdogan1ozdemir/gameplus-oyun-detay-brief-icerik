@@ -40,11 +40,13 @@ Katalog Excel'i bulunamazsa kullanıcıdan dosya yolunu iste.
 python3 scripts/arastirma.py "battlefield 6" --cikti /tmp/oyun.json --steam-appid 2807960
 ```
 
-Tek çağrıda dört kaynağı toplar: Google SERP ve PAA soruları (Türkiye/Türkçe), uzun kuyruk kelimeler ve aylık hacimleri, Steam mağaza verisi (resmi dil listesi, sistem gereksinimleri, Metacritic, stüdyo), gameplus blog sitemap taraması.
+Tek çağrıda beş kaynağı toplar: Google SERP ve PAA soruları (Türkiye/Türkçe), uzun kuyruk kelimeler ve aylık hacimleri, Steam mağaza verisi (resmi dil listesi, sistem gereksinimleri, Metacritic, stüdyo), gameplus blog sitemap taraması, Wikipedia oyun sayfası (oynanış, hikâye kurulumu, besteci ve müzik, ödül tablosu).
 
-Steam app id'yi bilmiyorsan parametreyi boş bırak, script oyun adıyla arar.
+Steam app id'yi bilmiyorsan parametreyi boş bırak, script oyun adıyla arar. Wikipedia başlığı oyun adından farklıysa `--wiki "Sayfa Başlığı"` ver.
 
-Bunun üstüne, içerikte kullanacağın her sayı için `references/dogrulama.md`'deki kaynak sırasını izle. Özellikle **hikâye modu süresi, Metacritic puanı ve GAME+ sunucu sınıfı** ayrı ayrı doğrulanır.
+Sayfayı ürün kataloğundan ayıran şey oyunu **anlatması**, bu yüzden teknik veriye ek olarak şunlar da araştırılır: oyunun tonu ve sanat tasarımı, müziği ve bestecisi, aldığı ödüller ile adaylıklar, hikâyenin kurulumu ve geçtiği yerler, sınıf ve mod tanımları. Bunların hepsi metne girmez; girenler kaynağıyla girer.
+
+Bunun üstüne, içerikte kullanacağın her sayı için `references/dogrulama.md`'deki kaynak sırasını izle. Özellikle **hikâye modu süresi, Metacritic puanı (platforma göre değişir), ödül ile adaylık ayrımı ve GAME+ sunucu sınıfı** ayrı ayrı doğrulanır.
 
 ### Faz 3 - Briefi kur
 
@@ -67,7 +69,10 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 
 `references/icerik-kurallari.md` yapıyı, tonu ve bölüm bölüm ne yazılacağını anlatır. Özet:
 
-- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama 750-850 kelime.
+- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama 750-850 kelime. Giriş oyunu tanıtır ve puanları madde listesiyle verir; erişim anlatısı ilk H2'de başlar.
+- Sayılabilir ve paralel şeyler (sınıflar, modlar, puanlar) madde listesiyle verilir, paragrafa sıkıştırılmaz. Numaralı liste yalnız sıralı adımlar içindir.
+- Oynanış bölümünün sonunda oyunun tonu, sanat tasarımı, müziği ve ödülleri kısa bir paragrafta toplanır; kazanılan ödül ile adaylık ayrı yazılır.
+- Hikâyeden spoiler verilmeden bahsedilir: kurulum, oynanan birlik, geçtiği yerler ve süre yazılır; olay örgüsü yazılmaz.
 - Genel geçer bilgiler geniş zamanla yazılır ("yer alır", "gerekmez"); şimdiki zaman yalnız gerçekten süregelen durumlar için kullanılır. Metnin tamamını `-iyor` ile yazmak sayfayı tek düzeleştiriyor.
 - Her H2'nin ilk cümlesi o başlığın sorusunu doğrudan yanıtlar. Yapay zeka yanıtlarında alıntılanabilirlik buna bağlı.
 - Ton marka sesidir: "sen" dili, geniş zaman, somut değerler. İçerik Dili Rehberi bu çıktıya uygulanmaz, o rehber müşteriye giden rapor ve sunumlar içindir.
@@ -95,6 +100,7 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 - **Hangi GAME+ paketinin gerektiği hiçbir yerde yazılmaz.** Ne başlıkta, ne SSS'de, ne gövdede. Paketlerin ne sunduğu anlatılabilir, "bu oyun için X paketi gerekir" denmez.
 - **Tek oyunculu moddan "kampanya" diye bahsedilmez.** "Hikâye modu", "campaign" ya da oyunun kendi kullandığı ad tercih edilir. Sebebi: kampanya kelimesi promosyon kampanyasıyla karışıyor.
 - **Türkçe dil desteği yalnız resmi ve modsuz destek varsa bölüm olur.** Destek yoksa ayrı H2 ve SSS sorusu açılmaz, gövdede tek cümleyle belirtilir.
+- **Ödül, puan ve özel ad kulaktan yazılmaz.** Kazanılan ödül ile adaylık ayrılır, Metacritic puanının hangi platforma ait olduğu bilinir, birlik ve karakter adları kaynaktaki yazımıyla geçer.
 - **Doğrulanamayan sayı yazılmaz.** Sızıntı ve söylenti kaynaklı rakam kullanılmaz; alan boş bırakılır ya da cümle çıkarılır, durum kullanıcıya söylenir.
 - **Fiyat, indirim ve kampanya bilgisi yazılmaz**, değiştiğinde sayfa eskir.
 - **Benzer niyetli birden fazla yazı varsa yalnız birine link verilir**; `/gfn/sistem-gereksinimleri` sayfasına link verilmez.
