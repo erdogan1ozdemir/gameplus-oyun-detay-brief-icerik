@@ -27,6 +27,9 @@
 - [ ] Özel adlar (birlik, karakter, mod, harita) kaynaktaki yazımıyla mı geçiyor?
 - [ ] Gövdede dört kip de görünüyor mu (geniş zaman, `-mektedir`, şimdiki zaman, ikinci tekil), yoksa tek kipe mi kilitlenmiş?
 - [ ] Anlatı bölümlerindeki birinci çoğul, erişim ve başlama adımlarına sızmış mı? (sızmamalı)
+- [ ] Bir cümle `-iyor` ile biterken sonraki `-mıştır` ile mi başlıyor? Geçişe köprü konmuş mu?
+- [ ] Başlık üç konuyu virgülle mi diziyor? (en fazla iki konu)
+- [ ] Müzik anlatılırken "skor" kelimesi kullanılmış mı? (kullanılmamalı)
 - [ ] Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlıyor mu?
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
 - [ ] Türkçe dil desteği yoksa gövdede tek cümleyle belirtildi mi, ayrı H2 ve SSS sorusu açılmadı mı?

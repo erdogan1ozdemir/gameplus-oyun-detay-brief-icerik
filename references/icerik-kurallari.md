@@ -36,6 +36,19 @@ Hikâye ve oynanış anlatılırken **birinci çoğul** da kullanılabilir; oyun
 bölümleriyle sınırlı kalır; erişim ve başlama adımlarında ikinci tekile ("sen") dönülür, çünkü
 orada okuyucuya doğrudan bir iş tarif ediliyor.
 
+**Kipler arası geçiş yumuşatılır.** Kipin değişmesi doğru, ama bir cümle `-iyor` ile biterken hemen
+ardından gelen cümlenin `-mıştır` ile bitmesi metni zıplatıyor; okuyucu iki farklı yazarın yazdığını
+hissediyor. İki çözüm var: aynı kipteki cümleleri **yan yana toplamak** (bir paragrafta anlatım,
+sonrakinde tespit) ya da geçişe **köprü bir ifade** koymak.
+
+| Zıplayan | Yumuşatılmış |
+|---|---|
+| "…anlamanın en hızlı yolu oluyor. The Game Awards 2025'te En İyi Ses Tasarımı ödülünü kazanmıştır." | "…anlamanın en hızlı yolu oluyor. **Bu emek karşılığını da buldu:** The Game Awards 2025'te En İyi Ses Tasarımı ödülü Battlefield 6'ya gitmiştir." |
+| "…çatışmanın ölçeğini hissettiriyor. Geliştirici ekip … referans aldığını belirtmiştir." | "…çatışmanın ölçeğini hissettiriyor. **Bu tercih bilinçli.** Geliştirici ekip … referans aldığını belirtmiştir." |
+| "…uyanı seçebilirsin. Performance tarafında … sunulmaktadır." | "…uyanı seçebilirsin. **Paketler arasındaki fark şöyle:** Performance tarafında … sunulmaktadır." |
+
+Köprü bir dolgu cümlesi değil, bir sonraki cümlenin ne anlatacağını söyleyen kısa bir geçiş olur.
+
 Bilgi aktaran cümlelerde konuşma diline kaçan geçmiş zamandan ("besteledi", "kazandı") kaçınılır;
 bunlar doğrulanmış tespit olduğu için `-mıştır` ile yazılır. Anlatı içindeki geçmiş zaman serbesttir.
 
@@ -115,6 +128,16 @@ birlik, bölümlerin geçtiği yerler, anlatı biçimi, HowLongToBeat süresi.
 Yazılmayacaklar: dönüm noktaları, kimin öldüğü, sonun nasıl bağlandığı, karakterlerin kimliğine dair
 açığa çıkan bilgiler. Ölçü şu: cümleyi oyunu oynamamış biri okuduğunda merakı artmalı, kapanmamalı.
 
+## Başlık adlandırma
+
+Başlık en fazla **iki konu** taşır. "Atmosferi, Ses Tasarımı ve Müziği" gibi üç konuyu virgülle
+dizen başlıklar hem uzun hem de arama sonucunda okunmaz görünüyor; üçüncü konu zaten bölümün içinde
+anlatılıyor, başlığa çıkmasına gerek yok. "Battlefield 6 Atmosferi ve Ses Tasarımı" yeterli.
+
+Başlık oyun adıyla başlar, soru biçiminde ya da nominal olabilir, ama iki başlık aynı kelimeyle
+dolmaz. Başlıkta geçen kelime gövdenin ilk cümlesinde tekrar edilmez; ilk cümle başlığı tekrar
+etmek yerine onu yanıtlar.
+
 ## Kalın vurgu
 
 Sayfa taranarak okunuyor; gözün takılacağı yerler olmazsa okuyucu paragrafın ortasındaki değeri
@@ -190,6 +213,8 @@ SSS'de yer almaz, bilgi gövdede tek cümleyle geçer.
   tanklar ve helikopterler oynanışın merkezinde". Sayfa tek bir oyunu anlatsa da özne düşürülmez.
 - **Katalogda olmayan mağaza:** oyun başka bir mağazada satılıyor olabilir, ama GeForce NOW yalnız
   katalogdaki `variants` alanında yazan mağazaların kopyasını açar. Orada olmayan mağaza yazılmaz.
+- **"Skor" kelimesi müzik anlamında kullanılmaz:** Türkçede puanla karışıyor. "Oyunun müziğini X
+  besteledi" yazılır; "skor" yalnız Metacritic puanı bağlamında geçer.
 - **Kaynak notu belgeye yazılmaz;** hangi bilginin nereden geldiği kullanıcıya sohbette söylenir.
 - Eleştirmen alıntısı ve uzun puan dökümü: Metacritic tek sayı olarak yeterli.
 - Doğrulanmamış süre, boyut ve oyuncu sayısı.
