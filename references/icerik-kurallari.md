@@ -11,6 +11,8 @@ oyunu yeni duymuş ve ne olduğuna bakıyor. Her iki durumda da beklediği şey 
 **her H2'nin ilk cümlesi o başlığın sorusunu doğrudan yanıtlar**, açıklama sonra gelir. Yapay zeka
 yanıtlarında alıntılanabilirlik de buna bağlı: alıntılanan şey neredeyse her zaman bölümün ilk cümlesi.
 
+Sayfa oyunun **PC sürümünü** anlatır; GeForce NOW akışa aldığı sürüm budur. Puan, gereksinim ve boyut değerleri PC'ninkidir, puan yazılırken de bu belirtilir ("Metacritic PC puanı").
+
 Sıfatla değil değerle anlatılır. "Muhteşem grafikler" yerine "4K HDR akış", "çok hızlı" yerine
 "30 milisaniyenin altında gecikme".
 

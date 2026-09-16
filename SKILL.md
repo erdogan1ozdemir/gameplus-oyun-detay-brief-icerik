@@ -100,6 +100,7 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 - **Hangi GAME+ paketinin gerektiği hiçbir yerde yazılmaz.** Ne başlıkta, ne SSS'de, ne gövdede. Paketlerin ne sunduğu anlatılabilir, "bu oyun için X paketi gerekir" denmez.
 - **Tek oyunculu moddan "kampanya" diye bahsedilmez.** "Hikâye modu", "campaign" ya da oyunun kendi kullandığı ad tercih edilir. Sebebi: kampanya kelimesi promosyon kampanyasıyla karışıyor.
 - **Türkçe dil desteği yalnız resmi ve modsuz destek varsa bölüm olur.** Destek yoksa ayrı H2 ve SSS sorusu açılmaz, gövdede tek cümleyle belirtilir.
+- **Sayfa oyunun PC sürümünü anlatır.** GeForce NOW PC sürümünü akıtıyor; Metacritic puanı, sistem gereksinimleri, kurulum boyutu ve dil listesi PC sütunundan alınır, konsol değeri yazılmaz.
 - **Ödül, puan ve özel ad kulaktan yazılmaz.** Kazanılan ödül ile adaylık ayrılır, Metacritic puanının hangi platforma ait olduğu bilinir, birlik ve karakter adları kaynaktaki yazımıyla geçer.
 - **Doğrulanamayan sayı yazılmaz.** Sızıntı ve söylenti kaynaklı rakam kullanılmaz; alan boş bırakılır ya da cümle çıkarılır, durum kullanıcıya söylenir.
 - **Fiyat, indirim ve kampanya bilgisi yazılmaz**, değiştiğinde sayfa eskir.

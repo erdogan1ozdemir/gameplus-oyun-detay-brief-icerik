@@ -30,6 +30,7 @@
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
 - [ ] Türkçe dil desteği yoksa gövdede tek cümleyle belirtildi mi, ayrı H2 ve SSS sorusu açılmadı mı?
 - [ ] Teknik değer kümeleri tabloya alındı mı?
+- [ ] Puan, gereksinim, boyut ve dil listesi **PC sürümünden** mi alınmış? Metacritic puanı "PC puanı" olarak mı yazılmış?
 - [ ] Doğrulanmamış sayı var mı? Her sayının kaynağı belli mi?
 - [ ] Fiyat, indirim, kampanya ya da sezon adı geçiyor mu? (geçmemeli)
 - [ ] Sunucu sınıfı yazıldıysa paketler sayfasından teyit edildi mi?

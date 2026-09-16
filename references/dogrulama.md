@@ -10,7 +10,7 @@ aşağıdaki sıra izlenir. Üstteki kaynak alttakini ezer.
 | Sistem gereksinimleri | Steam `appdetails` (`pc_requirements`) | EA / yayıncı sayfası | Steam Türkçe çeviriyle döner, doğrudan kullanılabilir |
 | Kurulum boyutu | Steam gereksinimleri (min ve önerilen ayrı) | - | Minimum ve önerilen farklıysa ikisi de yazılır |
 | Resmi dil desteği | Steam `supported_languages` | PlayStation destek sayfası | Türkçe listede yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz |
-| Metacritic puanı | metacritic.com sayfasının kendisi | Steam `metacritic` alanı | Steam'in değeri önbellekten gelir ve 1-2 puan geride kalabilir |
+| Metacritic puanı | metacritic.com platform dökümündeki **PC** satırı | Steam `metacritic` alanı (zaten PC) | Sayfa başlığındaki puan PC'ninki olmayabilir |
 | Hikâye modu süresi | HowLongToBeat | Oyun basını (GamesRadar, IGN) | İki bağımsız kaynak örtüşmüyorsa süre yazılmaz |
 | GFN paket ve sunucu değerleri | `gameplus.com.tr/gfn/paketler` | - | **Tek geçerli kaynak budur** |
 | GFN'de var mı, optimize mi | GFN oyun kataloğu (`katalog.py`) | nvidia.com GFN sayfası | Katalog "Tam optimize / Tam optimize değil" verir |
@@ -37,10 +37,19 @@ gerektiği yazılmadığı için bu alan içerikte kullanılmaz, yalnız iç bil
 Battlefield 6 örneğinde 12 aylık ortalama 49.500 iken Ekim 2025 zirvesi 135.000, Mayıs-Temmuz 2026
 ortalaması 15.900. Standart 12 aylık değer sütunda kalır, son üç ayın ortalaması DİKKAT satırına yazılır.
 
+**Her şey PC sürümünden alınır.** GeForce NOW oyunun PC sürümünü akıttığı için sayfanın anlattığı
+sürüm de PC sürümüdür. Puan, sistem gereksinimleri, kurulum boyutu, dil listesi ve sürüm farkı taşıyan
+her değer PC sütunundan okunur; konsol değeri yazılmaz. Sayfada tek bir sürüm anlatılmazsa okuyucu
+kendi kurulumuyla eşleşmeyen bir sayıya bakmış oluyor.
+
 **Metacritic'in tek bir puanı yoktur.** Oyun sayfasının üstündeki puan varsayılan platformunkidir;
-sağdaki dökümde her platform ayrı durur. Battlefield 6'da oyun sayfası 83/100 (71 eleştirmen) derken
-PC'ye özel puan 82/100 (64 eleştirmen). Hangi puanın yazıldığı Not bölümünde belirtilir; kullanıcı bir
-değer verdiyse o kullanılır, ama platform farkı ona söylenir.
+platform dökümü sağda ayrı durur. Battlefield 6'da sayfa başlığındaki puan 83/100 (71 eleştirmen)
+iken **PC puanı 82/100 (64 eleştirmen)**, PS5 83, Xbox Series X 84. Yazılan değer PC'ninkidir ve Not
+bölümünde hangi platforma ait olduğu belirtilir. Steam'in `metacritic` alanı zaten PC puanını döndürür,
+hızlı teyit için kullanılabilir.
+
+**Kullanıcı skoru platform bazında ayrışmaz.** Metacritic oyuncu puanını tüm platformlar için tek
+sayı olarak verir. Yazılırsa bu not düşülür, "PC kullanıcı skoru" diye sunulmaz.
 
 **Silah sınıfı adları Türkçeye çevrilirken kayıyor.** SMG "makineli tabanca", LMG "hafif makineli
 tüfek"tir; ikisi de "hafif makineli" diye yazılırsa iki sınıf aynı silahı kullanıyor görünür.
