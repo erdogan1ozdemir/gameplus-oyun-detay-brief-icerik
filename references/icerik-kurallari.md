@@ -152,8 +152,25 @@ ifadeler. Her paragrafta kalın varsa hiçbiri vurgu değildir.
 
 Son bölümün ardından, SSS'den önce iki üç cümlelik bir kapanış gelir: oyunun ne olduğunu bir
 cümlede toparlar ve okuyucuyu GeForce NOW üzerinden oynamaya çağırır. Çağrı somut bir eylemle
-biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil. Hangi paketin gerektiği burada
-da yazılmaz.
+biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil.
+
+**Kapanışta paket önerisi bulunur.** Bir iki cümleyle okuyucuya oyunu GeForce NOW'da oynamak için
+**Performance ya da Ultimate** paketlerinden birini seçebileceği söylenir ve satın almaya çağrılır.
+Sayfayı okuyan kişinin bir sonraki adımı pakete sahip olmak; bu cümle o adımı açıkça gösterir.
+
+- İki paket her zaman birlikte anılır. Oyuna göre tek paket önerilmez, "bu oyun için Ultimate
+  gerekir" gibi bir gereklilik kurulmaz.
+- Fiyat yazılmaz; fiyat değiştiğinde sayfa eskir.
+- Paket özelliği (çözünürlük, FPS, oturum süresi, sunucu sınıfı) bu cümlelerde geçmez. Farkı
+  anlatmak paketler sayfasının ve varsa GAME+ ile Oynamak alt başlığının işi.
+- `/gfn/paketler` linki gövdede başka bir yerde verildiyse burada tekrarlanmaz; verilmediyse anchor
+  ("GeForce NOW paketleri") bu cümlenin içine yerleşir.
+
+| Yazma | Yaz |
+|---|---|
+| "Bu oyun için Ultimate paketi gerekir." | "Battlefield 6'yı oynamak için **Performance** ya da **Ultimate** paketlerinden birini tercih edebilirsin." |
+| "Aylık 599 TL'den başlayan Performance paketiyle…" | "Paketini seç, hesabını bağla ve Oynat'a bas." |
+| "4K ve 240 FPS için Ultimate'ı seç." | "Sana uyan paketi seçip ilk maçına saniyeler içinde girebilirsin." |
 
 ## Tablo kullanımı
 
@@ -186,7 +203,8 @@ açılması, gecikme. Paketlerin ne sunduğu anlatılabilir; **"bu oyun için X 
 bunların hiçbiri gerekmiyor. "Bilgisayarım kaldırır mı" sorusu burada karşılanır.
 
 **Kapanış bölümü.** Erişim modeli (ücretsiz mod var mı, tam sürüm nasıl alınır) ve 3-4 maddelik
-numaralı başlama adımları. Adımlar sayfadaki Oynat çağrısına bağlanır.
+numaralı başlama adımları. Adımlar sayfadaki Oynat çağrısına bağlanır. Bölümün son paragrafı
+Performance ya da Ultimate paket önerisini ve satın alma çağrısını taşır (bkz. Kapanış çağrısı).
 
 ## SSS yanıtları
 

@@ -57,11 +57,11 @@ Detay sayfası kalıcı ürün sayfasıdır: oyuncunun "bu oyun nedir, GeForce N
 miyim, nasıl başlarım" sorusunu karşılar. Blogdaki inceleme yazıları çıkış dönemine ait
 değerlendirmelerdir ve ayrı bir iş görür.
 
-- Sayfada H1 oyun adı olarak bulunduğu için **gövde H2 ile başlar**.
-- Gövde ortalama **750-800 kelime**, 5-6 H2, H3'e girilmez ya da çok az girilir.
+- Sayfada H1 oyun adı olarak bulunduğu için gövdeye başlık konmaz; **başlıksız kısa bir girişle** açılır, ardından H2'ler gelir.
+- Gövde ortalama **1200-1500 kelime**, 7-9 H2 ve az sayıda H3.
 - SSS soruları Google'ın "Bunlar da sorulmuş" kutusundan ve arama önerilerinden gelir; yanıtlar
   20-60 kelime ve ilk cümle doğrudan cevaptır.
-- **Hangi GAME+ paketinin gerektiği hiçbir yerde yazılmaz.**
+- **Oyuna özel paket gerekliliği yazılmaz.** Kapanışta bir iki cümleyle oyunu oynamak için Performance ya da Ultimate paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
 - Tek oyunculu moddan "kampanya" diye bahsedilmez.
 - Doğrulanamayan sayı yazılmaz; alan boş bırakılır ve durum ekibe bildirilir.
 

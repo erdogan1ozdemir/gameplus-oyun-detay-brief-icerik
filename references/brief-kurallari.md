@@ -43,7 +43,7 @@ H2 · Başlık: ...
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
 
-BİÇİM: Sınıflar, modlar, puanlar ve öne çıkan özellikler madde listesiyle; teknik değer kümeleri tabloyla verilir. Önemli terim ve değerler kalın yazılır. Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini alır; hikâyeden spoiler verilmeden bahsedilir. Son bölümün ardından kısa bir kapanış çağrısı gelir.
+BİÇİM: Sınıflar, modlar, puanlar ve öne çıkan özellikler madde listesiyle; teknik değer kümeleri tabloyla verilir. Önemli terim ve değerler kalın yazılır. Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini alır; hikâyeden spoiler verilmeden bahsedilir. Son bölümün ardından kısa bir kapanış çağrısı gelir; kapanışta oyunu oynamak için Performance ya da Ultimate paketlerinden birinin seçilebileceğini söyleyen bir iki cümlelik satın alma çağrısı bulunur, fiyat ve paket özelliği yazılmaz.
 UZUNLUK: Ortalama 1200-1500 kelime gövde. Paragraf en fazla 3-4 cümle; teknik değerler rakamla.
 DİKKAT: Yazılmayacaklar, doğrulanacaklar, hacim uyarısı.
 ```
