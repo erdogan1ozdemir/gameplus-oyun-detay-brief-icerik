@@ -8,7 +8,7 @@
 - [ ] Başlık sayısı 1200-1500 kelimeye uygun mu? (7-9 H2, az sayıda H3)
 - [ ] İçerik kurgusunda başlık yanına kelime sayısı yazılmış mı? (yazılmamalı)
 - [ ] Hangi GAME+ paketinin gerektiğine dair başlık, soru ya da cümle var mı? (olmamalı)
-- [ ] BİÇİM satırında kapanıştaki Performance / Ultimate paket önerisi belirtilmiş mi?
+- [ ] BİÇİM satırında kapanıştaki GeForce NOW Ultimate / Performance paket önerisi belirtilmiş mi?
 - [ ] Link sayısı en az 4 mü, hepsi tam URL mi, 200 dönüyor mu?
 - [ ] Aynı niyeti karşılayan iki sayfaya birden link verilmiş mi? (verilmemeli)
 - [ ] `/gfn/sistem-gereksinimleri` linki var mı? (olmamalı)
@@ -45,7 +45,7 @@
 - [ ] Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini aldı mı?
 - [ ] Bölüm başına iki üç kalın vurgu var mı, yoksa her paragraf kalınla mı dolu?
 - [ ] SSS'den önce kapanış çağrısı var mı?
-- [ ] Kapanışta Performance ya da Ultimate paketlerinden birinin seçilebileceğini söyleyen, satın almaya çağıran bir iki cümle var mı?
+- [ ] Kapanışta GeForce NOW Ultimate ya da Performance paketlerinden birinin seçilebileceğini söyleyen, satın almaya çağıran bir iki cümle var mı? Sıra Ultimate önde mi, hizmet adı ("GeForce NOW") geçiyor mu?
 - [ ] Bu cümlelerde fiyat ya da paket özelliği (çözünürlük, FPS, oturum süresi) geçiyor mu? Tek paket önerilmiş mi? (ikisi de olmamalı)
 - [ ] GFN optimizasyon durumu yazılmış mı? (yazılmamalı)
 - [ ] Mağaza listesi katalogdaki variants alanıyla birebir mi? Katalogda olmayan mağaza yazılmış mı?

@@ -78,7 +78,7 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 `references/icerik-kurallari.md` yapıyı, tonu ve bölüm bölüm ne yazılacağını anlatır. Özet:
 
 - Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama **1200-1500 kelime**, 7-9 H2. Giriş oyunu tanıtır ve puanları madde listesiyle verir; erişim anlatısı ilk H2'de başlar.
-- Sayfa teknik kart değil: **hikâye, oynanış, atmosfer-ses-müzik ve öne çıkan özellikler** kendi bölümlerini alır. Son bölümün ardından, SSS'den önce kısa bir kapanış çağrısı gelir. Kapanışta bir iki cümleyle oyunu oynamak için **Performance ya da Ultimate** paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
+- Sayfa teknik kart değil: **hikâye, oynanış, atmosfer-ses-müzik ve öne çıkan özellikler** kendi bölümlerini alır. Son bölümün ardından, SSS'den önce kısa bir kapanış çağrısı gelir. Kapanışta bir iki cümleyle oyunu oynamak için **GeForce NOW Ultimate ya da Performance** paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
 - **İç link metnin içinden çıkar:** anchor'ı sildiğinde cümle hâlâ anlamlı olmalı. "Şu listeye göz atabilirsin" biçiminde link taşımak için cümle kurulmaz; anchor, insanların arattığı terimin kendisidir.
 - Önemli terim ve değerler **kalın** yazılır (bölüm başına iki üç vurgu). Kaynak notu belgeye basılmaz.
 - Sayılabilir ve paralel şeyler (sınıflar, modlar, puanlar) madde listesiyle verilir, paragrafa sıkıştırılmaz. Numaralı liste yalnız sıralı adımlar içindir.
@@ -108,7 +108,7 @@ Teslimden önce `references/kontrol-listesi.md`'yi çalıştır. En sık takıl�
 
 Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 
-- **Oyuna özel paket gerekliliği yazılmaz; iki paket her zaman birlikte önerilir.** "Bu oyun için X paketi gerekir" denmez; ne başlıkta, ne SSS'de, ne gövdede. Bunun yerine kapanış çağrısında okuyucuya oyunu oynamak için **Performance ya da Ultimate** paketlerinden birini seçebileceği söylenir ve satın almaya yönlendirilir. Bu cümlelerde fiyat ve paket özelliği geçmez: fiyat değiştikçe sayfa eskir, paketlerin farkını anlatmak da paketler sayfasının işi.
+- **Oyuna özel paket gerekliliği yazılmaz; iki paket her zaman birlikte önerilir.** "Bu oyun için X paketi gerekir" denmez; ne başlıkta, ne SSS'de, ne gövdede. Bunun yerine kapanış çağrısında okuyucuya oyunu oynamak için **GeForce NOW Ultimate ya da Performance** paketlerinden birini seçebileceği söylenir ve satın almaya yönlendirilir. Sıra ve ad sabittir: Ultimate önde durur, paket adı hizmet adıyla ("GeForce NOW") birlikte geçer. Bu cümlelerde fiyat ve paket özelliği geçmez: fiyat değiştikçe sayfa eskir, paketlerin farkını anlatmak da paketler sayfasının işi.
 - **Tek oyunculu moddan "kampanya" diye bahsedilmez.** "Hikâye modu", "campaign" ya da oyunun kendi kullandığı ad tercih edilir. Sebebi: kampanya kelimesi promosyon kampanyasıyla karışıyor.
 - **Türkçe dil desteği yalnız resmi ve modsuz destek varsa bölüm olur.** Destek yoksa ayrı H2 ve SSS sorusu açılmaz, gövdede tek cümleyle belirtilir.
 - **GFN optimizasyon durumu hiçbir oyunda yazılmaz.** Katalogdaki bu alan iç bilgidir.

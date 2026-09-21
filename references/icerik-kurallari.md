@@ -155,8 +155,12 @@ cümlede toparlar ve okuyucuyu GeForce NOW üzerinden oynamaya çağırır. Ça�
 biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil.
 
 **Kapanışta paket önerisi bulunur.** Bir iki cümleyle okuyucuya oyunu GeForce NOW'da oynamak için
-**Performance ya da Ultimate** paketlerinden birini seçebileceği söylenir ve satın almaya çağrılır.
-Sayfayı okuyan kişinin bir sonraki adımı pakete sahip olmak; bu cümle o adımı açıkça gösterir.
+**GeForce NOW Ultimate ya da Performance** paketlerinden birini seçebileceği söylenir ve satın almaya
+çağrılır. Sayfayı okuyan kişinin bir sonraki adımı pakete sahip olmak; bu cümle o adımı açıkça gösterir.
+
+- Yazım sabittir: **"GeForce NOW Ultimate ya da Performance paketleri"**. Ultimate önde durur ki üst
+  paket öne çıksın; paketler sayfasının başlığı da bu sırayı kullanır. Paket adı hizmet adıyla birlikte
+  geçer, böylece cümle "GeForce NOW Ultimate" gibi aranan ürün adını da taşır.
 
 - İki paket her zaman birlikte anılır. Oyuna göre tek paket önerilmez, "bu oyun için Ultimate
   gerekir" gibi bir gereklilik kurulmaz.
@@ -168,7 +172,8 @@ Sayfayı okuyan kişinin bir sonraki adımı pakete sahip olmak; bu cümle o ad�
 
 | Yazma | Yaz |
 |---|---|
-| "Bu oyun için Ultimate paketi gerekir." | "Battlefield 6'yı oynamak için **Performance** ya da **Ultimate** paketlerinden birini tercih edebilirsin." |
+| "Bu oyun için Ultimate paketi gerekir." | "Battlefield 6'yı oynamak için **GeForce NOW Ultimate** ya da **Performance** paketlerinden birini tercih etmen yeterli." |
+| "Performance ya da Ultimate paketlerinden birini seç." | "**GeForce NOW Ultimate** ya da **Performance** paketlerinden birini seç." (Ultimate önde, hizmet adıyla) |
 | "Aylık 599 TL'den başlayan Performance paketiyle…" | "Paketini seç, hesabını bağla ve Oynat'a bas." |
 | "4K ve 240 FPS için Ultimate'ı seç." | "Sana uyan paketi seçip ilk maçına saniyeler içinde girebilirsin." |
 
@@ -204,7 +209,7 @@ bunların hiçbiri gerekmiyor. "Bilgisayarım kaldırır mı" sorusu burada kar�
 
 **Kapanış bölümü.** Erişim modeli (ücretsiz mod var mı, tam sürüm nasıl alınır) ve 3-4 maddelik
 numaralı başlama adımları. Adımlar sayfadaki Oynat çağrısına bağlanır. Bölümün son paragrafı
-Performance ya da Ultimate paket önerisini ve satın alma çağrısını taşır (bkz. Kapanış çağrısı).
+GeForce NOW Ultimate ya da Performance paket önerisini ve satın alma çağrısını taşır (bkz. Kapanış çağrısı).
 
 ## SSS yanıtları
 

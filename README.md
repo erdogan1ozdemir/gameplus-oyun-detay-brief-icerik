@@ -61,7 +61,7 @@ değerlendirmelerdir ve ayrı bir iş görür.
 - Gövde ortalama **1200-1500 kelime**, 7-9 H2 ve az sayıda H3.
 - SSS soruları Google'ın "Bunlar da sorulmuş" kutusundan ve arama önerilerinden gelir; yanıtlar
   20-60 kelime ve ilk cümle doğrudan cevaptır.
-- **Oyuna özel paket gerekliliği yazılmaz.** Kapanışta bir iki cümleyle oyunu oynamak için Performance ya da Ultimate paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
+- **Oyuna özel paket gerekliliği yazılmaz.** Kapanışta bir iki cümleyle oyunu oynamak için GeForce NOW Ultimate ya da Performance paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
 - Tek oyunculu moddan "kampanya" diye bahsedilmez.
 - Doğrulanamayan sayı yazılmaz; alan boş bırakılır ve durum ekibe bildirilir.
 
