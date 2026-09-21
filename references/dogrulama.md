@@ -77,6 +77,35 @@ iç bilgidir; okuyucuya bir şey ifade etmiyor ve NVIDIA bu durumu sessizce değ
 **Sezon içeriği yazılmaz.** Sezon adı ve o sezonun haritaları yazılırsa sayfa her sezonda eskir.
 "Haritalar sezon güncellemeleriyle genişliyor" düzeyinde genel kalınır.
 
+**Katalogdaki ad, insanların arattığı ad olmayabilir.** Katalog kelimesi NVIDIA'nın uzun adından
+üretildiği için bazen neredeyse hiç aranmaz: "mount and blade 2 bannerlord" ayda 297 iken "bannerlord"
+33.100; "tom clancys rainbow six siege x" ayda 4 iken "rainbow six siege" 8.100. Main KW belirlenmeden
+önce adın kısa ve yaygın biçimleri hacim aracında yan yana ölçülür, en çok aranan oyun biçimi seçilir,
+katalog adının hacmi DİKKAT satırında not edilir. Tek kelimelik ya da kısaltma adlar ("rust", "wow",
+"r6") başka anlamlar da taşır: SERP'te ilk sonuçların oyuna ait olduğu görülmeden ana kelime yapılmaz;
+ikincil kelimeye alınırsa hacmin bir kısmının başka anlamlara gittiği DİKKAT'e yazılır.
+
+**Canlı servis oyunlarında mod, ad ve erişim modeli değişir.** Rainbow Six Siege'in "Siege X" adı
+Mart 2026'da bırakıldı, 6'ya 6 Dual Front modu Haziran 2026'da kaldırıldı; Overwatch 2 adı Şubat
+2026'da Overwatch'a döndü. Wikipedia ve katalog bu değişikliklerin gerisinde kalabiliyor. Çok oyunculu
+ve ücretsiz oyunlarda mod listesi, ücretsiz erişimin kapsamı ve oyunun güncel adı yayıncının son sezon
+sayfasından ya da resmi haberinden teyit edilir; kaldırılmış bir mod anlatılırsa sayfa ilk günden eskir.
+
+**DLC'nin sistem gereksinimi ana oyundan ayrı olabilir.** Bannerlord'un War Sails genişlemesi önerilen
+donanımı i5-13600K ve RTX 3060'a çıkarıyor, 35 GB ek alan istiyor. Gereksinim tablosu yazılırken
+Steam'de DLC'nin kendi kaydı da okunur (`appdetails` içindeki `dlc` listesi); fark varsa tabloya ayrı
+satır olarak girer. Bu, bulutta oynamanın faydasını somut gösteren bir veri de olur.
+
+**Türkçe arayüzü olan oyunda özel adlar yerelleştirmedeki yazımla geçer.** Bannerlord'da "Calradia"
+Türkçe sürümde Kalradya, "Khuzait" Kuzait Hanlığı'dır. Okuyucu oyunu Türkçe oynuyorsa adı o biçimde
+tanır. Türkçe Vikipedi'nin seçkin maddeleri bu yazımı ve Türkiye bağlamını (stüdyo, yerel yayın)
+çoğu zaman İngilizce sayfadan daha ayrıntılı taşır; İngilizce sayfayla çelişen sayı varsa (Warband'den
+kaç yıl önce geçtiği gibi) sayı yazılmaz.
+
+**Metacritic PC puanı betikle okunur.** `python3 scripts/metacritic_pc.py <slug>` PC eleştirmen
+sayfasından tüm platformların puanını ve eleştirmen sayısını döker. Wikipedia'daki puan kutusu çıkış
+dönemine aittir ve eleştirmen sayısı taşımaz; yalnız yedek kaynaktır.
+
 ## Doğrulanamayan bilgiyle ne yapılır
 
 Üç adım, sırayla:

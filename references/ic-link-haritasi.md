@@ -40,7 +40,7 @@ oyuna daha yakın olan seçilir. Aynı hedefe iki kez link verilmez.
 
 **`/gfn/sistem-gereksinimleri` sayfasına link verilmez.** Ekip kararı.
 
-**Anchor, hedef sayfanın kendi kelimesidir.** "Buraya tıkla" ya da çıplak URL kullanılmaz.
+**Anchor, insanların arattığı terimdir** (bkz. yukarıdaki bölüm). "Buraya tıkla" ya da çıplak URL kullanılmaz.
 
 **Önerilen ama henüz yayında olmayan sayfaya link verilmez**; tıklandığında 404 dönen bağlantı
 sayfaya güven kaybettirir. Link seçtikten sonra hepsinin 200 döndüğü kontrol edilir:
@@ -76,7 +76,8 @@ Her link brief'te hangi bölüme ve hangi cümleye gireceğiyle birlikte yazıl�
 
 | Bölüm | Link |
 |---|---|
-| Oynanış | tür kategorisi |
+| Giriş | tür kategorisi, türün ilk geçtiği cümlede |
+| Oynanış | türle ilgili ikinci kategori ya da tür rehberi (örtüşmüyorsa) |
 | Oynanış / mod alt başlığı | mod ya da türle ilgili blog yazısı |
 | GeForce NOW deneyimi | cloud gaming nedir |
 | GeForce NOW deneyimi / üyelik | paketler |

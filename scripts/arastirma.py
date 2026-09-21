@@ -112,19 +112,28 @@ def wikipedia(ad):
     Awards tablosu kazanan/aday ayrımını da taşıdığı için bu ayrımı kaybetmeden okunabiliyor.
     Yine de yazmadan önce ödül törenin kendi kazanan listesinden teyit edilir.
     """
+    from urllib.parse import quote
     baslik = ad.strip().replace(" ", "_")
-    ham = get(f"https://en.wikipedia.org/w/index.php?title={baslik}&action=raw")
-    if not ham or "#REDIRECT" in ham[:60].upper():
+    ham = ""
+    for _ in range(2):  # bir kez yönlendirme takip edilir
+        ham = get(f"https://en.wikipedia.org/w/index.php?title={quote(baslik, safe='_')}&action=raw")
+        m = re.match(r"\s*#REDIRECT\s*\[\[([^\]#|]+)", ham or "", re.I)
+        if not m:
+            break
+        baslik = m.group(1).strip().replace(" ", "_")
+    if not ham or ham.lstrip().upper().startswith("#REDIRECT"):
         return {"bulundu": False, "baslik": baslik}
+    mc = re.search(r"\|\s*MC\s*=\s*([^\n]+)", ham)
     def bolum(adlar, sinir=3500):
         for b in adlar:
             m = re.search(r"==+\s*" + b + r"\s*==+", ham)
             if m:
                 g = ham[m.end():m.end() + sinir]
-                g = re.sub(r"<ref[^>]*>.*?</ref>|<ref[^>]*/>", "", g, flags=re.S)
+                g = re.sub(r"<ref[^>]*/>|<ref[^>]*>.*?</ref>", "", g, flags=re.S)
                 return re.sub(r"\[\[([^\]|]*\|)?([^\]]*)\]\]", r"\2", g).strip()
         return ""
     return {"bulundu": True, "baslik": baslik,
+            "metacritic_kutusu": re.sub(r"<[^>]+>|\{\{[^}]*\}\}", " ", mc.group(1)).strip() if mc else "",
             "oynanis": bolum(["Gameplay"]),
             "hikaye": bolum(["Plot", "Synopsis", "Premise"], 2200),
             "muzik": bolum(["Music", "Audio"], 1800),

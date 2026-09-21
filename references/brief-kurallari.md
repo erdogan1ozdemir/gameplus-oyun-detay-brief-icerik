@@ -26,9 +26,10 @@ sorular alınır. Fiyat, satın alma, platform (ps5/xbox), anahtar/key, yama gib
 üçüncü taraf sayfalarının alanıdır, alınmaz. Hacim verisi olmayan ama hedeflenen kelime `(-)` ile yazılır.
 
 **Alt Başlıklar** - `H2: Başlık` ve gerekiyorsa `H3: Başlık` satırları. Sayı 1200-1500 kelimeye göre
-belirlenir: 5-6 H2, H3'e girilmez ya da en çok bir iki tane. Fazla başlık, her bölümü 80 kelimeye
-düşürüp metni listeye çeviriyor. İlişkili konular tek H2'de birleştirilir (modlar + battle royale +
-hikâye modu gibi).
+belirlenir: 7-9 H2 ve az sayıda H3. Hikâye, oynanış, atmosfer-ses ve öne çıkan özellikler kendi
+H2'lerini alır; bölüm başına 130-180 kelime düşer. Oyunun yapısı bir bölümü karşılamıyorsa (hikâyesi
+olmayan çok oyunculu bir oyun gibi) o başlık açılmaz, yerine oyunun gerçekten sahip olduğu konu gelir.
+Başlık en fazla iki konu taşır.
 
 **İçerik Kurgusu** - şu sırayla yazılır:
 
@@ -49,6 +50,13 @@ DİKKAT: Yazılmayacaklar, doğrulanacaklar, hacim uyarısı.
 
 Başlıkların yanına kelime sayısı yazılmaz. Koşullu bir uyarı varsa (Türkçe desteği gibi) DİKKAT'in
 sonuna kalın yazılır; `brief_satiri.py` bunu `kurgu_kalin` alanıyla basar.
+
+**Kurgu hücresi yaklaşık 30 satıra sığmalıdır.** Excel satır yüksekliği en fazla 409 punto; İçerik
+Kurgusu sütununda (genişlik 134) bu yaklaşık 30 satır metin eder, fazlası hücrede görünmez kalır.
+`brief_satiri.py` taşan satırda uyarı verir. Kurgu satırları bu yüzden telgraf üslubuyla yazılır:
+ne anlatılacağı, hangi kelimenin nerede karşılanacağı ve doğrulanmış değerler; açıklayıcı cümle
+kurulmaz. H2 başına 1-2 ekran satırı hedeflenir. Toplu brief hazırlanırken ortak satırlar (TON, GeForce
+NOW H2 ve H3'leri, BİÇİM, UZUNLUK) tek yerden üretilir, oyuna özgü satırlar ayrı yazılır.
 
 **Link Verilecek Sayfalar** - numaralı liste, her link iki satır:
 

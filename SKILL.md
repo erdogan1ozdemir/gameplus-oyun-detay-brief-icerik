@@ -44,6 +44,14 @@ Tek çağrıda beş kaynağı toplar: Google SERP ve PAA soruları (Türkiye/Tü
 
 Steam app id'yi bilmiyorsan parametreyi boş bırak, script oyun adıyla arar. Wikipedia başlığı oyun adından farklıysa `--wiki "Sayfa Başlığı"` ver.
 
+Metacritic PC puanı ve eleştirmen sayısı için:
+
+```bash
+python3 scripts/metacritic_pc.py battlefield-6
+```
+
+Katalogdaki aratılacak ad çoğu zaman insanların arattığı ad değildir (uzun resmi ad, "X" ya da sürüm eki). Main KW'yi seçmeden önce adın kısa ve yaygın biçimlerinin hacmini yan yana ölç; ayrıntı `references/dogrulama.md`'de.
+
 Sayfayı ürün kataloğundan ayıran şey oyunu **anlatması**, bu yüzden teknik veriye ek olarak şunlar da araştırılır: oyunun tonu ve sanat tasarımı, müziği ve bestecisi, aldığı ödüller ile adaylıklar, hikâyenin kurulumu ve geçtiği yerler, sınıf ve mod tanımları. Bunların hepsi metne girmez; girenler kaynağıyla girer.
 
 Bunun üstüne, içerikte kullanacağın her sayı için `references/dogrulama.md`'deki kaynak sırasını izle. Özellikle **hikâye modu süresi, Metacritic puanı (platforma göre değişir), ödül ile adaylık ayrımı ve GAME+ sunucu sınıfı** ayrı ayrı doğrulanır.
