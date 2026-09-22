@@ -91,9 +91,10 @@ Tipik iskelet (oyuna göre değişir):
 8. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
    adımları ve kapanış çağrısı.
 
-Türkçe dil desteği yalnız **resmi ve modsuz** destek varsa kendi H2'sini alır. Destek yoksa ayrı
-bölüm açılmaz, birinci bölümde tek cümleyle belirtilir. Okuyucunun bunu öğrenmek için sayfayı
-taraması gerekmemeli.
+Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
+sayılmaz) ve yalnız o durumda kendi H2'sini alır. Destek yoksa ayrı bölüm açılmaz, girişte tek
+cümleyle belirtilir. Her iki durumda da SSS'de "{Oyun} Türkçe mi?" sorusu yer alır (bkz. SSS
+yanıtları). Okuyucunun bunu öğrenmek için sayfayı taraması gerekmemeli.
 
 ## Madde listesi kullanımı
 
@@ -219,8 +220,9 @@ okunur, sayılar rakamla, oyun adı tam haliyle bir kez.
 Gövdedeki cümleler birebir tekrarlanmaz. SSS daha kısa ve daha keskin yazılır; gövde anlatır,
 SSS cevaplar.
 
-Yanıtlanamayan soru listeden çıkarılır. Örneğin resmi Türkçe desteği yoksa "Türkçe mi?" sorusu
-SSS'de yer almaz, bilgi gövdede tek cümleyle geçer.
+Yanıtlanamayan soru listeden çıkarılır. **Türkçe sorusu ise her oyunda sorulur:** destek varsa
+"Evet" ile hangi katmanların (arayüz, altyazı, seslendirme) Türkçe olduğu, yoksa "Hayır" ile
+oyunun hangi dilleri desteklediği yazılır. Okuyucu bu soruyu arıyor; cevabı başka sayfada aramasın.
 
 ## Yazarken kaçınılacaklar
 
@@ -240,6 +242,12 @@ SSS'de yer almaz, bilgi gövdede tek cümleyle geçer.
   besteledi" yazılır; "skor" yalnız Metacritic puanı bağlamında geçer.
 - **Kaynak notu belgeye yazılmaz;** hangi bilginin nereden geldiği kullanıcıya sohbette söylenir.
 - Eleştirmen alıntısı ve uzun puan dökümü: Metacritic tek sayı olarak yeterli.
-- Doğrulanmamış süre, boyut ve oyuncu sayısı.
+- Doğrulanmamış süre, boyut ve oyuncu sayısı. Resmi değer yoksa en az iki kaynaktan ortalama aralık
+  verilir ("ortalama 35-50 GB", "yaklaşık 70-80 GB") ve resmi değer olmadığı söylenir (bkz. dogrulama.md).
+- **Zamana bağlı ifadeler:** "çıkacak", "yakında", "şu an en son çıkan", "... için duyurdu" gibi
+  tarih geçince yanlışa düşen ifadeler yazılmaz. Tarihli, zamandan bağımsız kalıp kullanılır: "23 Ekim 2026
+  çıkış tarihli Modern Warfare 4", "15 Ekim 2026 tarihli Charting the Unknown genişlemesiyle birlikte".
+- **Düşük puanı saklamak:** Metacritic kullanıcı skoru düşük olsa da listeden çıkarılmaz; sayfa oyunu
+  değil bulut hizmetini satar ve objektif puan okuyucunun güvenini artırır.
 - Marka sembolleri (® ™), emoji, uzun tire.
 - "Geforce Now" yazımı; doğrusu GeForce NOW.

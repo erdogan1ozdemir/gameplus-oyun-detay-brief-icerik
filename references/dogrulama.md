@@ -8,8 +8,8 @@ aşağıdaki sıra izlenir. Üstteki kaynak alttakini ezer.
 | Bilgi | Birincil kaynak | İkincil | Not |
 |---|---|---|---|
 | Sistem gereksinimleri | Steam `appdetails` (`pc_requirements`) | EA / yayıncı sayfası | Steam Türkçe çeviriyle döner, doğrudan kullanılabilir |
-| Kurulum boyutu | Steam gereksinimleri (min ve önerilen ayrı) | - | Minimum ve önerilen farklıysa ikisi de yazılır |
-| Resmi dil desteği | Steam `supported_languages` | PlayStation destek sayfası | Türkçe listede yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz |
+| Kurulum boyutu | Steam gereksinimleri (min ve önerilen ayrı) | Yayıncının resmi sayfası; resmi değer yoksa en az iki güncel kaynaktan ortalama aralık | Minimum ve önerilen farklıysa ikisi de yazılır; aralık verilirse resmi değer olmadığı belirtilir |
+| Resmi dil desteği | Steam `supported_languages` | Yayıncının mağaza sayfası (Epic, Battle.net) | Türkçe oyunda resmi dil olarak yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz. "Türkçe mi?" SSS sorusu her durumda açılır |
 | Metacritic puanı | metacritic.com platform dökümündeki **PC** satırı | Steam `metacritic` alanı (zaten PC) | Sayfa başlığındaki puan PC'ninki olmayabilir |
 | Hikâye modu süresi | HowLongToBeat | Oyun basını (GamesRadar, IGN) | İki bağımsız kaynak örtüşmüyorsa süre yazılmaz |
 | GFN paket ve sunucu değerleri | `gameplus.com.tr/gfn/paketler` | - | **Tek geçerli kaynak budur** |
@@ -110,9 +110,13 @@ dönemine aittir ve eleştirmen sayısı taşımaz; yalnız yedek kaynaktır.
 
 Üç adım, sırayla:
 
-1. İçeriğe yazma. Cümleyi ya da bölümü çıkar.
-2. Kullanıcıya sohbette söyle: hangi bilgi, neden doğrulanamadı, hangi kaynaklara bakıldı.
-3. Kullanıcı elle veri verirse ekle; vermezse alan kalıcı olarak boş kalır.
+1. Bilgi ölçülebilir bir değerse (kurulum boyutu, oynama süresi) ve resmi değer yayımlanmamışsa, en az
+   iki güncel ve güvenilir kaynağa bak. Örtüşüyorlarsa **ortalama aralık** ver ("ortalama 35-50 GB",
+   "yaklaşık 9-14 saat") ve resmi değer olmadığını belirt. Fortnite'ın boyutunu Epic yayımlamıyor;
+   Resident Evil Requiem'in PC boyutunu Capcom yayımlamıyor, ikisinde de aralık verildi.
+2. Kaynaklar örtüşmüyorsa, bilgi söylenti ya da sızıntıysa içeriğe yazma; cümleyi ya da bölümü çıkar.
+3. Kullanıcıya sohbette söyle: hangi bilgi, neden doğrulanamadı ya da aralıkla verildi, hangi kaynaklara bakıldı.
+4. Kullanıcı elle veri verirse ekle; vermezse alan kalıcı olarak boş kalır.
 
 Bu, sayfanın en kolay kaybedeceği şeyin güven olmasından kaynaklanıyor. Tek bir yanlış GB değeri
 ya da olmayan bir Türkçe desteği vaadi, sayfanın tamamını şüpheli hale getiriyor.

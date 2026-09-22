@@ -71,7 +71,12 @@ link taşımak için ayrı cümle kurulmaz. Seçim ve yerleştirme kuralları `i
 
 **SSS'ler** - numaralı soru, altında `Yanıtta:` satırı. Sorular Google'ın "Bunlar da sorulmuş"
 kutusundan ve arama önerilerinden gelir; uydurulmaz. 8-10 soru yeterli. Yanıtları içerik ekibi yazar,
-brief yalnız soruyu ve yanıtta geçmesi gerekeni verir.
+brief yalnız soruyu ve yanıtta geçmesi gerekeni verir. **"{Oyun} Türkçe mi?" sorusu her briefte yer alır**;
+resmi destek yoksa yanıt notu "resmi Türkçe desteği olmadığı" olur. Sorular kullanıcının arattığı
+biçimde ve doğal sözdizimiyle yazılır: "kaçta çıktı" değil "ne zaman çıktı", "ne oyunu" değil "nasıl bir
+oyun", "bilgisayarımı kaldırır mı" değil "Bilgisayarım X'i kaldırır mı". Sayfanın konusu dışına düşen
+sorular ("mobil sürüm neden kapandı") GeForce NOW'a bağlanan karşılığıyla değiştirilir ("telefonda
+oynanır mı"). Tarihe bağlı notlar da zamandan bağımsız yazılır ("çıkınca güncellenir" türü not bırakılmaz).
 
 **Yanıt Biçimi** - oyunlar arasında değişmeyen, kullanıcının onayladığı metin:
 

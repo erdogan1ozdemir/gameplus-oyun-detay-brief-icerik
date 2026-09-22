@@ -12,7 +12,7 @@
 - [ ] Link sayısı en az 4 mü, hepsi tam URL mi, 200 dönüyor mu?
 - [ ] Aynı niyeti karşılayan iki sayfaya birden link verilmiş mi? (verilmemeli)
 - [ ] `/gfn/sistem-gereksinimleri` linki var mı? (olmamalı)
-- [ ] SSS soruları PAA ve arama önerilerinden mi geliyor?
+- [ ] SSS soruları PAA ve arama önerilerinden mi geliyor? "Türkçe mi?" sorusu listede var mı?
 - [ ] Yanıt biçimi metni olduğu gibi kopyalandı mı?
 - [ ] Künye ve katalog verisi briefe sızmış mı? (sızmamalı)
 
@@ -33,10 +33,11 @@
 - [ ] Müzik anlatılırken "skor" kelimesi kullanılmış mı? (kullanılmamalı)
 - [ ] Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlıyor mu?
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
-- [ ] Türkçe dil desteği yoksa gövdede tek cümleyle belirtildi mi, ayrı H2 ve SSS sorusu açılmadı mı?
+- [ ] SSS'de "Türkçe mi?" sorusu var mı? Destek yoksa "Hayır" ile yanıtlandı mı, gövdede tek cümleyle belirtildi mi, ayrı H2 açılmadı mı?
+- [ ] "Çıkacak", "yakında", "şu an en son" gibi tarih geçince eskiyen ifade var mı? (olmamalı; tarihli kalıp kullanılır)
 - [ ] Teknik değer kümeleri tabloya alındı mı?
 - [ ] Puan, gereksinim, boyut ve dil listesi **PC sürümünden** mi alınmış? Metacritic puanı "PC puanı" olarak mı yazılmış?
-- [ ] Doğrulanmamış sayı var mı? Her sayının kaynağı belli mi?
+- [ ] Doğrulanmamış sayı var mı? Her sayının kaynağı belli mi? Resmi değeri olmayan boyut ya da süre, iki kaynağa dayanan ortalama aralık olarak mı verildi?
 - [ ] Fiyat, indirim, kampanya ya da sezon adı geçiyor mu? (geçmemeli)
 - [ ] Sunucu sınıfı yazıldıysa paketler sayfasından teyit edildi mi?
 - [ ] SSS yanıtları 60 kelimeyi aşıyor mu? İlk cümleler doğrudan yanıt mı?

@@ -63,7 +63,9 @@ değerlendirmelerdir ve ayrı bir iş görür.
   20-60 kelime ve ilk cümle doğrudan cevaptır.
 - **Oyuna özel paket gerekliliği yazılmaz.** Kapanışta bir iki cümleyle oyunu oynamak için GeForce NOW Ultimate ya da Performance paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
 - Tek oyunculu moddan "kampanya" diye bahsedilmez.
-- Doğrulanamayan sayı yazılmaz; alan boş bırakılır ve durum ekibe bildirilir.
+- Doğrulanamayan sayı kesin değer gibi yazılmaz; resmi değeri olmayan boyut ya da süre için iki kaynaktan ortalama aralık verilir, kaynaklar örtüşmüyorsa alan boş bırakılır ve durum ekibe bildirilir.
+- "Türkçe mi?" sorusu her oyunun SSS'sinde yer alır; oyunda resmi dil olarak yoksa "Hayır" ile yanıtlanır.
+- Çıkış ve güncelleme tarihleri zamandan bağımsız yazılır ("23 Ekim 2026 çıkış tarihli"); "çıkacak", "yakında" yazılmaz.
 
 Ayrıntılar `SKILL.md` ve `references/` altında.
 
