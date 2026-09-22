@@ -195,6 +195,11 @@ yazısına link verilir.
 bağlanıyor. Sonra oyunun ne olduğu tek cümlede. Ardından stüdyo, çıkış tarihi, Metacritic puanı ve
 resmi dil desteği. Uzun giriş yazılmaz.
 
+**Katalogdaki tanıtım metni.** Oyunun kendi adlandırdığı sistemler (Battle Pass, LINK becerileri, Koleksiyon
+Günlüğü, bileklikler), yan karakter ve düşman adları ile erişilebilirlik seçenekleri çoğunlukla yalnız
+katalogdaki uzun tanıtım metninde geçer. Yazmadan önce bu metin okunur ve içeriğe giren her bilgi
+kaynağıyla doğrulanır; sezonluk içerik ve pazarlama sloganları yine alınmaz.
+
 **Oynanış bölümü.** Oyunun kendi terimleriyle anlatılır (sistem adları, sınıf adları, mod adları
 İngilizce kalır). Sınıflar ve modlar madde listesiyle verilir; bölümün sonunda ton, sanat tasarımı,
 müzik ve ödüller kısa bir paragrafta toplanır. Tek oyunculu taraftan **"kampanya" diye bahsedilmez**; "hikâye modu", "campaign"

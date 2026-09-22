@@ -16,6 +16,7 @@ aşağıdaki sıra izlenir. Üstteki kaynak alttakini ezer.
 | GFN'de var mı | GFN oyun kataloğu (`katalog.py`) | nvidia.com GFN sayfası | Optimizasyon durumu iç bilgidir, içeriğe yazılmaz |
 | Hangi mağazadan oynanabilir | Katalogdaki `Mağazalar` / `variants` alanı | - | Oyun başka mağazada satılsa da GFN o kopyayı açmıyor olabilir |
 | Oyunun modları, hikâyesi, mekanikleri | Markanın kendi blog yazısı | Yayıncı sayfası | Blog varsa önce o okunur, ton ve terim tutarlılığı için |
+| Oyunun kendi tanıtım metni (sistem, mod, yoldaş ve bölge adları) | Katalog JSON `longDescription` (`scripts/katalog_json.py`) | Mağaza sayfasının açıklaması | Steam ve Wikipedia'da bulunmayan ayrıntıları taşır: ilerleme sistemi, erişilebilirlik seçenekleri, yan karakter adları |
 | Çıkış tarihi | Katalog + Steam | - | GFN yayın tarihi ile mağaza satış tarihi farklı olabilir |
 | Ödüller ve adaylıklar | Törenin resmi kazanan listesi | Wikipedia oyun sayfası `Awards` bölümü | "Aday gösterildi" ile "kazandı" ayrımı tek tek kontrol edilir |
 | Besteci, müzik ve ses tasarımı | Wikipedia oyun sayfası `Music` bölümü | Oyun basını röportajları | Skoru besteleyen ile parçaları veren grup farklı olabilir |
@@ -76,6 +77,13 @@ iç bilgidir; okuyucuya bir şey ifade etmiyor ve NVIDIA bu durumu sessizce değ
 
 **Sezon içeriği yazılmaz.** Sezon adı ve o sezonun haritaları yazılırsa sayfa her sezonda eskir.
 "Haritalar sezon güncellemeleriyle genişliyor" düzeyinde genel kalınır.
+
+**Katalog JSON'unda dil desteği alanı yoktur.** 2.174 oyunluk kayıtta dil, altyazı ya da seslendirme alanı bulunmaz.
+`keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye, Açık Dünya) NVIDIA'nın çevrilmiş tür
+etiketleridir; Türkçesi olmayan Resident Evil Requiem ve Battlefield 6 kayıtlarında da yer alır, yani dil
+sinyali değildir. Ayrıca `contentRatings` **USK** (Almanya) derecesidir; Türkiye için PEGI ayrıca bakılır.
+Teknoloji bayrakları oyun düzeyinde değil mağaza variantı düzeyindedir (`HDR_ENABLED`, `RTX_ENABLED`,
+`REFLEX_ENABLED`) ve içerikteki HDR/Reflex cümleleri bu bayrakla karşılaştırılır.
 
 **Katalogdaki ad, insanların arattığı ad olmayabilir.** Katalog kelimesi NVIDIA'nın uzun adından
 üretildiği için bazen neredeyse hiç aranmaz: "mount and blade 2 bannerlord" ayda 297 iken "bannerlord"

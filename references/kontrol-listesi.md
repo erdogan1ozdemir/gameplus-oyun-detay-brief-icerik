@@ -50,6 +50,8 @@
 - [ ] Bu cümlelerde fiyat ya da paket özelliği (çözünürlük, FPS, oturum süresi) geçiyor mu? Tek paket önerilmiş mi? (ikisi de olmamalı)
 - [ ] GFN optimizasyon durumu yazılmış mı? (yazılmamalı)
 - [ ] Mağaza listesi katalogdaki variants alanıyla birebir mi? Katalogda olmayan mağaza yazılmış mı?
+- [ ] Katalogdaki uzun tanıtım metni tarandı mı? Oyunun kendi sistem, mod, yoldaş ve bölge adları içerikte karşılandı mı?
+- [ ] HDR / Reflex cümleleri katalog variantındaki bayraklarla (HDR_ENABLED, REFLEX_ENABLED) uyuşuyor mu?
 - [ ] Okuyucunun bilgisayarı olduğu varsayılmış mı? ("bilgisayarında … olmalı" yerine "bilgisayardan oynayanlarda")
 - [ ] Bilgi cümleleri konuşma diline kaçan geçmiş zamanla mı yazılmış? ("besteledi" yerine "bestelemiştir")
 - [ ] Belgenin altına kaynak notu basılmış mı? (basılmamalı, sohbette söylenir)

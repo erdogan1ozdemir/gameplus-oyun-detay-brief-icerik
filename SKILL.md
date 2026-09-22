@@ -32,6 +32,14 @@ python3 scripts/katalog.py "Battlefield 6"
 
 Oyunun GFN kataloğundaki kaydını verir: aratılacak ad, arama hacmi, türler, yayıncı, mağazalar, GFN optimizasyon durumu, HDR/Reflex/RTX, kontroller, yaş sınıfı, çıkış tarihi, Türkçe etiketler. Bu kayıt briefin iskeletidir ama **tek başına yeterli değildir**; katalog alanları eskiyebiliyor ve bazıları NVIDIA adlandırmasıyla geliyor (bkz. `references/dogrulama.md`).
 
+Oyunun kendi tanıtım metnini ve mağaza variantlarının teknoloji bayraklarını ham katalogdan oku:
+
+```bash
+python3 scripts/katalog_json.py "Forza Horizon 6"
+```
+
+Uzun tanıtım metni, Steam ve Wikipedia'da bulunmayan ayrıntıları taşır (ilerleme sistemi, mod ve bölge adları, yoldaş ve düşman adları, erişilebilirlik seçenekleri) ve içerik yazılmadan önce okunur. JSON'da dil desteği alanı yoktur; `keywords` çevrilmiş tür etiketidir, dil sinyali değildir.
+
 Katalog Excel'i bulunamazsa kullanıcıdan dosya yolunu iste.
 
 ### Faz 2 - Araştır
