@@ -61,7 +61,8 @@ geniş zaman; bu dağılım iyi bir hedef. Tek bir kip toplamın belirgin çoğu
 Gövde, **başlıksız kısa bir girişle açılır**: oyunu genel olarak tanıtan bir ya da iki paragraf.
 Sayfada H1 zaten oyun adı olduğu için bu girişe başlık konmaz, doğrudan metin gelir. Giriş oyunun ne
 olduğunu, kim yaptığını, ne zaman çıktığını ve seri içindeki yerini söyler; erişim ve "nasıl oynanır"
-anlatısı girişte değil, ilk H2'de başlar. Böylece oyunu tanımayan okuyucu da sayfaya bir yerden giriyor.
+anlatısı girişte değil, kendi bölümünde toplanır. Böylece oyunu tanımayan okuyucu da sayfaya bir
+yerden giriyor.
 
 Ortalama **1200-1500 kelime**, 7-9 H2 ve az sayıda H3. Bölüm başına 130-180 kelime düşer; bu,
 bir konuyu gerçekten anlatmaya yetiyor. Başlık sayısı kelime bütçesiyle orantılı tutulur: daha
@@ -78,18 +79,26 @@ Tipik iskelet (oyuna göre değişir):
    zaman çıktığını ve seri içindeki yerini söyler. İkinci paragraf oyunun kapsamını (çok oyunculu +
    tek oyunculu) verir, puanları **madde listesiyle** yazar ve resmi dil desteğini tek cümleyle
    belirtir.
-1. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - yalnız erişim yanıtı: oyun kütüphanede mi, hangi mağaza
-   hesabıyla bağlanıyor, kurulum gerekiyor mu, ücretsiz mod varsa şartı ne. Künye bilgisi girişte
-   verildiği için burada tekrarlanmaz.
-2. **{Oyun} Hikâyesi** - kurulum, oynanan karakter ya da birlik, geçtiği yerler, anlatı biçimi, süre.
-3. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, araçlar, harita yapısı, modlar; alt
+1. **{Oyun} Hikâyesi** - kurulum, oynanan karakter ya da birlik, geçtiği yerler, anlatı biçimi, süre.
+2. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, araçlar, harita yapısı, modlar; alt
    başlıkta çok oyunculu taraf ve varsa ücretsiz mod.
-4. **{Oyun} Atmosferi, Ses Tasarımı ve Müziği** - ton, sanat tasarımı, ses, besteci, ödüller.
-5. **{Oyun}'da Öne Çıkan Özellikler** - oyunu ayıran başlıklar 6-8 maddelik listede.
-6. **GeForce NOW ile {Oyun} Deneyimi** - bulutun ne değiştirdiği, cihaz çeşitliliği, bağlantı hızı tablosu.
-7. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
-8. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
+3. **{Oyun} Atmosferi ve Ses Tasarımı** - ton, sanat tasarımı, ses, besteci, ödüller.
+4. **{Oyun}'da Öne Çıkan Özellikler** - oyunu ayıran başlıklar 6-8 maddelik listede.
+5. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - erişim yanıtı ve bulutun ne değiştirdiği aynı bölümde;
+   altında iki H3 gelir: **{Oyun}'ı GAME+ ile Oynamak** ve **Bağlantı Hızı ve Görüntü Kalitesi**.
+6. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
+7. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
    adımları ve kapanış çağrısı.
+
+**GeForce NOW tek bölümdür ve GAME+ H3'ünün hemen öncesinde durur.** Sayfa uzun süre iki ayrı
+bölümle yazıldı: başta kısa bir erişim başlığı ("kütüphanede yer alır, hesabını bağla, indirme
+gerekmez"), sonlara doğru da bir bulut deneyimi başlığı ("NVIDIA sunucularında çalışır, indirme ve
+donanım derdi yok"). İkisi aynı üç cümleyi farklı sırayla tekrarlıyordu. Bugünkü kural: erişim
+yanıtı, bulutun ne değiştirdiği, cihaz çeşitliliği ve kontrol desteği **tek H2 altında** toplanır,
+bu H2 GAME+ ve bağlantı hızı H3'lerinin hemen öncesine konur. Böylece bulut anlatısı tek yerde
+başlayıp paket, hız ve teknoloji ayrıntısıyla bitiyor ve hemen ardından gelen sistem gereksinimleri
+bölümüne doğal olarak bağlanıyor. Başlık her oyunda aynı kalıptadır: `{Oyun} GeForce NOW'da Nasıl
+Oynanır?`. "GeForce NOW ile {Oyun} Deneyimi" başlığı artık kullanılmaz.
 
 Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
 sayılmaz) ve yalnız o durumda kendi H2'sini alır. Destek yoksa ayrı bölüm açılmaz, girişte tek
@@ -191,14 +200,20 @@ yazısına link verilir.
 
 ## Bölüm bölüm ne yazılır
 
-**Erişim bölümü.** İlk iki cümle: oyun kütüphanede mi, kurulum gerekiyor mu, hangi mağaza hesabıyla
-bağlanıyor. Sonra oyunun ne olduğu tek cümlede. Ardından stüdyo, çıkış tarihi, Metacritic puanı ve
-resmi dil desteği. Uzun giriş yazılmaz.
+**Katalogdaki tanıtım metni iki kez okunur.** Oyunun kendi adlandırdığı sistemler (Battle Pass, LINK
+becerileri, Koleksiyon Günlüğü, bileklikler), yan karakter ve düşman adları, mod ve bölge adları ile
+erişilebilirlik seçenekleri çoğunlukla yalnız katalogdaki kısa ve uzun tanıtım metninde geçer;
+Steam ve Wikipedia bunları vermiyor.
 
-**Katalogdaki tanıtım metni.** Oyunun kendi adlandırdığı sistemler (Battle Pass, LINK becerileri, Koleksiyon
-Günlüğü, bileklikler), yan karakter ve düşman adları ile erişilebilirlik seçenekleri çoğunlukla yalnız
-katalogdaki uzun tanıtım metninde geçer. Yazmadan önce bu metin okunur ve içeriğe giren her bilgi
-kaynağıyla doğrulanır; sezonluk içerik ve pazarlama sloganları yine alınmaz.
+1. **Yazmadan önce:** `python3 scripts/katalog_json.py "{Oyun}"` çıktısındaki `shortDescription` ve
+   `longDescription` okunur, metne girecek adlar buradan not edilir.
+2. **Taslak bittikten sonra:** aynı iki metin bir kez daha okunur ve "burada olup içerikte olmayan
+   ne var" diye karşılaştırılır. Eksik çıkanlar ya uygun bölüme eklenir ya da bilinçli olarak dışarıda
+   bırakılır. Bu ikinci geçiş, ilk turda gözden kaçan somut adları yakalıyor: altı oyunluk ilk partide
+   Payload modu, Portal'ın nesne düzenleme araçları, Koleksiyon Günlüğü ve bileklikler bu şekilde
+   sonradan eklendi.
+
+İçeriğe giren her bilgi yine kaynağıyla doğrulanır; sezonluk içerik ve pazarlama sloganları alınmaz.
 
 **Oynanış bölümü.** Oyunun kendi terimleriyle anlatılır (sistem adları, sınıf adları, mod adları
 İngilizce kalır). Sınıflar ve modlar madde listesiyle verilir; bölümün sonunda ton, sanat tasarımı,
@@ -206,12 +221,36 @@ müzik ve ödüller kısa bir paragrafta toplanır. Tek oyunculu taraftan **"kam
 ya da oyunun kendi adı kullanılır. Sebebi kampanya kelimesinin promosyon kampanyasıyla karışması.
 Hikâye süresi doğrulanabiliyorsa kaynağıyla yazılır.
 
-**GeForce NOW bölümü.** Sayfanın ayrıştığı yer. Bulutun somut olarak ne değiştirdiği: indirme ve
-güncelleme beklememek, donanım gerekmemesi, aynı kütüphanenin telefonda, Mac'te ve televizyonda
-açılması, gecikme. Paketlerin ne sunduğu anlatılabilir; **"bu oyun için X paketi gerekir" denmez.**
+**GeForce NOW bölümü.** Sayfanın ayrıştığı yer ve bulutla ilgili tek bölüm. Sırası şu:
+
+1. **Erişim yanıtı (ilk cümle).** Oyun kütüphanede mi, hangi mağaza hesabıyla açılıyor, satın almış
+   olmak yeterli mi, ücretsiz mod varsa şartı ne. Oyunun kaç GB indirme istediği biliniyorsa
+   beklenmeyen yük olarak burada geçer ("**150 GB'lık indirmeyi beklemeden**").
+2. **Bulutun ne değiştirdiği.** Oyunun NVIDIA sunucularında çalıştığı, kurulum, güncelleme ve donanım
+   yükünün orada kaldığı. Bu, ikinci paragrafta yeniden anlatılmaz; bir kez söylenir.
+3. **Cihaz ve kontrol.** Aynı kütüphanenin dizüstünde, Mac'te, televizyonda ve telefonda açılması;
+   katalogdaki `supportedControls` alanına göre gamepad, dokunmatik, direksiyon ya da uçuş kontrol
+   desteği. Kısmi kumanda desteği (`GAMEPAD_PARTIAL`) ya da yalnız klavye-fare çalışan oyunlarda
+   bu durum olduğu gibi yazılır; okuyucu televizyondan oynamayı planlıyor olabilir.
+4. **H3 {Oyun}'ı GAME+ ile Oynamak** - hangi hesapla açıldığı ve paketlerin ne sunduğu. Paketlerin ne
+   sunduğu anlatılabilir; **"bu oyun için X paketi gerekir" denmez.**
+5. **H3 Bağlantı Hızı ve Görüntü Kalitesi** - hız tablosu ve oyunun desteklediği teknolojiler.
+
+**HDR, RTX ve NVIDIA Reflex desteği yazılır.** Bu üç bayrak katalog JSON'unda mağaza variantı
+düzeyinde durur (`HDR_ENABLED`, `RTX_ENABLED`, `REFLEX_ENABLED`) ve okuyucunun bulutta ne
+kazandığını somutlaştırır: Reflex gecikmeyi düşürür, HDR renk ve parlaklık aralığını genişletir,
+RTX ile ışın izlemenin yükü sunucuda kalır. Doğal yeri bağlantı hızı H3'üdür; teknoloji oyunun
+kendi anlatısıyla bağlanır ("karanlık sahnelerdeki ayrıntılar daha net seçilir", "tetiğe basmanla
+ekrandaki karşılığı arasındaki gecikme azalır"), kuru bir liste hâlinde bırakılmaz. Katalogda
+görünmeyen teknoloji yazılmaz. Paket cümlesindeki "4K HDR akış" hizmetin özelliğidir, oyunun HDR
+desteği değildir; ikisi karıştırılmaz.
 
 **Sistem gereksinimleri bölümü.** Karşıtlık üzerine kurulur: PC tarafında ne gerekiyor, bulutta
-bunların hiçbiri gerekmiyor. "Bilgisayarım kaldırır mı" sorusu burada karşılanır.
+bunların hiçbiri gerekmiyor. "Bilgisayarım kaldırır mı" sorusu burada karşılanır. Bölüm GeForce NOW
+bölümünün hemen ardından geldiği için **kapanış cümlesi bir önceki bölümü tekrar etmez**: "indirmen
+gerekmez, SSD'de yer açman gerekmez" listesi yukarıda verildi. Burada yalnız eşik cevaplanır:
+bilgisayarın bu değerlerin altında kalsa da oyunun açıldığı ve görüntü kalitesini cihazın değil
+bağlantı hızının belirlediği.
 
 **Kapanış bölümü.** Erişim modeli (ücretsiz mod var mı, tam sürüm nasıl alınır) ve 3-4 maddelik
 numaralı başlama adımları. Adımlar sayfadaki Oynat çağrısına bağlanır. Bölümün son paragrafı
@@ -245,7 +284,8 @@ oyunun hangi dilleri desteklediği yazılır. Okuyucu bu soruyu arıyor; cevabı
   katalogdaki `variants` alanında yazan mağazaların kopyasını açar. Orada olmayan mağaza yazılmaz.
 - **"Skor" kelimesi müzik anlamında kullanılmaz:** Türkçede puanla karışıyor. "Oyunun müziğini X
   besteledi" yazılır; "skor" yalnız Metacritic puanı bağlamında geçer.
-- **Kaynak notu belgeye yazılmaz;** hangi bilginin nereden geldiği kullanıcıya sohbette söylenir.
+- **Kaynak notu ve künye satırı belgeye yazılmaz;** kelime sayısı, başlık dökümü ve kaynaklar okuyucuya
+  bir şey söylemez, belgeyi iç doküman gibi gösterir. Bu bilgiler kullanıcıya sohbette söylenir.
 - Eleştirmen alıntısı ve uzun puan dökümü: Metacritic tek sayı olarak yeterli.
 - Doğrulanmamış süre, boyut ve oyuncu sayısı. Resmi değer yoksa en az iki kaynaktan ortalama aralık
   verilir ("ortalama 35-50 GB", "yaklaşık 70-80 GB") ve resmi değer olmadığı söylenir (bkz. dogrulama.md).

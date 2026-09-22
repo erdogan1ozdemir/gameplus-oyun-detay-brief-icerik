@@ -83,7 +83,10 @@ iç bilgidir; okuyucuya bir şey ifade etmiyor ve NVIDIA bu durumu sessizce değ
 etiketleridir; Türkçesi olmayan Resident Evil Requiem ve Battlefield 6 kayıtlarında da yer alır, yani dil
 sinyali değildir. Ayrıca `contentRatings` **USK** (Almanya) derecesidir; Türkiye için PEGI ayrıca bakılır.
 Teknoloji bayrakları oyun düzeyinde değil mağaza variantı düzeyindedir (`HDR_ENABLED`, `RTX_ENABLED`,
-`REFLEX_ENABLED`) ve içerikteki HDR/Reflex cümleleri bu bayrakla karşılaştırılır.
+`REFLEX_ENABLED`); bir oyunun Steam variantında olan bayrak Xbox variantında olmayabilir, bu yüzden
+variantların birleşimine bakılır. Bu üç bayrak hem briefe hem içeriğe girer ve `scripts/icerik_denetim.py`
+metinle karşılaştırır: destekli olup anılmayan da, desteksiz olup yazılan da bulgu sayılır. Paket
+cümlesindeki "4K HDR akış" hizmetin özelliğidir, oyunun HDR desteği değildir.
 
 **Katalogdaki ad, insanların arattığı ad olmayabilir.** Katalog kelimesi NVIDIA'nın uzun adından
 üretildiği için bazen neredeyse hiç aranmaz: "mount and blade 2 bannerlord" ayda 297 iken "bannerlord"

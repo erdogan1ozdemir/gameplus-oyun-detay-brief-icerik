@@ -38,7 +38,9 @@ Oyunun kendi tanıtım metnini ve mağaza variantlarının teknoloji bayrakları
 python3 scripts/katalog_json.py "Forza Horizon 6"
 ```
 
-Uzun tanıtım metni, Steam ve Wikipedia'da bulunmayan ayrıntıları taşır (ilerleme sistemi, mod ve bölge adları, yoldaş ve düşman adları, erişilebilirlik seçenekleri) ve içerik yazılmadan önce okunur. JSON'da dil desteği alanı yoktur; `keywords` çevrilmiş tür etiketidir, dil sinyali değildir.
+Uzun tanıtım metni, Steam ve Wikipedia'da bulunmayan ayrıntıları taşır (ilerleme sistemi, mod ve bölge adları, yoldaş ve düşman adları, erişilebilirlik seçenekleri) ve içerik yazılmadan önce okunur; taslak bittikten sonra bir kez daha okunup "burada olup içerikte olmayan ne var" diye karşılaştırılır. JSON'da dil desteği alanı yoktur; `keywords` çevrilmiş tür etiketidir, dil sinyali değildir.
+
+Aynı çıktı **teknoloji bayraklarını** da verir: `HDR_ENABLED`, `RTX_ENABLED`, `REFLEX_ENABLED` mağaza variantı düzeyinde durur ve hem briefe hem içeriğe girer (bağlantı hızı bölümünde). Bayrağı olmayan teknoloji yazılmaz.
 
 Katalog Excel'i bulunamazsa kullanıcıdan dosya yolunu iste.
 
@@ -70,7 +72,7 @@ Bunun üstüne, içerikte kullanacağın her sayı için `references/dogrulama.m
 
 - **Main KW** oyunun adıdır; hacim 12 aylık ortalamadır. Yeni çıkmış oyunlarda bu ortalama çıkış zirvesiyle şişer, son üç ayı da kontrol edip DİKKAT satırına yaz.
 - **İkincil kelimeler** erişim ve oynanış niyetini taşıyanlardan seçilir. Fiyat, satın alma, platform ve anahtar (key) kelimeleri mağaza sayfalarının alanıdır, alınmaz.
-- **Alt başlıklar** 1200-1500 kelimeye sığacak sayıda olur: pratikte 7-9 H2 ve az sayıda H3. Hikâye, oynanış, atmosfer ve öne çıkan özellikler kendi bölümlerini alır.
+- **Alt başlıklar** 1200-1500 kelimeye sığacak sayıda olur: pratikte 7-9 H2 ve az sayıda H3. Hikâye, oynanış, atmosfer ve öne çıkan özellikler kendi bölümlerini alır. Sıra sabittir: oyun başlıkları önce gelir, bulutla ilgili her şey tek `H2: {Oyun} GeForce NOW'da Nasıl Oynanır?` başlığında toplanır ve GAME+ ile bağlantı hızı H3'lerinin hemen öncesinde durur.
 - **İçerik kurgusu** TON, AÇILIŞ, her H2 için bir satır, SSS, UZUNLUK, DİKKAT sırasıyla yazılır. **Başlıkların yanına kelime sayısı yazılmaz.**
 - **Linkler** tam URL ile, altında yerleşeceği bölüm belirtilerek verilir. En az 4, yaklaşık 5-6 link. Seçim kuralları `references/ic-link-haritasi.md`'de.
 - **SSS** soruları PAA ve arama önerilerinden gelir; yanıtları içerik ekibi yazar, brief yalnız soruyu ve yanıtta geçmesi gerekeni verir.
@@ -85,7 +87,10 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 
 `references/icerik-kurallari.md` yapıyı, tonu ve bölüm bölüm ne yazılacağını anlatır. Özet:
 
-- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama **1200-1500 kelime**, 7-9 H2. Giriş oyunu tanıtır ve puanları madde listesiyle verir; erişim anlatısı ilk H2'de başlar.
+- Gövde başlıksız 1-2 paragraflık girişle açılır, ardından H2'ler gelir; ortalama **1200-1500 kelime**, 7-9 H2. Giriş oyunu tanıtır ve puanları madde listesiyle verir.
+- **GeForce NOW tek bölümdür.** Erişim yanıtı (kütüphane, mağaza hesabı, indirme yükü) ile bulutun ne değiştirdiği aynı H2 altında toplanır, başlık `{Oyun} GeForce NOW'da Nasıl Oynanır?` olur ve `{Oyun}'ı GAME+ ile Oynamak` H3'ünün hemen öncesine konur. İki ayrı bölüm yazıldığında aynı üç cümle tekrarlanıyordu; "GeForce NOW ile {Oyun} Deneyimi" başlığı kullanılmaz.
+- **HDR, RTX ve NVIDIA Reflex desteği** bağlantı hızı H3'ünde, oyunun kendi anlatısına bağlanarak yazılır (gecikme, karanlık sahneler, ışın izleme). Bayraklar katalog JSON'undan okunur; olmayan teknoloji yazılmaz, paket cümlesindeki "4K HDR akış" oyunun desteği sayılmaz.
+- Yazmadan önce katalogdaki kısa ve uzun tanıtım metni okunur; taslak bitince aynı metinlerle karşılaştırılıp eksik kalan sistem, mod ve yer adları tamamlanır.
 - Sayfa teknik kart değil: **hikâye, oynanış, atmosfer-ses-müzik ve öne çıkan özellikler** kendi bölümlerini alır. Son bölümün ardından, SSS'den önce kısa bir kapanış çağrısı gelir. Kapanışta bir iki cümleyle oyunu oynamak için **GeForce NOW Ultimate ya da Performance** paketlerinden birinin seçilebileceği söylenir ve okuyucu satın almaya çağrılır; fiyat ve paket özelliği yazılmaz.
 - **İç link metnin içinden çıkar:** anchor'ı sildiğinde cümle hâlâ anlamlı olmalı. "Şu listeye göz atabilirsin" biçiminde link taşımak için cümle kurulmaz; anchor, insanların arattığı terimin kendisidir.
 - Önemli terim ve değerler **kalın** yazılır (bölüm başına iki üç vurgu). Kaynak notu belgeye basılmaz.
@@ -98,9 +103,10 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 - Teknik değer kümeleri (bağlantı hızı, sistem gereksinimleri) tabloyla verilir, paragrafa gömülmez.
 - SSS yanıtları 20-60 kelime, ilk cümle doğrudan yanıt.
 
-Dosyayı üretmek için:
+Dosyayı üretmek için önce denetim, sonra docx:
 
 ```bash
+python3 scripts/icerik_denetim.py --json /tmp/icerik.json
 python3 scripts/icerik_docx.py --json /tmp/icerik.json --out "oyun-adi-icerik.docx"
 ```
 
@@ -108,7 +114,7 @@ JSON biçimi scriptin başında yazılı. Köprüler `[LINK1]` yer tutucularıyl
 
 ### Faz 5 - Denetle ve teslim et
 
-Teslimden önce `references/kontrol-listesi.md`'yi çalıştır. En sık takılınan yerler: doğrulanmamış sayı, paket gerekliliği ifadesi, "kampanya" kelimesi, uzun tire, çift boşluk.
+Teslimden önce `scripts/icerik_denetim.py`'yi çalıştır (yapı, biçim, link, SSS ve teknoloji bayrakları) ve ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontrolleri geç. En sık takılınan yerler: doğrulanmamış sayı, paket gerekliliği ifadesi, "kampanya" kelimesi, uzun tire, çift boşluk, iki yerde tekrarlanan bulut anlatısı.
 
 Çıktıları çalışma klasörüne kaydet ve kullanıcıya gönder. Dosyayı gönderirken **hangi bilgiyi hangi kaynaktan aldığını ve neyi yazmadığını** kısaca söyle; bu sayfalarda en değerli şey, yazılmayanın neden yazılmadığının bilinmesi.
 
@@ -119,6 +125,7 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 - **Oyuna özel paket gerekliliği yazılmaz; iki paket her zaman birlikte önerilir.** "Bu oyun için X paketi gerekir" denmez; ne başlıkta, ne SSS'de, ne gövdede. Bunun yerine kapanış çağrısında okuyucuya oyunu oynamak için **GeForce NOW Ultimate ya da Performance** paketlerinden birini seçebileceği söylenir ve satın almaya yönlendirilir. Sıra ve ad sabittir: Ultimate önde durur, paket adı hizmet adıyla ("GeForce NOW") birlikte geçer. Bu cümlelerde fiyat ve paket özelliği geçmez: fiyat değiştikçe sayfa eskir, paketlerin farkını anlatmak da paketler sayfasının işi.
 - **Tek oyunculu moddan "kampanya" diye bahsedilmez.** "Hikâye modu", "campaign" ya da oyunun kendi kullandığı ad tercih edilir. Sebebi: kampanya kelimesi promosyon kampanyasıyla karışıyor.
 - **Türkçe sorusu her oyunda SSS'de yer alır; kendi H2'sini yalnız resmi destek varsa alır.** Türkçe, oyunda resmi dil olarak (Steam ya da yayıncının resmi dil listesi) yer almıyorsa "yok" denir; topluluk yaması ve mod destek sayılmaz. Destek yoksa da "Türkçe mi?" sorusu açılır ve "Hayır" ile yanıtlanır: okuyucu bunu arıyor ve cevabı bu sayfada bulmalı. Destek yoksa ayrı H2 açılmaz, gövdede tek cümleyle belirtilir.
+- **Bulut anlatısı sayfada bir kez geçer.** Erişim ve GeForce NOW deneyimi tek H2'de toplanır; sistem gereksinimleri bölümünün kapanışı da bu cümleleri tekrarlamaz, yalnız donanım eşiğini cevaplar.
 - **GFN optimizasyon durumu hiçbir oyunda yazılmaz.** Katalogdaki bu alan iç bilgidir.
 - **Mağaza listesi katalogdaki `variants` alanından gelir.** Oyun başka mağazada satılsa da GFN o kopyayı açmıyor olabilir.
 - **Sayfa oyunun PC sürümünü anlatır.** GeForce NOW PC sürümünü akıtıyor; Metacritic puanı, sistem gereksinimleri, kurulum boyutu ve dil listesi PC sütunundan alınır, konsol değeri yazılmaz.
@@ -138,5 +145,5 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 | `references/brief-kurallari.md` | Faz 3'te, brief satırını kurarken. |
 | `references/icerik-kurallari.md` | Faz 4'te, içeriği yazmadan önce. |
 | `references/ic-link-haritasi.md` | Link seçerken. Mevcut sayfa envanteri ve seçim kuralları. |
-| `references/kontrol-listesi.md` | Faz 5'te, teslimden önce. |
+| `references/kontrol-listesi.md` | Faz 5'te, teslimden önce. Otomatik denetim betiği de burada anlatılıyor. |
 | `examples/` | Battlefield 6 brief satırı ve içeriği. Yeni oyun yazarken biçim referansı. |

@@ -8,7 +8,7 @@ Kullanım:
 icerik.json biçimi:
 {
   "oyun": "Battlefield 6",
-  "meta": "Gövde 827 kelime · 5 H2, 4 H3 · 2 tablo · 6 iç link · 8 SSS",
+  "meta": "İç künye; belgeye BASILMAZ, yalnız denetim için JSON'da durur",
   "linkler": {"LINK1": ["anchor metni", "https://gameplus.com.tr/..."]},
   "govde": [["H2","Başlık"], ["p","Paragraf, içinde [LINK1] geçebilir"],
             ["H3","Alt başlık"], ["li","Numaralı madde"], ["mad","Madde imli madde"],
@@ -16,7 +16,7 @@ icerik.json biçimi:
             ["tablo", [["Sütun","Sütun"],["satır","satır"]]]],
   "sss": [["Soru?","Yanıt"]]
 }
-Kaynak notu belgeye basılmaz; kullanıcıya sohbette söylenir.
+Kaynak notu ve künye satırı (kelime sayısı, başlık dökümü) belgeye basılmaz; kullanıcıya sohbette söylenir.
 Gövde H2 ile başlar; sayfada H1 oyun adı olarak bulunduğu için belgeye H1 yazılmaz.
 """
 import argparse, json, re
@@ -82,10 +82,6 @@ def main():
 
     p = doc.add_paragraph(); r = p.add_run(f"{d.get('oyun','Oyun')} | Oyun Detay Sayfası İçeriği")
     r.bold = True; r.font.size = Pt(15); r.font.name = FN; renk(r, TEAL)
-    if d.get("meta"):
-        p = doc.add_paragraph(); r = p.add_run(d["meta"])
-        r.font.size = Pt(8.5); r.font.name = FN; renk(r, "5A6B68")
-
     for tip, icerik in d["govde"]:
         if tip in ("H2", "H3"):
             p = doc.add_paragraph()

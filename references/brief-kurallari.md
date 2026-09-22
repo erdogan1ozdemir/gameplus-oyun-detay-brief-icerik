@@ -31,6 +31,21 @@ H2'lerini alır; bölüm başına 130-180 kelime düşer. Oyunun yapısı bir b�
 olmayan çok oyunculu bir oyun gibi) o başlık açılmaz, yerine oyunun gerçekten sahip olduğu konu gelir.
 Başlık en fazla iki konu taşır.
 
+**Sıra sabittir: oyun önce, GeForce NOW sonra.** Oyuna ait başlıklar (hikâye, oynanış, atmosfer, öne
+çıkan özellikler) baştan verilir; bulutla ilgili her şey tek bir H2'de toplanır ve sona yakın durur:
+
+```
+H2: {Oyun} GeForce NOW'da Nasıl Oynanır?
+H3: {Oyun}'ı GAME+ ile Oynamak
+H3: Bağlantı Hızı ve Görüntü Kalitesi
+H2: {Oyun} Sistem Gereksinimleri ve İndirme
+H2: {Oyun} Ücretsiz mi, Nasıl Başlanır?
+```
+
+Başta ayrı bir erişim H2'si ve sonda ayrı bir "GeForce NOW ile {Oyun} Deneyimi" H2'si açılmaz; iki
+başlık da aynı üç cümleyi (kütüphanede yer alır, hesabını bağla, indirme ve donanım derdi yok)
+tekrarlıyordu. Gerekçenin tamamı `icerik-kurallari.md`'deki Yapı bölümünde.
+
 **İçerik Kurgusu** - şu sırayla yazılır:
 
 ```
@@ -40,6 +55,9 @@ AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel o
 
 H2 · Başlık: Bu bölümde ne anlatılır, hangi kelime nerede karşılanır, hangi biçim kullanılır.
 H2 · Başlık: ...
+H2 · {Oyun} GeForce NOW'da Nasıl Oynanır: Erişim yanıtı (kütüphane, mağaza hesabı, indirme boyutu) ve bulutun kazandırdıkları tek bölümde; cihaz çeşitliliği ve kontrol desteği (gamepad / dokunmatik / direksiyon / kısmi).
+H3 · GAME+ ile Oynamak: Hangi hesapla açıldığı, satın alma durumu; paketlerin sunduğu değerler anlatılır, gereken paket yazılmaz.
+H3 · Bağlantı Hızı ve Görüntü Kalitesi: 15 Mbps 1080p/30, 35 Mbps 1440p/60, 50 Mbps 4K/60 FPS tablosu; oyunun HDR / RTX / NVIDIA Reflex desteği.
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
 
@@ -94,5 +112,11 @@ Bu metin olduğu gibi kopyalanır. FAQPage schema maddesi ekip tarafından çık
 
 ## Briefe girmeyenler
 
-Sayfa künyesi ve katalog verisi (yayıncı, geliştirici, yaş sınırı, RTX/HDR, mağaza bağlantısı)
-briefe yazılmaz. Bunlar sayfanın künye tablosundan gelir; brief içerik planıdır.
+Sayfa künyesi ve katalog verisi (yayıncı, geliştirici, yaş sınırı, mağaza bağlantısı) briefe
+yazılmaz. Bunlar sayfanın künye tablosundan gelir; brief içerik planıdır.
+
+**Teknoloji bayrakları bunun istisnasıdır.** HDR, RTX ve NVIDIA Reflex desteği gövdede anlatıldığı
+için briefte de yer alır: bağlantı hızı H3'ünün satırına, katalog JSON'undaki variant bayraklarından
+(`HDR_ENABLED`, `RTX_ENABLED`, `REFLEX_ENABLED`) okunarak yazılır. Oyunda bu bayraklardan hiçbiri
+yoksa satır "katalogda HDR, RTX ve Reflex desteği görünmüyor; bu teknolojilerden söz edilmez" diye
+kapanır, böylece içerik ekibi olmayan desteği uydurmaz.

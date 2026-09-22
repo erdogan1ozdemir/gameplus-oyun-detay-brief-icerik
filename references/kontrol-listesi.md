@@ -6,6 +6,9 @@
 - [ ] Yeni çıkmış oyunda son üç ayın ortalaması DİKKAT satırına yazıldı mı?
 - [ ] İkincil kelimelerde fiyat, satın alma, platform ve anahtar kelimeleri var mı? (olmamalı)
 - [ ] Başlık sayısı 1200-1500 kelimeye uygun mu? (7-9 H2, az sayıda H3)
+- [ ] Başlık sırası doğru mu: oyun başlıkları önce, tek GeForce NOW H2'si GAME+ ve bağlantı hızı H3'lerinin hemen öncesinde, ardından sistem gereksinimleri?
+- [ ] Başta ayrı erişim H2'si ya da sonda "GeForce NOW ile {Oyun} Deneyimi" başlığı kalmış mı? (kalmamalı)
+- [ ] Bağlantı hızı H3'ünün satırında oyunun HDR / RTX / Reflex desteği yazılı mı? Bayrağı olmayan oyunda "söz edilmez" notu var mı?
 - [ ] İçerik kurgusunda başlık yanına kelime sayısı yazılmış mı? (yazılmamalı)
 - [ ] Hangi GAME+ paketinin gerektiğine dair başlık, soru ya da cümle var mı? (olmamalı)
 - [ ] BİÇİM satırında kapanıştaki GeForce NOW Ultimate / Performance paket önerisi belirtilmiş mi?
@@ -18,7 +21,10 @@
 
 ## İçerik
 
-- [ ] Gövde H2 ile mi başlıyor, belgede H1 var mı? (olmamalı)
+- [ ] Belgede H1 var mı? (olmamalı; sayfadaki H1 oyun adıdır)
+- [ ] GeForce NOW tek H2'de mi toplanmış, adı `{Oyun} GeForce NOW'da Nasıl Oynanır?` mı, GAME+ H3'ünün hemen öncesinde mi duruyor?
+- [ ] Erişim yanıtı ile bulut anlatısı aynı bölümde mi, yoksa iki yerde aynı cümleler mi tekrarlanıyor? ("NVIDIA sunucularında çalışır", "indirme ve donanım derdi yok")
+- [ ] Sistem gereksinimleri bölümünün kapanışı bir önceki bölümü tekrar ediyor mu? (etmemeli: yalnız eşik cevaplanır)
 - [ ] Kelime sayısı 1200-1500 bandında mı?
 - [ ] Gövde başlıksız 1-2 paragraflık girişle mi açılıyor, giriş ilk H2'nin işini üstlenmiş mi?
 - [ ] Sınıflar, modlar ve puanlar madde listesine alındı mı, yoksa paragrafa mı sıkıştırıldı?
@@ -51,10 +57,24 @@
 - [ ] GFN optimizasyon durumu yazılmış mı? (yazılmamalı)
 - [ ] Mağaza listesi katalogdaki variants alanıyla birebir mi? Katalogda olmayan mağaza yazılmış mı?
 - [ ] Katalogdaki uzun tanıtım metni tarandı mı? Oyunun kendi sistem, mod, yoldaş ve bölge adları içerikte karşılandı mı?
-- [ ] HDR / Reflex cümleleri katalog variantındaki bayraklarla (HDR_ENABLED, REFLEX_ENABLED) uyuşuyor mu?
+- [ ] HDR / RTX / Reflex cümleleri katalog variantındaki bayraklarla uyuşuyor mu? Destekli olan anılmış, olmayan yazılmamış mı?
+- [ ] Teknoloji, oyunun kendi anlatısına bağlanmış mı, yoksa kuru liste mi? Paket cümlesindeki "4K HDR akış" oyunun HDR desteğiyle karıştırılmış mı?
+- [ ] Katalogdaki kısa ve uzun tanıtım metni taslak bittikten sonra bir kez daha okunup "burada olup içerikte olmayan ne var" karşılaştırması yapıldı mı?
 - [ ] Okuyucunun bilgisayarı olduğu varsayılmış mı? ("bilgisayarında … olmalı" yerine "bilgisayardan oynayanlarda")
 - [ ] Bilgi cümleleri konuşma diline kaçan geçmiş zamanla mı yazılmış? ("besteledi" yerine "bestelemiştir")
-- [ ] Belgenin altına kaynak notu basılmış mı? (basılmamalı, sohbette söylenir)
+- [ ] Belgeye kaynak notu ya da künye satırı (kelime sayısı, başlık dökümü) basılmış mı? (basılmamalı, sohbette söylenir)
+
+## Otomatik denetim
+
+Docx üretmeden önce çalıştırılır; yapı, biçim, link, SSS ve teknoloji bayraklarını birlikte bakar:
+
+```bash
+python3 scripts/icerik_denetim.py --json /tmp/icerik.json
+```
+
+Katalogdaki başlık metindeki addan farklıysa (`Diablo IV` / `Diablo 4` gibi) `--katalog-adi` verilir.
+Betik bulgu bulursa 1 koduyla çıkar; bulgular giderilmeden docx üretilmez. Aşağıdaki liste betiğin
+bakamadığı, okuyarak karar verilen şeyler içindir.
 
 ## Biçim taraması
 
