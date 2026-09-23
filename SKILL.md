@@ -97,7 +97,9 @@ python3 scripts/brief_satiri.py --xlsx "GeForce NOW oyun detay sayfası içerik 
 - Sayılabilir ve paralel şeyler (sınıflar, modlar, puanlar) madde listesiyle verilir, paragrafa sıkıştırılmaz. Numaralı liste yalnız sıralı adımlar içindir.
 - Oynanış bölümünün sonunda oyunun tonu, sanat tasarımı, müziği ve ödülleri kısa bir paragrafta toplanır; kazanılan ödül ile adaylık ayrı yazılır.
 - Hikâyeden spoiler verilmeden bahsedilir: kurulum, oynanan birlik, geçtiği yerler ve süre yazılır; olay örgüsü yazılmaz.
-- **Kip cümlenin işine göre değişir:** tanım ve kurallar geniş zaman, kaynaklı veri `-mektedir/-maktadır`, anlatı ve atmosfer şimdiki zaman, okuyucuya yönerge ikinci tekil. Hikâye anlatılırken birinci çoğul da kullanılabilir ("oyuna başlıyoruz"). Tek kipe kilitlenen metin makine çıktısı gibi okunuyor.
+- **Kip cümlenin işine göre değişir:** tanım ve kurallar geniş zaman, kaynaklı veri `-mektedir/-maktadır`, anlatı ve atmosfer şimdiki zaman, okuyucuya yönerge ikinci tekil. Tek kipe kilitlenen metin makine çıktısı gibi okunuyor.
+- **Hitap baştan sona "sen".** Hikâye ve oynanış anlatısı da ikinci tekille yazılır ("Kliff ile başlıyorsun"); birinci çoğul ("başlıyoruz", "karşımıza çıkan") kullanılmaz. Aynı sayfada "biz" ile "sen" yan yana gelince metin iki yazarın elinden çıkmış gibi okunuyor.
+- **Cümle kurgusu editör gözüyle okunur:** yan cümlede özne açık, teknik bilgi doğru özneye bağlı (motor oyunu çalıştırır), aynı cümlede aynı kök bir kez, parantez cümleyi tekrar etmez, oyun terimi tam isim tamlamasıyla ("bitirici hamleler"), fiil ortama uygun (seri "oynanır", "okunmaz"), mecaz yok (şart cihaza "yüklenmez"). Madde tanımı etiketi tekrar etmez, bilgi ekler; bölümler aynı konuda çelişen "en çok" iddiası taşımaz. Örnekler `icerik-kurallari.md`'de.
 - Her H2'nin ilk cümlesi o başlığın sorusunu doğrudan yanıtlar. Yapay zeka yanıtlarında alıntılanabilirlik buna bağlı.
 - Ton marka sesidir: "sen" dili, geniş zaman, somut değerler. İçerik Dili Rehberi bu çıktıya uygulanmaz, o rehber müşteriye giden rapor ve sunumlar içindir.
 - Teknik değer kümeleri (bağlantı hızı, sistem gereksinimleri) tabloyla verilir, paragrafa gömülmez.
@@ -114,7 +116,7 @@ JSON biçimi scriptin başında yazılı. Köprüler `[LINK1]` yer tutucularıyl
 
 ### Faz 5 - Denetle ve teslim et
 
-Teslimden önce `scripts/icerik_denetim.py`'yi çalıştır (yapı, biçim, link, SSS ve teknoloji bayrakları) ve ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontrolleri geç. En sık takılınan yerler: doğrulanmamış sayı, paket gerekliliği ifadesi, "kampanya" kelimesi, uzun tire, çift boşluk, iki yerde tekrarlanan bulut anlatısı.
+Teslimden önce `scripts/icerik_denetim.py`'yi çalıştır (yapı, biçim, link, SSS, teknoloji bayrakları, birinci çoğul ve mecaz fiil; `--tekrar` ile aynı cümledeki kök tekrarlarını da listeler) ve ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontrolleri geç. En sık takılınan yerler: doğrulanmamış sayı, paket gerekliliği ifadesi, "kampanya" kelimesi, uzun tire, çift boşluk, iki yerde tekrarlanan bulut anlatısı.
 
 Çıktıları çalışma klasörüne kaydet ve kullanıcıya gönder. Dosyayı gönderirken **hangi bilgiyi hangi kaynaktan aldığını ve neyi yazmadığını** kısaca söyle; bu sayfalarda en değerli şey, yazılmayanın neden yazılmadığının bilinmesi.
 
@@ -129,7 +131,7 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 - **GFN optimizasyon durumu hiçbir oyunda yazılmaz.** Katalogdaki bu alan iç bilgidir.
 - **Mağaza listesi katalogdaki `variants` alanından gelir.** Oyun başka mağazada satılsa da GFN o kopyayı açmıyor olabilir.
 - **Sayfa oyunun PC sürümünü anlatır.** GeForce NOW PC sürümünü akıtıyor; Metacritic puanı, sistem gereksinimleri, kurulum boyutu ve dil listesi PC sütunundan alınır, konsol değeri yazılmaz.
-- **Ödül, puan ve özel ad kulaktan yazılmaz.** Kazanılan ödül ile adaylık ayrılır, Metacritic puanının hangi platforma ait olduğu bilinir, birlik ve karakter adları kaynaktaki yazımıyla geçer.
+- **Ödül, puan ve özel ad kulaktan yazılmaz.** Kazanılan ödül ile adaylık ayrılır, Metacritic puanının hangi platforma ait olduğu bilinir, birlik ve karakter adları kaynaktaki yazımıyla geçer. Ödül dalı ise Türkçe yazılır ("Most Epic" değil "En Destansı Oyun"), tören adı özgün kalır.
 - **Doğrulanamayan sayı kesin değer gibi yazılmaz.** Sızıntı ve söylenti kaynaklı rakam kullanılmaz. Resmi değeri yayımlanmayan ölçülebilir bilgilerde (kurulum boyutu, oynama süresi) en az iki güncel ve güvenilir kaynaktan **ortalama aralık** verilir ("ortalama 35-50 GB") ve resmi değer olmadığı belirtilir; kaynaklar örtüşmüyorsa sayı yazılmaz, durum kullanıcıya söylenir.
 - **Tarihler zamandan bağımsız yazılır.** "Çıkacak", "yakında", "şu an en son çıkan" gibi ifadeler tarih geçince yanlışa düşer ve sayfayı güncellemek gerekir. Doğrusu tarihle bağlamak: "23 Ekim 2026 çıkış tarihli Modern Warfare 4", "15 Ekim 2026 tarihli genişlemeyle birlikte". Sayfa, tarih geçtikten sonra da düzeltme gerektirmeden doğru kalmalı.
 - **Puanlar düşük olsa da yazılır.** Sayfa oyunu değil bulut hizmetini satar; Metacritic kullanıcı skoru düşük olsa bile objektiflik için listede kalır.

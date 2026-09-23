@@ -31,10 +31,14 @@ reyon var:
 | Anlatı, atmosfer, deneyim | Şimdiki zaman | "Hikâye yakın bir alternatif gelecekte geçiyor", "çatışma daha akıcı bir his veriyor" |
 | Okuyucuya seslenen yönerge | İkinci tekil geniş zaman | "Oynat'a bas", "paketlerden birini seçebilirsin" |
 
-Hikâye ve oynanış anlatılırken **birinci çoğul** da kullanılabilir; oyun basınının doğal dili bu:
-"Dagger 1-3 timiyle oyuna başlıyoruz", "farklı cephelerde savaşıyoruz". Bu kullanım anlatı
-bölümleriyle sınırlı kalır; erişim ve başlama adımlarında ikinci tekile ("sen") dönülür, çünkü
-orada okuyucuya doğrudan bir iş tarif ediliyor.
+**Hitap baştan sona "sen"dir; birinci çoğul kullanılmaz.** Bir dönem hikâye ve oynanış bölümleri
+oyun basınının diliyle birinci çoğul yazıldı ("oyuna başlıyoruz", "rakiplerle çatışıyoruz"),
+erişim ve başlama adımları ise ikinci tekille. Aynı sayfada iki hitap yan yana gelince okuyucu
+kiminle konuşulduğunu kaçırıyor ve metin iki ayrı yazarın elinden çıkmış gibi okunuyor. Anlatı da
+ikinci tekille kurulur: "Kliff ile başlıyorsun", "silah ve malzeme toplayıp rakiplerle
+çatışıyorsun". İyelik ve zamir biçimleri de bu kurala girer ("ilk kez karşımıza çıkan" değil "ilk
+kez sahneye çıkan"); marka da kendinden "blog yazımızda" diye söz etmez. "Günümüz" gibi
+kalıplaşmış kelimeler bunun dışındadır.
 
 **Kipler arası geçiş yumuşatılır.** Kipin değişmesi doğru, ama bir cümle `-iyor` ile biterken hemen
 ardından gelen cümlenin `-mıştır` ile bitmesi metni zıplatıyor; okuyucu iki farklı yazarın yazdığını
@@ -55,6 +59,56 @@ bunlar doğrulanmış tespit olduğu için `-mıştır` ile yazılır. Anlatı i
 Ölçü sayı değil dağılım: gövdede her kip de görünüyorsa metin insan yazmış gibi okunuyor.
 Battlefield 6 metninde 1.326 kelimede 28 `-iyor`, 5 `-mektedir` ve 6 `-mıştır` var, geri kalanı
 geniş zaman; bu dağılım iyi bir hedef. Tek bir kip toplamın belirgin çoğunluğuysa metin yeniden okunur.
+
+## Cümle kurgusu ve kelime seçimi
+
+İlk altı içeriğin editör okumasında düzeltilen yerlerin çoğu bilgi hatası değil cümle hatasıydı:
+bilgi doğru, ama cümle bir şeyi iki kez söylüyor, bilgiyi yanlış özneye bağlıyor ya da kelimeyi
+yerinden oynatıyor. Bu hatalar tek tek küçük, ama sayfaya çeviri ya da makine metni havası
+veriyor. Taslak bittikten sonra her paragraf bu gözle bir kez daha okunur.
+
+- **Yan cümlede özne açık olur.** Sıfat-fiil yan cümlesinde kimin ne yaptığı belirsiz kalırsa cümle
+  başka bir şey söylüyor gibi okunur: "dışında kalan her saniye hasar aldığı için" cümlesinde hasar
+  alan saniye olmuş.
+- **Bilgi doğru özneye bağlanır.** Oyun motoru oyunu çalıştırır; dövüş sistemini, haritayı ya da
+  ışığı değil. Teknik bir bilgi cümlenin hangi parçasına bağlandıysa okuyucu onu o parçanın
+  özelliği sanır.
+- **Aynı cümlede aynı kelime ya da kök iki kez geçmez.** "İlerleme … ilerler", "serinin … serinin",
+  "haritası … en büyük haritası", "dövüşü … dövüşün … dövüş oyunu". Aynı özneli iki yargı "ve" ile
+  bağlanıyorsa biri sıfat-fiile çevrilir. Bilinçli paralel yapı ("Grace'in korkusu oyuncunun
+  korkusuyla aynı hizada") ve "girebileceğin gibi … de girebilirsin" kalıbı bunun dışındadır.
+  Aynı kontrol art arda gelen cümleler için de yapılır: iki cümle aynı kalıpla açılıyorsa biri gider.
+- **Cümlenin zaten söylediği şey parantezle tekrarlanmaz.** "Serinin dokuzuncu ana oyunu olarak da
+  bilinen (Resident Evil 9)" iki kez aynı şeyi söylüyor. Alternatif ad arama kelimesiyse parantezsiz,
+  cümlenin içinde geçer: "Resident Evil 9 olarak da bilinen".
+- **Kelimenin kendisinde olan tanım yeniden yapılmaz.** "Oyunları hikâyeye göre dizen kronolojik
+  sıra" dendiğinde kronolojik sıranın tanımı cümleye eklenmiş olur.
+- **Oyun terimi Türkçeye tam isim tamlamasıyla aktarılır.** Sıfatı isim gibi çoğullamak anlamı
+  bulanıklaştırır: "bitiriciler" değil "bitirici hamleler", "menzilliler" değil "menzilli silahlar".
+- **Fiil ortama uyar.** Oyun serisi okunmaz, oynanır. Kitap ve dizi dilinden taşınan fiiller
+  ("kendi içinde okunabilir", "izlenir") oyun için kullanılmaz.
+- **Mecaz yerine düz anlatım.** Şart ve gereksinim cihaza "yüklenmez", "binmez"; cihazda aranmaz ya
+  da cihazın karşılaması gerekmez. Okuyucu cümleyi bir kez okuyup anlamalı.
+- **Bölümler arası üstünlük iddiası çelişmez.** Oynanış bölümü "en çok övülen taraf dövüş" diyorsa
+  atmosfer bölümü "en çok hemfikir olunan nokta dünyanın güzelliği" diyemez. En-üstünlük bir konu
+  için bir kez kullanılır; ikinci öne çıkan nokta "bir diğer" ile bağlanır.
+- **Aynı kavram için tek terim.** Metin "kombo" diyorsa madde listesinde "kombinasyon" denmez.
+- **Sade kuruluş tercih edilir.** "Topluluğu içinde yer alan Kliff" yerine "topluluğunun üyesi
+  Kliff"; "önerilen olarak 12 GB" yerine "önerilen değer 12 GB'tır".
+
+| Yazma | Yaz |
+|---|---|
+| "…rakiplerle çatışıyoruz; güvenli bölgenin dışında kalan her saniye hasar aldığı için…" | "…rakiplerle çatışıyorsun; güvenli bölgenin dışında kalan oyuncu her saniye hasar aldığı için…" |
+| "Oyuna, paralı asker topluluğu Gri Yeleliler içinde yer alan Kliff ile başlıyoruz." | "Oyuna, paralı asker topluluğu Gri Yeleliler'in (Greymanes) üyesi Kliff ile başlıyorsun." |
+| "Oynanışın merkezinde BlackSpace Engine üzerinde çalışan kombo tabanlı dövüş sistemi var." | "Pearl Abyss'in kendi motoru BlackSpace Engine ile geliştirilen Crimson Desert'ın merkezinde kombo tabanlı bir dövüş sistemi var." |
+| "Resident Evil Requiem, Resident Evil 7'den beri serinin kullandığı RE Engine ile geliştirilmiştir ve serinin yalnızca yeni nesil sistemler için yapılan ilk oyunudur." | "Resident Evil 7'den beri kullanılan RE Engine ile geliştirilen Requiem, serinin yalnızca yeni nesil sistemler için yapılan ilk oyunudur." |
+| "…serinin dokuzuncu ana oyunu olarak da bilinen (Resident Evil 9) hayatta kalma korku oyunudur." | "…Resident Evil 9 olarak da bilinen hayatta kalma korku oyunudur." |
+| "Oyunları hikâyeye göre dizen Resident Evil serisinin kronolojik sırası içinde Requiem…" | "Resident Evil serisinin kronolojik sırasında Requiem…" |
+| "Silah ve bitiriciler: …yakın mesafe bitiricileri…" | "Silah ve bitirici hamleler: …yakın mesafe bitirici hamleleri…" |
+| "Her kol kendi içinde okunabildiği için…" | "Her kol kendi içinde oynanabildiği için…" |
+| "GeForce NOW ile oynarken bu şart senin cihazına yüklenmez." | "GeForce NOW ile oynarken cihazında bu kadar bellek olması gerekmez." |
+| "Eleştirmenlerin oyunda en çok hemfikir olduğu nokta da dünyanın güzelliği oldu." (dövüş zaten "en çok övülen") | "Dövüşün yanında eleştirmenlerin hemfikir olduğu bir diğer nokta da dünyanın güzelliği ve ölçeği oldu." |
+| "İlerleme bu festival yapısı üzerinden ilerler." | "İlerleme bu festival yapısı üzerinden sağlanır." |
 
 ## Yapı
 
@@ -116,6 +170,17 @@ Biçim: `Ad: tek cümlelik tanım.` Madde başına bir fikir, 10-20 kelime. List
 kısa bir cümle bulunur ("Serinin dört klasik sınıfı geri döndü:"). İki maddelik liste yapılmaz,
 altı maddeyi geçen liste bölünür.
 
+**Tanım etiketi tekrar etmez, bilgi ekler.** Madde tanımı etiketin ne işe yaradığını ya da oyuncuya
+ne kazandırdığını söyler; etiketi başka kelimelerle yinelemek maddeyi boşaltır. Etiketin son kelimesi
+tanımın son kelimesi olarak geri geliyorsa ("…yarıştığı şampiyonalar", "…iş birliği becerileri")
+madde büyük ihtimalle bilgi taşımıyordur.
+
+| Yazma | Yaz |
+|---|---|
+| "**Menzilli silahlar:** Uzaktaki hedefler için farklı menzilli silah seçenekleri." | "**Menzilli silahlar:** Uzaktaki hedefleri yakın dövüşe girmeden etkisiz hâle getirme." |
+| "**Element güçlendirmeleri:** Kombinasyonlarla açılan element etkili güçlü yetenekler." | "**Element güçlendirmeleri:** Kombolarla açılan, element etkisi taşıyan güçlü yetenekler." |
+| "**Tek Tip Yarış Şampiyonaları:** …aynı tip araçlarla yarıştığı şampiyonalar." | "**Tek Tip Yarış Şampiyonaları:** Tüm oyuncuların aynı tip araçla, eşit şartlarda karşılaştığı etkinlikler." |
+
 Numaralı liste yalnız **sıralı adımlar** için kullanılır (başlama adımları). Sıra taşımayan her şey
 madde imli listedir. `icerik_docx.py` içinde numaralı liste `li`, madde imli liste `mad` tipidir.
 
@@ -128,6 +193,10 @@ gibi. Besteci adı yazılır, ödül adı ve yılı tam verilir, kazanılan öd�
 
 Ödül yoksa bölüm zorlanmaz; ton ve sanat tasarımı tek cümleyle geçilir. Uydurma ödül ya da
 "övgü topladı" gibi kaynaksız genelleme yazılmaz.
+
+**Ödül dalı Türkçe yazılır, tören adı özgün kalır.** "Gamescom Awards'ta Most Epic" değil
+"Gamescom Awards'ta En Destansı Oyun"; "The Game Awards'ta En İyi Ses Tasarımı". Aynı cümlede bir
+dal Türkçe, diğeri İngilizce kalırsa ("Most Epic ve En İyi PC Oyunu") çeviri unutulmuş gibi okunur.
 
 ## Hikâyeden spoiler vermeden bahsetmek
 
@@ -264,6 +333,10 @@ okunur, sayılar rakamla, oyun adı tam haliyle bir kez.
 Gövdedeki cümleler birebir tekrarlanmaz. SSS daha kısa ve daha keskin yazılır; gövde anlatır,
 SSS cevaplar.
 
+**Soru, arama ifadesinin kısalığını taşımaz; anlamlı bir soru olur.** Kullanıcı aramada "neyin
+devamı" yazsa da sayfadaki soru "Resident Evil Requiem hangi serinin devamı?" olur. Soru
+değişince yanıtın ilk cümlesi de yeni soruya cevap verir ("…Resident Evil serisinin devamıdır").
+
 Yanıtlanamayan soru listeden çıkarılır. **Türkçe sorusu ise her oyunda sorulur:** destek varsa
 "Evet" ile hangi katmanların (arayüz, altyazı, seslendirme) Türkçe olduğu, yoksa "Hayır" ile
 oyunun hangi dilleri desteklediği yazılır. Okuyucu bu soruyu arıyor; cevabı başka sayfada aramasın.
@@ -279,7 +352,11 @@ oyunun hangi dilleri desteklediği yazılır. Okuyucu bu soruyu arıyor; cevabı
 - **Olumsuzla kurulan koşullar:** "ikinci kez satın alman gerekmez" yerine "satın almış olman
   yeterlidir". Okuyucu ne yapmayacağını değil, ne yapması gerektiğini arıyor.
 - **Öznesiz cümleler:** "Tanklar ve helikopterler oynanışın merkezinde" değil, "Battlefield 6'da
-  tanklar ve helikopterler oynanışın merkezinde". Sayfa tek bir oyunu anlatsa da özne düşürülmez.
+  tanklar ve helikopterler oynanışın merkezinde". Sayfa tek bir oyunu anlatsa da özne düşürülmez;
+  yan cümlelerde de (bkz. Cümle kurgusu ve kelime seçimi).
+- **Link taşımak için kurulan cümle:** "Ayrıntılı listeyi blog yazımızda bulabilirsin" gibi cümleler
+  yazılmaz; anchor bölümün zaten var olan bir cümlesine yerleşir ("Resmi [Battlefield 6 sistem
+  gereksinimleri] PC sürümü için şöyledir:").
 - **Katalogda olmayan mağaza:** oyun başka bir mağazada satılıyor olabilir, ama GeForce NOW yalnız
   katalogdaki `variants` alanında yazan mağazaların kopyasını açar. Orada olmayan mağaza yazılmaz.
 - **"Skor" kelimesi müzik anlamında kullanılmaz:** Türkçede puanla karışıyor. "Oyunun müziğini X

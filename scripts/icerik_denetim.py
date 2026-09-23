@@ -14,6 +14,7 @@ teknoloji anılmamışsa eksik, desteklenmeyen teknoloji anılmışsa yanlış b
 Bulgu varsa çıkış kodu 1 olur; docx üretmeden önce çalıştırılır.
 """
 import argparse, json, os, re, sys, unicodedata
+from collections import Counter
 
 VARSAYILAN_KATALOG = [os.path.expanduser("~/Downloads/inbound/all_games_1.json"),
                       os.path.expanduser("~/Downloads/all_games_1.json")]
@@ -26,6 +27,19 @@ BICIM = [("—", "uzun tire"), ("–", "en tire"), (r"(?<=\S)  +(?=\S)", "çift 
          (r" ,| \.", "boşluk-noktalama"), (r"(?i)\bçıkacak\b|\byakında\b", "zamana bağlı ifade")]
 
 KAPANIS = "**GeForce NOW Ultimate** ya da **Performance** paketlerinden"
+
+# Editör okumasında düzeltilen cümle hataları (bkz. icerik-kurallari.md, Cümle kurgusu ve kelime seçimi)
+BIRINCI_COGUL = (r"\b\w+(?:ıyoruz|iyoruz|uyoruz|üyoruz|ıyorduk|iyorduk|acağız|eceğiz|abiliriz|ebiliriz)\b"
+                 r"|\b(?!günümüz)\w+(?:ımız|imiz|umuz|ümüz)(?:a|e|ı|i|u|ü|da|de|dan|den|la|le|ın|in|un|ün)?\b"
+                 r"|\bbiz(?:im|e|i|den)?\b")
+MECAZ = r"(?i)(?:şart|gereksinim|gereklilik)\w*[^.;]{0,40}?(?:yüklen|bin)\w*|cihaz\w* (?:yüklen|bin)\w*"
+UYARI_DESEN = [
+    (r"\b(?:Most|Best) [A-Z]\w+", "ödül dalı İngilizce kalmış olabilir (tören adı özgün, dal Türkçe)"),
+    (r"bilinen \(", "parantez cümlenin söylediğini tekrar ediyor olabilir"),
+    (r"(?i)kendi içinde okunabil", "oyun için 'okunur' fiili (oynanır)"),
+]
+TEKRAR_DISI = {"oyunu", "oyunl", "oyunc", "oynan", "oynay", "oynam", "oynad", "gefor", "nvidi", "ultim",
+               "perfo", "paket", "hesab", "kütüp", "sunuc", "bulut", "kadar"}
 
 TEKNOLOJI = {"HDR_ENABLED": ("HDR", r"\bHDR\b"),
              "RTX_ENABLED": ("RTX", r"\bRTX\b|ışın izleme"),
@@ -63,6 +77,8 @@ def main():
     ap.add_argument("--json", required=True)
     ap.add_argument("--katalog-adi", help="katalogdaki oyun başlığı (metinden farklıysa)")
     ap.add_argument("--katalog-json")
+    ap.add_argument("--tekrar", action="store_true",
+                    help="aynı cümlede aynı kökün iki kez geçtiği yerleri okuma listesi olarak basar")
     a = ap.parse_args()
 
     d = json.load(open(a.json, encoding="utf-8"))
@@ -116,6 +132,24 @@ def main():
         for m in re.finditer(pat, tum):
             sorun.append(f"{ad}: …{tum[max(0, m.start() - 45):m.end() + 45]}…")
 
+    # hitap ve cümle kurgusu
+    for m in re.finditer(BIRINCI_COGUL, tum):
+        sorun.append(f"birinci çoğul (hitap sen olmalı): …{tum[max(0, m.start() - 40):m.end() + 20]}…")
+    for m in re.finditer(MECAZ, tum):
+        sorun.append(f"mecaz fiil (şart cihaza yüklenmez, cihazda aranmaz): …{tum[max(0, m.start() - 30):m.end() + 20]}…")
+    for desen, ad in UYARI_DESEN:
+        for m in re.finditer(desen, tum):
+            uyari.append(f"{ad}: …{tum[max(0, m.start() - 40):m.end() + 30]}…")
+    kok = lambda w: w.replace("İ", "i").replace("I", "ı").lower()[:5]   # Türkçe küçük harf
+    for t, i in g:
+        m = re.match(r"\*\*(.+?):\*\*\s*(.+)", i) if t == "mad" else None
+        if not m:
+            continue
+        et = [kok(w) for w in re.findall(r"\w+", m.group(1)) if len(w) >= 5]
+        gv = [kok(w) for w in re.findall(r"\w+", duz(m.group(2))) if len(w) >= 5]
+        if et and gv and (len(set(et) & set(gv)) >= 2 or et[-1] == gv[-1]):
+            uyari.append(f"madde tanımı etiketini tekrar ediyor olabilir: {duz(i)[:110]}")
+
     # kapanış paket çağrısı
     if KAPANIS not in " ".join(i for t, i in g if t == "p"):
         sorun.append("kapanışta GeForce NOW Ultimate ya da Performance paket önerisi yok")
@@ -155,6 +189,16 @@ def main():
         print("teknoloji:", ", ".join(sorted(TEKNOLOJI[x][0] for x in b if x in TEKNOLOJI)) or "-")
     for u in uyari:
         print("NOT:", u)
+    if a.tekrar:
+        ad_kok = {kok(w) for w in re.findall(r"\w+", oyun)}
+        for t, i in g:
+            if t not in ("p", "li", "mad"):
+                continue
+            for c in re.split(r"(?<=[.!?;:]) +", duz(i)):
+                say = Counter(kok(w) for w in re.findall(r"[^\W\d_]+", c) if len(w) >= 5)
+                kokler = [k for k, n in say.items() if n > 1 and k not in TEKRAR_DISI and k not in ad_kok]
+                if kokler:
+                    print(f"OKU ({', '.join(kokler)}): {c[:150]}")
     print("SORUN YOK" if not sorun else "SORUNLAR:\n  " + "\n  ".join(sorun))
     sys.exit(1 if sorun else 0)
 

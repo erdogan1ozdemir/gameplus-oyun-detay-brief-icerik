@@ -33,9 +33,19 @@
 - [ ] Hikâyeden bahsedilirken olay örgüsü açığa çıkmış mı? (çıkmamalı: kurulum, mekân ve süre yeterli)
 - [ ] Özel adlar (birlik, karakter, mod, harita) kaynaktaki yazımıyla mı geçiyor?
 - [ ] Gövdede dört kip de görünüyor mu (geniş zaman, `-mektedir`, şimdiki zaman, ikinci tekil), yoksa tek kipe mi kilitlenmiş?
-- [ ] Anlatı bölümlerindeki birinci çoğul, erişim ve başlama adımlarına sızmış mı? (sızmamalı)
+- [ ] Metinde birinci çoğul var mı? ("başlıyoruz", "çatışıyoruz", "karşımıza çıkan", "blog yazımızda"; olmamalı, hitap baştan sona sen)
 - [ ] Bir cümle `-iyor` ile biterken sonraki `-mıştır` ile mi başlıyor? Geçişe köprü konmuş mu?
 - [ ] Başlık üç konuyu virgülle mi diziyor? (en fazla iki konu)
+- [ ] Yan cümlelerde özne açık mı? ("dışında kalan her saniye hasar aldığı için" türü, öznesi kayan cümle var mı?)
+- [ ] Teknik bilgi doğru özneye mi bağlı? (motor oyunu çalıştırır, dövüş sistemini değil)
+- [ ] Aynı cümlede aynı kelime ya da kök iki kez geçiyor mu? Art arda iki cümle aynı kalıpla mı açılıyor? (`icerik_denetim.py --tekrar` adayları listeler, karar okuyarak verilir)
+- [ ] Cümlenin zaten söylediği bir şey parantezle tekrarlanmış mı? Kelimenin kendi tanımı cümleye eklenmiş mi? ("hikâyeye göre dizen kronolojik sıra")
+- [ ] Oyun terimleri tam isim tamlamasıyla mı aktarıldı? ("bitiriciler" değil "bitirici hamleler")
+- [ ] Fiil ortama uyuyor mu? (oyun "okunmaz", oynanır) Mecaz fiil var mı? (şart cihaza "yüklenmez", cihazda aranmaz)
+- [ ] İki bölüm aynı konuda çelişen en-üstünlük iddiası taşıyor mu? ("en çok övülen" ile "en çok hemfikir olunan")
+- [ ] Madde tanımları etiketi tekrar mı ediyor, yoksa bilgi mi ekliyor? Aynı kavram için tek terim mi kullanıldı? (kombo / kombinasyon)
+- [ ] Ödül dalları Türkçe mi yazıldı? ("Most Epic" değil "En Destansı Oyun"; tören adı özgün kalır)
+- [ ] SSS soruları arama ifadesinin kısalığını mı taşıyor? ("neyin devamı" değil "hangi serinin devamı")
 - [ ] Müzik anlatılırken "skor" kelimesi kullanılmış mı? (kullanılmamalı)
 - [ ] Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlıyor mu?
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
@@ -73,8 +83,11 @@ python3 scripts/icerik_denetim.py --json /tmp/icerik.json
 ```
 
 Katalogdaki başlık metindeki addan farklıysa (`Diablo IV` / `Diablo 4` gibi) `--katalog-adi` verilir.
-Betik bulgu bulursa 1 koduyla çıkar; bulgular giderilmeden docx üretilmez. Aşağıdaki liste betiğin
-bakamadığı, okuyarak karar verilen şeyler içindir.
+Betik bulgu bulursa 1 koduyla çıkar; bulgular giderilmeden docx üretilmez. `NOT:` satırları hata
+değil, okuyarak karar verilecek adaylardır (İngilizce kalmış ödül dalı, parantez tekrarı, etiketini
+tekrar eden madde). Okuma turu için `--tekrar` eklenirse aynı cümlede aynı kökün iki kez geçtiği
+yerler `OKU:` satırı olarak listelenir; paralel yapılar da listeye girdiği için karar okuyarak verilir.
+Aşağıdaki liste betiğin bakamadığı, okuyarak karar verilen şeyler içindir.
 
 ## Biçim taraması
 

@@ -49,7 +49,7 @@ tekrarlıyordu. Gerekçenin tamamı `icerik-kurallari.md`'deki Yapı bölümünd
 **İçerik Kurgusu** - şu sırayla yazılır:
 
 ```
-TON: Sayfanın kime, hangi beklentiyle yazıldığı.
+TON: Sayfanın kime, hangi beklentiyle yazıldığı; hitap baştan sona "sen" (birinci çoğul yok).
 
 AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel olarak tanıtır, puanlar madde listesiyle verilir, resmi dil desteği tek cümleyle belirtilir. Sayfada H1 bulunduğu için bu girişe başlık konmaz.
 
@@ -73,8 +73,11 @@ sonuna kalın yazılır; `brief_satiri.py` bunu `kurgu_kalin` alanıyla basar.
 Kurgusu sütununda (genişlik 134) bu yaklaşık 30 satır metin eder, fazlası hücrede görünmez kalır.
 `brief_satiri.py` taşan satırda uyarı verir. Kurgu satırları bu yüzden telgraf üslubuyla yazılır:
 ne anlatılacağı, hangi kelimenin nerede karşılanacağı ve doğrulanmış değerler; açıklayıcı cümle
-kurulmaz. H2 başına 1-2 ekran satırı hedeflenir. Toplu brief hazırlanırken ortak satırlar (TON, GeForce
-NOW H2 ve H3'leri, BİÇİM, UZUNLUK) tek yerden üretilir, oyuna özgü satırlar ayrı yazılır.
+kurulmaz. Telgraf üslubu mecaza izin vermez: kurgu satırındaki ifade içeriğe çoğu zaman olduğu gibi
+geçiyor. "32 GB RAM şartının bulutta cihaza yüklenmediği" yazılırsa içerikte de "bu şart cihazına
+yüklenmez" cümlesi çıkıyor; doğrusu "32 GB RAM'in bulutta oyuncunun cihazında aranmadığı". H2 başına 1-2 ekran satırı hedeflenir. Toplu brief
+hazırlanırken ortak satırlar (TON, GeForce NOW H2 ve H3'leri, BİÇİM, UZUNLUK) tek yerden üretilir,
+oyuna özgü satırlar ayrı yazılır.
 
 **Link Verilecek Sayfalar** - numaralı liste, her link iki satır:
 
@@ -92,7 +95,8 @@ kutusundan ve arama önerilerinden gelir; uydurulmaz. 8-10 soru yeterli. Yanıtl
 brief yalnız soruyu ve yanıtta geçmesi gerekeni verir. **"{Oyun} Türkçe mi?" sorusu her briefte yer alır**;
 resmi destek yoksa yanıt notu "resmi Türkçe desteği olmadığı" olur. Sorular kullanıcının arattığı
 biçimde ve doğal sözdizimiyle yazılır: "kaçta çıktı" değil "ne zaman çıktı", "ne oyunu" değil "nasıl bir
-oyun", "bilgisayarımı kaldırır mı" değil "Bilgisayarım X'i kaldırır mı". Sayfanın konusu dışına düşen
+oyun", "bilgisayarımı kaldırır mı" değil "Bilgisayarım X'i kaldırır mı", "neyin devamı" değil "hangi serinin
+devamı". Arama ifadesi kısa olsa da sayfadaki soru anlamlı ve tam kurulur. Sayfanın konusu dışına düşen
 sorular ("mobil sürüm neden kapandı") GeForce NOW'a bağlanan karşılığıyla değiştirilir ("telefonda
 oynanır mı"). Tarihe bağlı notlar da zamandan bağımsız yazılır ("çıkınca güncellenir" türü not bırakılmaz).
 
