@@ -172,13 +172,13 @@ Aynı fikir iki yerde tekrarlanmaz, her yazıda kalıp cümle kopyalanmaz; demo 
 bir sistemde çalışıyor. Görüntü ve ses, kullanıcının cihazına internet üzerinden aktarılıyor...")
 cümleler birebir alınmaz, oyunun kendi anlatısıyla yeniden kurulur. Beşten fazla yer anlatıyı böler.
 
-Türkçe durumu GeForce NOW kaydından okunur (`scripts/dil_hucresi.py`, brief'in 10. sütunu). **Türkçe herhangi
-bir mağaza sürümünde varsa oyunda var sayılır ve içerikte mağaza farkı yazılmaz** ("Steam sürümünde yok,
+Türkçe durumu brief'in 10. sütunundan okunur; o sütun PC listesine göre yazılır ve Steam dil tablosuyla
+teyit edilmiştir (`scripts/dil_teyit.py`, bkz. `dogrulama.md`). **Türkçe bir PC sürümünde varsa oyunda var
+sayılır ve içerikte mağaza farkı yazılmaz** ("Steam sürümünde yok,
 Battle.net'te var" gibi cümleler kurulmaz; kullanıcı kararı 28.09.2026). Kapsam okuyucunun terimleriyle
 yazılır: **Türkçe menü, altyazı ve Türkçe dublaj** ("Türkçe menü ve altyazı var, Türkçe dublaj yok").
-Mağaza listeleri ayrışıyorsa, özellikle dublaj iddiası internetten teyit edilir: 007 First Light'ın Xbox
-listesi Türkçe ses gösteriyor ama resmi duyuruya göre ses yalnız İngilizce; Overwatch'ta ses seçeneğinde
-Türkçe görünse de seslendirme İngilizce kalıyor. Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
+Xbox listesi esas alınmaz: 007 First Light'ın Xbox listesi Türkçe ses gösteriyor ama resmi duyuruya göre ses
+yalnız İngilizce. Dublaj teyitsizse "dublaj yok" da "var" da yazılmaz (Fortnite, Rust, ARK). Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
 sayılmaz) ve yalnız o durumda kendi H2'sini alır. Destek yoksa ayrı bölüm açılmaz, girişte tek
 cümleyle belirtilir. Her iki durumda da SSS'de "{Oyun} Türkçe mi?" sorusu yer alır (bkz. SSS
 yanıtları). Okuyucunun bunu öğrenmek için sayfayı taraması gerekmemeli.

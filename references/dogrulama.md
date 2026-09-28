@@ -84,13 +84,27 @@ iç bilgidir; okuyucuya bir şey ifade etmiyor ve NVIDIA bu durumu sessizce değ
 seslendirme). Steam variantı olan 110 oyunluk örneklemde 107 oyun Steam'in kendi listesiyle birebir
 tuttu; 3 oyunda Türkçe Steam'e sonradan eklendiği için JSON'da görünmüyordu, JSON'da olup Steam'de
 olmayan Türkçe çıkmadı. Mağazalar ayrışabiliyor: Hearts of Iron IV'te Türkçe yalnız Xbox listesinde,
-Clair Obscur: Expedition 33'te yalnız Steam listesinde, 007 First Light'ta Türkçe seslendirme yalnız
-Xbox listesinde görünüyor. **Kaynak GeForce NOW kaydıdır** (kullanıcı kararı, 28.09.2026: veri GeForce NOW'dan geldiği için). Türkçe
-herhangi bir mağaza sürümünde (ya da GFN kaydı eksikse Steam'de) varsa oyunda var sayılır; içerikte mağaza
-farkı yazılmaz. Mağaza listeleri ayrışıyorsa Türkçe katmanları internetten teyit edilir, en çok da dublaj:
-mağaza metaverisi ses seçeneğini listeleyip gerçek dublaj olmayabiliyor (007 First Light Xbox listesi,
-Overwatch Battle.net listesi). Albion Online'da GFN kaydı Türkçe göstermiyor, Steam gösteriyor: Türkçe var
-sayıldı. Doğrulanmış sonuç brief'in dil sütununa "(doğrulandı: …)" diye yazılır.
+007 First Light ve Age of Empires IV'te Türkçe seslendirme yalnız Xbox listesinde görünüyor.
+
+**Esas PC listesidir ve her brief'te teyit edilir** (kullanıcı kararı, 28.09.2026). Xbox listesi PC sürümünde
+olmayan katmanları gösterebildiği için PC mağaza variantı varken hesaba katılmaz. `python3 scripts/dil_teyit.py
+"{Oyun}"` GFN'nin PC variantlarını (Xbox hariç) Steam mağaza sayfasındaki dil tablosuyla (Interface / Full
+Audio / Subtitles) karşılaştırır; GFN kaydında Steam sürümü yoksa `--appid` ile verilir. Karar sırası:
+
+1. **Steam dil tablosu** ilk kaynaktır. PC sürümünün yayıncı tarafından doldurulan listesidir ve GFN'nin diğer
+   PC kayıtlarından daha isabetli çıktı: Battlefield 1'de EA kaydı Türkçe altyazı gösteriyor, Steam yalnız
+   menü diyor; oyunda altyazı resmi değil, topluluk yamasıyla geliyor.
+2. **Steam yoksa** GFN'nin PC kaydı (Epic, Battle.net, EA App, yayıncı başlatıcısı) ve yayıncının kendi dil
+   listesi (Genshin Impact: Türkçe 3.3 sürümüyle geldi; Honkai: Star Rail: Türkçe yok).
+3. **Listeler ayrışıyorsa ya da Türkçe dublaj görünüyorsa** yayıncı kaynağı (duyuru, resmi SSS, forum yanıtı)
+   karar verir. Mağaza metaverisi ses seçeneğini listeleyip gerçek dublaj olmayabiliyor: 007 First Light (IO
+   Interactive: ses yalnız İngilizce), Overwatch (ses seçeneğinde Türkçe var, seslendirme İngilizce). Teyit
+   edilemeyen dublaj yazılmaz (Rust, ARK: Steam Türkçe sesi listeliyor, resmi kaynak yok; Fortnite: 2020'de
+   yalnız bir etkinlik sinematiği Türkçe seslendirildi).
+
+Türkçe bir PC sürümünde varsa oyunda var sayılır ve içerikte mağaza farkı yazılmaz (Overwatch: Türkçe
+Battle.net sürümünde var, Steam sürümünde yok; içerikte "Türkçe menü ve altyazı var" denir). Teyitli sonuç
+brief'in dil sütununa "(teyit: …)" diye yazılır.
 `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye, Açık Dünya) NVIDIA'nın çevrilmiş tür
 etiketleridir; Türkçesi olmayan Resident Evil Requiem ve Battlefield 6 kayıtlarında da yer alır, yani dil
 sinyali değildir. Ayrıca `contentRatings` **USK** (Almanya) derecesidir; Türkiye için PEGI ayrıca bakılır.

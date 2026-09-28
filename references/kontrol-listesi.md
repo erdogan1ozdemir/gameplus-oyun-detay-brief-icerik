@@ -17,7 +17,7 @@
 - [ ] Aynı niyeti karşılayan iki sayfaya birden link verilmiş mi? (verilmemeli)
 - [ ] `/gfn/sistem-gereksinimleri` linki var mı? (olmamalı)
 - [ ] SSS soruları PAA ve arama önerilerinden mi geliyor? "Türkçe mi?" sorusu listede var mı?
-- [ ] 10. sütunda (Resmi Dil Desteği) GeForce NOW kaydından üretilen hücre var mı? "Doğrula" notu varsa Türkçe katmanları (özellikle dublaj) internetten teyit edilip satır "(doğrulandı: …)" diye güncellendi mi? AÇILIŞ ve Türkçe SSS notu bu hücreyle çelişiyor mu, mağaza farkı yazıyor mu? (yazmamalı)
+- [ ] 10. sütunda (Resmi Dil Desteği (PC)) Türkçe satırı `dil_teyit.py` ile Steam dil tablosuna karşı teyit edilip "(teyit: …)" diye yazıldı mı? "Teyit edilmedi" satırı kalmış mı? Xbox listesi esas alınmış mı? (alınmamalı) Ayrışma ya da dublaj varsa yayıncı kaynağına bakıldı mı? AÇILIŞ ve Türkçe SSS notu bu hücreyle çelişiyor mu, mağaza farkı yazıyor mu? (yazmamalı)
 - [ ] Yanıt biçimi metni olduğu gibi kopyalandı mı?
 - [ ] Künye ve katalog verisi briefe sızmış mı? (sızmamalı)
 

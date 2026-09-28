@@ -5,11 +5,12 @@
 Kullanım:
     python3 dil_hucresi.py "Forza Horizon 6"
 
-Neden: resmi dil verisi GeForce NOW'un kendi kaydından alınır (kullanıcı kararı, 28.09.2026). Kayıt mağaza
-variantı başına dil ve kapsam taşır: ux = menü, subtitles = altyazı, speech = seslendirme (Türkçe dublaj).
-Türkçe herhangi bir mağaza sürümünde varsa oyunda var sayılır; katmanlar birleşimdir. Mağaza listeleri
-ayrışıyorsa (007 First Light: Xbox listesi Türkçe dublaj gösteriyor, resmi duyuruya göre ses yalnız İngilizce)
-hücreye "Doğrula" notu düşülür ve Türkçe katmanları internetten teyit edilir. İçerikte mağaza farkı yazılmaz.
+Neden: dil verisi GeForce NOW'un kendi kaydından okunur, ama esas alınan PC listesidir (kullanıcı kararı,
+28.09.2026): Xbox variantı PC sürümünde olmayan katmanları gösterebildiği için (007 First Light ve Age of Empires
+IV'te Türkçe dublaj görünüyor, PC sürümünde yok) PC mağaza variantı varken Xbox listesi hesaba katılmaz.
+Kayıt mağaza variantı başına dil ve kapsam taşır: ux = menü, subtitles = altyazı, speech = seslendirme.
+Her brief'te Türkçe satırı `dil_teyit.py` ile Steam dil tablosuna karşı teyit edilir ve hücreye teyitli satır
+yazılır (hucre(g, dogrulama=...)). İçerikte mağaza farkı yazılmaz.
 """
 import json, os, re, sys, unicodedata
 
@@ -76,40 +77,45 @@ def turkce(g):
 TERIM = (("ux", "Menü"), ("subtitles", "Altyazı"), ("speech", "Türkçe dublaj"))
 
 
+def pc_variantlari(g):
+    """Dil verisi olan variantlar; PC mağaza variantı varsa Xbox dışarıda kalır. (variantlar, yalniz_xbox)"""
+    vs = [v for v in g.get("variants", []) if (v.get("gfn") or {}).get("supportedLanguages")]
+    pc = [v for v in vs if v["appStore"] != "XBOX"]
+    return (pc, False) if pc else (vs, bool(vs))
+
+
 def turkce_satiri(g):
-    """Türkçe herhangi bir mağaza sürümünde varsa oyunda var sayılır (kullanıcı kararı 28.09.2026: Xbox'ta
-    varsa Steam'de de vardır). Katmanlar birleşimdir ve kullanıcının terimleriyle yazılır: Menü, Altyazı,
-    Türkçe dublaj. Mağaza listeleri ayrışıyorsa içerikte belirtilmez, yalnız doğrulama notu düşülür."""
+    """PC listesinden Türkçe satırı; terimler Menü, Altyazı, Türkçe dublaj. PC mağazaları ayrışıyorsa ya da
+    yalnız Xbox verisi varsa teyit gerektiğini döndürür."""
+    vs, yalniz_xbox = pc_variantlari(g)
     var, yok = {}, []
-    for v in g.get("variants", []):
-        sl = (v.get("gfn") or {}).get("supportedLanguages") or []
-        if not sl: continue
+    for v in vs:
+        sl = v["gfn"]["supportedLanguages"]
         f = set().union(*[set(l.get("availableFeatures") or []) for l in sl if l["language"].lower() == "tr_tr"])
         (var.setdefault(v["appStore"], set()).update(f) if f else yok.append(v["appStore"]))
-    if not var and not yok: return "Türkçe: Veri yok (GeForce NOW kaydında dil listesi boş; Steam'den bakılır)", False
-    if not var: return "Türkçe: Yok", False
+    if not var and not yok: return "Türkçe: Veri yok (GeForce NOW kaydında dil listesi boş; Steam'den bakılır)", True
+    if not var: return "Türkçe: Yok" + (" (yalnız Xbox listesi var)" if yalniz_xbox else ""), yalniz_xbox
     hepsi = set().union(*var.values()); ortak = set.intersection(*var.values())
-    ayrisiyor = bool(yok) or hepsi != ortak
-    return "Türkçe: " + " + ".join(ad for kod, ad in TERIM if kod in hepsi), ayrisiyor
+    satir = "Türkçe: " + " + ".join(ad for kod, ad in TERIM if kod in hepsi)
+    return satir + (" (yalnız Xbox listesi var)" if yalniz_xbox else ""), bool(yok) or hepsi != ortak or yalniz_xbox
 
 
 def hucre(g, dogrulama=None):
-    """Brief'in 'Resmi Dil Desteği (GeForce NOW)' hücresi. Listeler tüm mağaza sürümlerinde ortak dillerdir,
-    bir mağazadaki fazlalık ayrıca yazılır. dogrulama: internetten teyit edilmiş Türkçe satırı (isteğe bağlı)."""
+    """Brief'in 'Resmi Dil Desteği (PC)' hücresi. dogrulama: dil_teyit.py ile teyit edilmiş Türkçe satırı.
+    Listeler PC mağaza sürümlerinde ortak dillerdir, bir mağazadaki fazlalık ayrıca yazılır."""
     if g is None: return "GeForce NOW kaydı bulunamadı."
+    vs, _ = pc_variantlari(g)
     magaza = {}
-    for v in g.get("variants", []):
-        sl = (v.get("gfn") or {}).get("supportedLanguages") or []
-        if not sl: continue
+    for v in vs:
         mg = MAGAZA.get(v["appStore"] or "NONE", str(v["appStore"]).title())
-        for l in sl:
+        for l in v["gfn"]["supportedLanguages"]:
             for f in l.get("availableFeatures") or []:
                 magaza.setdefault(mg, {}).setdefault(f, set()).add(l["language"].lower())
     tr, ayrisiyor = turkce_satiri(g)
     satirlar = [dogrulama or tr]
-    if ayrisiyor and not dogrulama:
-        satirlar.append("Doğrula: mağaza listeleri ayrışıyor; Türkçe katmanları (özellikle dublaj) internetten teyit "
-                        "edilir. İçerikte mağaza farkı yazılmaz.")
+    if not dogrulama:
+        satirlar.append("Teyit edilmedi: dil_teyit.py ile Steam dil tablosuna karşı teyit edilir"
+                        + ("; PC listeleri ayrışıyor, yayıncı kaynağına da bakılır." if ayrisiyor else "."))
     if not magaza: return "\n".join(satirlar)
     satirlar.append("")
     sirala = lambda k: sorted(k, key=lambda c: (SIRA.index(c) if c in SIRA else 999, c))

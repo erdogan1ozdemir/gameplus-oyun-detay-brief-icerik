@@ -18,7 +18,8 @@ satir.json biçimi (dokuz alanın hepsi zorunlu, çok satırlı metinler "\n" il
   "link": "1. anchor : https://...\n   yerleşeceği bölüm",
   "sss": "1. Soru?\n   Yanıtta: ...",
   "yanit": "• Her yanıt ort. 20-60 kelimedir.",
-  "dil": "Türkçe: ... (isteğe bağlı; yoksa dil_hucresi.py ile GeForce NOW kaydından üretilir)"
+  "dil_teyit": "Türkçe: Menü + Altyazı (teyit: Steam dil tablosu)  <- dil_teyit.py ile teyit edilmiş satır",
+  "dil": "(isteğe bağlı) hücrenin tamamı; yoksa dil_hucresi.hucre(g, dil_teyit) ile PC listesinden üretilir"
 }
 Dosya yoksa şablon başlık satırıyla oluşturulur; 10. sütun (Resmi Dil Desteği) yoksa eklenir.
 """
@@ -26,7 +27,7 @@ import argparse, json, math, os, sys
 
 INK, HEAD, FN = "FF10332F", "434343", "Calibri"
 BASLIK = ["Oyun Adı", "Main KW", "Main KW Hacim", "İkincil Kelimeler", "Alt Başlıklar",
-          "İçerik Kurgusu", "Link Verilecek Sayfalar", "SSS'ler", "Yanıt Biçimi", "Resmi Dil Desteği (GeForce NOW)"]
+          "İçerik Kurgusu", "Link Verilecek Sayfalar", "SSS'ler", "Yanıt Biçimi", "Resmi Dil Desteği (PC)"]
 GENISLIK = [22, 20, 12, 38, 48, 134, 72, 66, 58, 60]
 ANAHTAR = ["oyun", "main_kw", "hacim", "ikincil", "basliklar", "kurgu", "link", "sss", "yanit"]
 
@@ -53,7 +54,9 @@ def main():
     if not d.get("dil"):
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import dil_hucresi
-        d["dil"] = dil_hucresi.hucre(dil_hucresi.bul(d["oyun"]))
+        d["dil"] = dil_hucresi.hucre(dil_hucresi.bul(d["oyun"]), d.get("dil_teyit"))
+        if not d.get("dil_teyit"):
+            print("UYARI: dil_teyit yok; Türkçe satırı dil_teyit.py ile teyit edilmeden yazıldı.", file=sys.stderr)
 
     if os.path.exists(a.xlsx):
         wb = load_workbook(a.xlsx, rich_text=True)

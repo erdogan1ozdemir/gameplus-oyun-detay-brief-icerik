@@ -80,25 +80,25 @@ yüklenmez" cümlesi çıkıyor; doğrusu "32 GB RAM'in bulutta oyuncunun cihaz�
 hazırlanırken ortak satırlar (TON, GeForce NOW H2 ve H3'leri, BİÇİM, UZUNLUK) tek yerden üretilir,
 oyuna özgü satırlar ayrı yazılır.
 
-**Resmi Dil Desteği (GeForce NOW)** - 10. sütun. Veri GeForce NOW'un kendi katalog dökümünden
-(`gfn_apps_TR.json`) gelir, Steam'den değil (kullanıcı kararı, 28.09.2026). `scripts/dil_hucresi.py "{Oyun}"`
-hücreyi üretir, `brief_satiri.py` satırda `dil` alanı yoksa kendisi çağırır:
+**Resmi Dil Desteği (PC)** - 10. sütun. Veri GeForce NOW'un katalog dökümünden (`gfn_apps_TR.json`) gelir
+ama **PC listesi esas alınır**: PC mağaza variantı varken Xbox listesi hesaba katılmaz (kullanıcı kararı,
+28.09.2026). Her brief'te Türkçe satırı önce `scripts/dil_teyit.py "{Oyun}"` ile Steam dil tablosuna karşı
+teyit edilir (bkz. `dogrulama.md`), sonra `dil_hucresi.hucre(g, dogrulama=...)` hücreyi üretir. `brief_satiri.py`
+satırda `dil` alanı yoksa hücreyi teyitsiz üretir ve "Teyit edilmedi" satırı düşer; bu satır teslimde kalmaz.
 
 ```
-Türkçe: Menü + Altyazı (doğrulandı: IO Interactive duyurusuna göre ses yalnız İngilizce, Türkçe dublaj yok)
+Türkçe: Menü + Altyazı (teyit: Steam dil tablosu; IO Interactive'e göre ses yalnız İngilizce, Türkçe dublaj yok)
 
 Menü (13): İngilizce, Fransızca, ... · Steam listesinde +1 dil
 Altyazı (13): ...
-Seslendirme (1): İngilizce · Xbox listesinde +13 dil
+Seslendirme (1): İngilizce
 ```
 
-Türkçe satırı mağaza sürümlerinin birleşimidir ve menü / altyazı / Türkçe dublaj terimleriyle yazılır:
-Türkçe bir mağazada varsa oyunda var sayılır. Mağaza listeleri ayrışıyorsa betik "Doğrula" notu düşer;
-Türkçe katmanları (özellikle dublaj) internetten teyit edilip satır "(doğrulandı: …)" diye güncellenir.
-Kurgu ve SSS notlarında mağaza farkı yazılmaz. Dil listeleri tüm mağazalarda ortak dillerdir; bir mağazadaki
-fazlalık ayrıca not düşülür, böylece yazar Xbox listesine bakıp "14 dilde seslendirme" yazmaz. Kurgudaki AÇILIŞ satırı ve "Türkçe mi?" SSS notu bu
-sütunla çelişmez. GeForce NOW kaydı eksik görünüyorsa (Albion Online: kayıtta 7 dil var, Steam'de Türkçe tam
-sesli listeleniyor) brief sessizce değiştirilmez, durum kullanıcıya söylenir.
+Türkçe satırı menü / altyazı / Türkçe dublaj terimleriyle yazılır ve parantezde teyit kaynağını taşır
+("teyit: Steam dil tablosu", "teyit: Battle.net sürümünde var, Steam dil tablosunda yok"). Teyit edilemeyen
+dublaj satıra katman olarak yazılmaz, notta belirtilir. Kurgu ve SSS notlarında mağaza farkı yazılmaz. Dil
+listeleri PC mağaza sürümlerinde ortak dillerdir; bir mağazadaki fazlalık ayrıca not düşülür. Kurgudaki AÇILIŞ
+satırı ve "Türkçe mi?" SSS notu bu sütunla çelişmez: sütun "Menü" diyorsa not "menü ve altyazı" demez.
 
 **Link Verilecek Sayfalar** - numaralı liste, her link iki satır:
 
