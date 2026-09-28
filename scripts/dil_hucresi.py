@@ -6,10 +6,10 @@ Kullanım:
     python3 dil_hucresi.py "Forza Horizon 6"
 
 Neden: resmi dil verisi GeForce NOW'un kendi kaydından alınır (kullanıcı kararı, 28.09.2026). Kayıt mağaza
-variantı başına dil ve kapsam taşır: ux = arayüz, subtitles = altyazı, speech = seslendirme. Mağazalar
-ayrışabildiği için Türkçe satırı "(yalnız Steam)" ya da "(Seslendirme yalnız Xbox)" gibi not düşer; dil
-listeleri tüm mağazalarda ortak olan dillerdir, bir mağazadaki fazlalık "Xbox sürümünde +13 dil" diye yazılır.
-Kayıt eksik görünüyorsa (Albion Online: GFN kaydında 7 dil, Steam'de Türkçe var) durum kullanıcıya söylenir.
+variantı başına dil ve kapsam taşır: ux = menü, subtitles = altyazı, speech = seslendirme (Türkçe dublaj).
+Türkçe herhangi bir mağaza sürümünde varsa oyunda var sayılır; katmanlar birleşimdir. Mağaza listeleri
+ayrışıyorsa (007 First Light: Xbox listesi Türkçe dublaj gösteriyor, resmi duyuruya göre ses yalnız İngilizce)
+hücreye "Doğrula" notu düşülür ve Türkçe katmanları internetten teyit edilir. İçerikte mağaza farkı yazılmaz.
 """
 import json, os, re, sys, unicodedata
 
@@ -73,9 +73,29 @@ def turkce(g):
     return (kapsam(ortak) or kapsam(hepsi)) + (f" ({'; '.join(notlar)})" if notlar else "")
 
 
-def hucre(g):
-    """Listeler tüm mağaza sürümlerinde ortak olan dillerdir; bir mağazada fazladan listelenen diller ayrıca yazılır
-    (ör. 007 First Light seslendirmesi Steam'de yalnız İngilizce, Xbox listesinde 14 dil)."""
+TERIM = (("ux", "Menü"), ("subtitles", "Altyazı"), ("speech", "Türkçe dublaj"))
+
+
+def turkce_satiri(g):
+    """Türkçe herhangi bir mağaza sürümünde varsa oyunda var sayılır (kullanıcı kararı 28.09.2026: Xbox'ta
+    varsa Steam'de de vardır). Katmanlar birleşimdir ve kullanıcının terimleriyle yazılır: Menü, Altyazı,
+    Türkçe dublaj. Mağaza listeleri ayrışıyorsa içerikte belirtilmez, yalnız doğrulama notu düşülür."""
+    var, yok = {}, []
+    for v in g.get("variants", []):
+        sl = (v.get("gfn") or {}).get("supportedLanguages") or []
+        if not sl: continue
+        f = set().union(*[set(l.get("availableFeatures") or []) for l in sl if l["language"].lower() == "tr_tr"])
+        (var.setdefault(v["appStore"], set()).update(f) if f else yok.append(v["appStore"]))
+    if not var and not yok: return "Türkçe: Veri yok (GeForce NOW kaydında dil listesi boş; Steam'den bakılır)", False
+    if not var: return "Türkçe: Yok", False
+    hepsi = set().union(*var.values()); ortak = set.intersection(*var.values())
+    ayrisiyor = bool(yok) or hepsi != ortak
+    return "Türkçe: " + " + ".join(ad for kod, ad in TERIM if kod in hepsi), ayrisiyor
+
+
+def hucre(g, dogrulama=None):
+    """Brief'in 'Resmi Dil Desteği (GeForce NOW)' hücresi. Listeler tüm mağaza sürümlerinde ortak dillerdir,
+    bir mağazadaki fazlalık ayrıca yazılır. dogrulama: internetten teyit edilmiş Türkçe satırı (isteğe bağlı)."""
     if g is None: return "GeForce NOW kaydı bulunamadı."
     magaza = {}
     for v in g.get("variants", []):
@@ -85,14 +105,19 @@ def hucre(g):
         for l in sl:
             for f in l.get("availableFeatures") or []:
                 magaza.setdefault(mg, {}).setdefault(f, set()).add(l["language"].lower())
-    if not magaza: return "Türkçe: Veri yok (GeForce NOW kaydında dil listesi boş)"
+    tr, ayrisiyor = turkce_satiri(g)
+    satirlar = [dogrulama or tr]
+    if ayrisiyor and not dogrulama:
+        satirlar.append("Doğrula: mağaza listeleri ayrışıyor; Türkçe katmanları (özellikle dublaj) internetten teyit "
+                        "edilir. İçerikte mağaza farkı yazılmaz.")
+    if not magaza: return "\n".join(satirlar)
+    satirlar.append("")
     sirala = lambda k: sorted(k, key=lambda c: (SIRA.index(c) if c in SIRA else 999, c))
-    satirlar = [f"Türkçe: {turkce(g)}", ""]
-    for kod, ad in (("ux", "Arayüz"), ("subtitles", "Altyazı"), ("speech", "Seslendirme")):
+    for kod, ad in (("ux", "Menü"), ("subtitles", "Altyazı"), ("speech", "Seslendirme")):
         kumeler = [m.get(kod, set()) for m in magaza.values()]
         ortak = set.intersection(*kumeler) if kumeler else set()
         metin = ", ".join(AD.get(c, c) for c in sirala(ortak)) or "-"
-        fazla = [f"{mg} sürümünde +{len(m.get(kod, set()) - ortak)} dil" for mg, m in sorted(magaza.items())
+        fazla = [f"{mg} listesinde +{len(m.get(kod, set()) - ortak)} dil" for mg, m in sorted(magaza.items())
                  if len(magaza) > 1 and m.get(kod, set()) - ortak]
         satirlar.append(f"{ad} ({len(ortak)}): {metin}" + (f" · {'; '.join(fazla)}" if fazla else ""))
     return "\n".join(satirlar)

@@ -172,8 +172,13 @@ Aynı fikir iki yerde tekrarlanmaz, her yazıda kalıp cümle kopyalanmaz; demo 
 bir sistemde çalışıyor. Görüntü ve ses, kullanıcının cihazına internet üzerinden aktarılıyor...")
 cümleler birebir alınmaz, oyunun kendi anlatısıyla yeniden kurulur. Beşten fazla yer anlatıyı böler.
 
-Türkçe durumu GeForce NOW kaydından okunur (`scripts/dil_hucresi.py`, brief'in 10. sütunu); mağazaya göre
-değişiyorsa hangi sürümde olduğu cümleye girer. Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
+Türkçe durumu GeForce NOW kaydından okunur (`scripts/dil_hucresi.py`, brief'in 10. sütunu). **Türkçe herhangi
+bir mağaza sürümünde varsa oyunda var sayılır ve içerikte mağaza farkı yazılmaz** ("Steam sürümünde yok,
+Battle.net'te var" gibi cümleler kurulmaz; kullanıcı kararı 28.09.2026). Kapsam okuyucunun terimleriyle
+yazılır: **Türkçe menü, altyazı ve Türkçe dublaj** ("Türkçe menü ve altyazı var, Türkçe dublaj yok").
+Mağaza listeleri ayrışıyorsa, özellikle dublaj iddiası internetten teyit edilir: 007 First Light'ın Xbox
+listesi Türkçe ses gösteriyor ama resmi duyuruya göre ses yalnız İngilizce; Overwatch'ta ses seçeneğinde
+Türkçe görünse de seslendirme İngilizce kalıyor. Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
 sayılmaz) ve yalnız o durumda kendi H2'sini alır. Destek yoksa ayrı bölüm açılmaz, girişte tek
 cümleyle belirtilir. Her iki durumda da SSS'de "{Oyun} Türkçe mi?" sorusu yer alır (bkz. SSS
 yanıtları). Okuyucunun bunu öğrenmek için sayfayı taraması gerekmemeli.
@@ -385,7 +390,7 @@ devamı" yazsa da sayfadaki soru "Resident Evil Requiem hangi serinin devamı?" 
 değişince yanıtın ilk cümlesi de yeni soruya cevap verir ("…Resident Evil serisinin devamıdır").
 
 Yanıtlanamayan soru listeden çıkarılır. **Türkçe sorusu ise her oyunda sorulur:** destek varsa
-"Evet" ile hangi katmanların (arayüz, altyazı, seslendirme) Türkçe olduğu, yoksa "Hayır" ile
+"Evet" ile hangi katmanların (menü, altyazı, Türkçe dublaj) Türkçe olduğu, yoksa "Hayır" ile
 oyunun hangi dilleri desteklediği yazılır. Okuyucu bu soruyu arıyor; cevabı başka sayfada aramasın.
 
 ## Yazarken kaçınılacaklar

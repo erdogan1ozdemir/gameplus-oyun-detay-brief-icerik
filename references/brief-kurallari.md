@@ -85,16 +85,18 @@ oyuna özgü satırlar ayrı yazılır.
 hücreyi üretir, `brief_satiri.py` satırda `dil` alanı yoksa kendisi çağırır:
 
 ```
-Türkçe: Arayüz + Altyazı (Seslendirme yalnız Xbox)
+Türkçe: Menü + Altyazı (doğrulandı: IO Interactive duyurusuna göre ses yalnız İngilizce, Türkçe dublaj yok)
 
-Arayüz (13): İngilizce, Fransızca, ... · Steam sürümünde +1 dil
+Menü (13): İngilizce, Fransızca, ... · Steam listesinde +1 dil
 Altyazı (13): ...
-Seslendirme (1): İngilizce · Xbox sürümünde +13 dil
+Seslendirme (1): İngilizce · Xbox listesinde +13 dil
 ```
 
-Türkçe satırı mağazalar ayrışıyorsa hangi sürümde olduğunu yazar ("yalnız Battle.net", "Altyazı yalnız
-Epic"). Listeler tüm mağaza sürümlerinde ortak dillerdir; bir mağazadaki fazlalık ayrıca not düşülür, böylece
-yazar Xbox listesine bakıp "14 dilde seslendirme" yazmaz. Kurgudaki AÇILIŞ satırı ve "Türkçe mi?" SSS notu bu
+Türkçe satırı mağaza sürümlerinin birleşimidir ve menü / altyazı / Türkçe dublaj terimleriyle yazılır:
+Türkçe bir mağazada varsa oyunda var sayılır. Mağaza listeleri ayrışıyorsa betik "Doğrula" notu düşer;
+Türkçe katmanları (özellikle dublaj) internetten teyit edilip satır "(doğrulandı: …)" diye güncellenir.
+Kurgu ve SSS notlarında mağaza farkı yazılmaz. Dil listeleri tüm mağazalarda ortak dillerdir; bir mağazadaki
+fazlalık ayrıca not düşülür, böylece yazar Xbox listesine bakıp "14 dilde seslendirme" yazmaz. Kurgudaki AÇILIŞ satırı ve "Türkçe mi?" SSS notu bu
 sütunla çelişmez. GeForce NOW kaydı eksik görünüyorsa (Albion Online: kayıtta 7 dil var, Steam'de Türkçe tam
 sesli listeleniyor) brief sessizce değiştirilmez, durum kullanıcıya söylenir.
 

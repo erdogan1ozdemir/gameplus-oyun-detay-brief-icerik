@@ -142,6 +142,11 @@ def main():
                 sorun.append(f"hız tablosunda listeye girmeyen platform: {', '.join(sorted(fazla))}")
     for m in re.finditer(r"15 Mbps[^.;]{0,20}1080p|50 Mbps[^.;]{0,20}4K|35 Mbps[^.;]{0,20}1440p", tum):
         sorun.append(f"eski hız değeri: …{tum[max(0, m.start() - 30):m.end() + 20]}…")
+    for c_ in re.split(r"(?<=[.!?])\s+", tum):
+        if "Türkçe" in c_ and re.search(r"(Steam|Epic|Xbox|Battle\.net|GOG|EA App)[^.]{0,40}(sürüm|listele)", c_):
+            sorun.append(f"Türkçe cümlesinde mağaza farkı (içerikte yazılmaz): …{c_[:110]}…")
+        if re.search(r"Türkçe (?:arayüz|seslendirme)", c_):
+            uyari.append(f"Türkçe kapsamı menü / altyazı / Türkçe dublaj diye yazılır: …{c_[:90]}…")
     for m in re.finditer(r"Aynı kütüphane[^.]{0,90}açılır", tum):
         sorun.append(f"yapay cihaz cümlesi ('{{Oyun}} oyununa sahipsen … oynayabilirsin' kalıbı kullanılır): …{m.group(0)[:70]}…")
 

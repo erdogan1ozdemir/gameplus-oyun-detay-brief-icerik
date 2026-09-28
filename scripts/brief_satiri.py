@@ -80,6 +80,9 @@ def main():
     for c, k in enumerate(ANAHTAR + ["dil"], start=1):
         deger = d[k]
         if k == "kurgu" and d.get("kurgu_kalin"):
+            # kalın cümle aynı satırda devam eder; araya boşluk konmazsa "yazılmaz.Türkçe" gibi yapışır
+            if not str(d["kurgu"])[-1:].isspace():
+                d["kurgu_kalin"] = " " + str(d["kurgu_kalin"]).lstrip()
             deger = CellRichText([
                 TextBlock(InlineFont(rFont=FN, sz=10, b=False, color=INK), str(d["kurgu"])),
                 TextBlock(InlineFont(rFont=FN, sz=10, b=True, color=INK), str(d["kurgu_kalin"]))])

@@ -85,10 +85,12 @@ seslendirme). Steam variantı olan 110 oyunluk örneklemde 107 oyun Steam'in ken
 tuttu; 3 oyunda Türkçe Steam'e sonradan eklendiği için JSON'da görünmüyordu, JSON'da olup Steam'de
 olmayan Türkçe çıkmadı. Mağazalar ayrışabiliyor: Hearts of Iron IV'te Türkçe yalnız Xbox listesinde,
 Clair Obscur: Expedition 33'te yalnız Steam listesinde, 007 First Light'ta Türkçe seslendirme yalnız
-Xbox listesinde görünüyor. **Kaynak GeForce NOW kaydıdır** (kullanıcı kararı, 28.09.2026: veri GeForce NOW'dan geldiği için). Mağazalar
-ayrışıyorsa içerikte hangi sürümde olduğu yazılır ("Battle.net sürümünde Türkçe arayüz, altyazı ve
-seslendirme bulunur"). Kayıt belirgin biçimde eksik görünüyorsa (dil listesi boş ya da Steam'in listelediği
-Türkçeyi göstermiyor: Albion Online) içerik yazılmadan önce kullanıcıya sorulur.
+Xbox listesinde görünüyor. **Kaynak GeForce NOW kaydıdır** (kullanıcı kararı, 28.09.2026: veri GeForce NOW'dan geldiği için). Türkçe
+herhangi bir mağaza sürümünde (ya da GFN kaydı eksikse Steam'de) varsa oyunda var sayılır; içerikte mağaza
+farkı yazılmaz. Mağaza listeleri ayrışıyorsa Türkçe katmanları internetten teyit edilir, en çok da dublaj:
+mağaza metaverisi ses seçeneğini listeleyip gerçek dublaj olmayabiliyor (007 First Light Xbox listesi,
+Overwatch Battle.net listesi). Albion Online'da GFN kaydı Türkçe göstermiyor, Steam gösteriyor: Türkçe var
+sayıldı. Doğrulanmış sonuç brief'in dil sütununa "(doğrulandı: …)" diye yazılır.
 `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye, Açık Dünya) NVIDIA'nın çevrilmiş tür
 etiketleridir; Türkçesi olmayan Resident Evil Requiem ve Battlefield 6 kayıtlarında da yer alır, yani dil
 sinyali değildir. Ayrıca `contentRatings` **USK** (Almanya) derecesidir; Türkiye için PEGI ayrıca bakılır.

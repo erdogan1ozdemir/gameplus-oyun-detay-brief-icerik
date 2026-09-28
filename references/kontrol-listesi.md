@@ -17,7 +17,7 @@
 - [ ] Aynı niyeti karşılayan iki sayfaya birden link verilmiş mi? (verilmemeli)
 - [ ] `/gfn/sistem-gereksinimleri` linki var mı? (olmamalı)
 - [ ] SSS soruları PAA ve arama önerilerinden mi geliyor? "Türkçe mi?" sorusu listede var mı?
-- [ ] 10. sütunda (Resmi Dil Desteği) GeForce NOW kaydından üretilen hücre var mı? AÇILIŞ satırı ve Türkçe SSS notu bu hücreyle çelişiyor mu? Kayıt eksik görünüyorsa kullanıcıya söylendi mi?
+- [ ] 10. sütunda (Resmi Dil Desteği) GeForce NOW kaydından üretilen hücre var mı? "Doğrula" notu varsa Türkçe katmanları (özellikle dublaj) internetten teyit edilip satır "(doğrulandı: …)" diye güncellendi mi? AÇILIŞ ve Türkçe SSS notu bu hücreyle çelişiyor mu, mağaza farkı yazıyor mu? (yazmamalı)
 - [ ] Yanıt biçimi metni olduğu gibi kopyalandı mı?
 - [ ] Künye ve katalog verisi briefe sızmış mı? (sızmamalı)
 
@@ -56,6 +56,7 @@
 - [ ] Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlıyor mu?
 - [ ] "Kampanya" kelimesi tek oyunculu mod için kullanılmış mı? (kullanılmamalı)
 - [ ] SSS'de "Türkçe mi?" sorusu var mı? Destek yoksa "Hayır" ile yanıtlandı mı, gövdede tek cümleyle belirtildi mi, ayrı H2 açılmadı mı?
+- [ ] Türkçe kapsamı menü / altyazı / Türkçe dublaj terimleriyle mi yazılmış, brief'in dil sütunuyla uyumlu mu? Mağaza farkı ("Steam sürümünde yok, Battle.net'te var") yazılmış mı? (yazılmamalı)
 - [ ] "Çıkacak", "yakında", "şu an en son" gibi tarih geçince eskiyen ifade var mı? (olmamalı; tarihli kalıp kullanılır)
 - [ ] Teknik değer kümeleri tabloya alındı mı?
 - [ ] Puan, gereksinim, boyut ve dil listesi **PC sürümünden** mi alınmış? Metacritic puanı "PC puanı" olarak mı yazılmış?
