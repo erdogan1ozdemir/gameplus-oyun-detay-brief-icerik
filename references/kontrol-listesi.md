@@ -8,7 +8,7 @@
 - [ ] Başlık sayısı 1200-1500 kelimeye uygun mu? (7-9 H2, az sayıda H3)
 - [ ] Başlık sırası doğru mu: `{Oyun} GeForce NOW'da Nasıl Oynanır?` ilk H2; oyun başlıkları; `{Oyun}'ı GAME+ ile Oynamak` H2 ve altında Bağlantı Hızı H3'ü; sistem gereksinimleri; başlama?
 - [ ] "GeForce NOW ile {Oyun} Deneyimi" başlığı kalmış mı? (kalmamalı)
-- [ ] Bağlantı hızı satırında GAME+ / NVIDIA değerleri (720p/60 15, 1080p/60 25, 4K/120 45 Mbps) ve gecikme notu var mı? BİÇİM'de "2-4 yerde GeForce NOW" notu var mı?
+- [ ] Bağlantı hızı satırında önerilen hız tablosu (platformlarıyla) ve gecikme notu var mı? BİÇİM'de "2-4 yerde GeForce NOW" notu var mı?
 - [ ] Bağlantı hızı H3'ünün satırında oyunun HDR / RTX / Reflex desteği yazılı mı? Bayrağı olmayan oyunda "söz edilmez" notu var mı?
 - [ ] İçerik kurgusunda başlık yanına kelime sayısı yazılmış mı? (yazılmamalı)
 - [ ] Hangi GAME+ paketinin gerektiğine dair başlık, soru ya da cümle var mı? (olmamalı)
@@ -26,7 +26,8 @@
 - [ ] `{Oyun} GeForce NOW'da Nasıl Oynanır?` girişten sonraki ilk H2 mi? `{Oyun}'ı GAME+ ile Oynamak` ayrı H2 mi, altında Bağlantı Hızı H3'ü var mı?
 - [ ] GAME+ H2'si ilk H2'deki erişim cümlelerini tekrar ediyor mu? ("kütüphanede bulur, hesabını bağlar" iki yerde geçmemeli)
 - [ ] Oyun bölümlerinde 2-4 yerde oynanış GeForce NOW'a bağlanmış mı? Cümleler oyunun o bölümdeki somut özelliğine mi dayanıyor, demo cümleleri birebir mi kopyalanmış? Aynı fikir iki yerde mi?
-- [ ] Hız tablosu üç sütunlu (yayın hedefi / GAME+ Türkiye / NVIDIA global) ve güncel değerlerde mi? Eski 15 Mbps 1080p/30, 50 Mbps 4K/60 değerleri gövdede ya da SSS'de kalmış mı?
+- [ ] Hız tablosu "Yayın kalitesi / Önerilen bağlantı hızı / Platform" başlıklı mı, değerler "15 Mbps+" biçiminde mi, 360 FPS satırı ve GAME+ sütunu yok mu, platformlar Win, Mac, Browser, Android, iOS, TV ile sınırlı mı? Eski 15 Mbps 1080p/30, 50 Mbps 4K/60 değerleri gövdede ya da SSS'de kalmış mı?
+- [ ] Cihaz cümlesi okuyucuya mı sesleniyor ("oyununa sahipsen GAME+ GeForce NOW ile … oynayabilirsin"), yoksa "Aynı kütüphane … açılır" kalıbı mı kullanılmış?
 - [ ] Gecikme notu (80 ms altı, ideal 40 ms), kablolu / 5 GHz bağlantı ve uygulamadaki ağ testi yazılmış mı?
 - [ ] Sistem gereksinimleri bölümünün kapanışı bir önceki bölümü tekrar ediyor mu? (etmemeli: yalnız eşik cevaplanır)
 - [ ] Kelime sayısı 1200-1500 bandında mı?

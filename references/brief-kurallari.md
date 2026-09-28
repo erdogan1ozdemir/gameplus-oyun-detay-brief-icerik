@@ -58,7 +58,7 @@ H2 · {Oyun} GeForce NOW'da Nasıl Oynanır: İlk H2. Erişim yanıtı (kütüph
 H2 · Başlık: Bu bölümde ne anlatılır, hangi kelime nerede karşılanır, hangi biçim kullanılır.
 H2 · Başlık: ...
 H2 · GAME+ ile Oynamak: Hangi hesapla açıldığı, satın alma durumu; paketlerin sunduğu değerler anlatılır, gereken paket yazılmaz.
-H3 · Bağlantı Hızı ve Görüntü Kalitesi: GAME+ Türkiye / NVIDIA global hız tablosu (720p/60 15, 1080p/60 25, 4K/120 45 Mbps) ve gecikme notu (80 ms altı, ideal 40 ms); oyunun HDR / RTX / NVIDIA Reflex desteği.
+H3 · Bağlantı Hızı ve Görüntü Kalitesi: Önerilen bağlantı hızı tablosu (yayın kalitesi / hız / platform; 720p/60 15, 1080p/60 25, 4K/120 45 Mbps+) ve gecikme notu (80 ms altı, ideal 40 ms); oyunun HDR / RTX / NVIDIA Reflex desteği.
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
 

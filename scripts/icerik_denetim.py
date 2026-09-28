@@ -120,17 +120,30 @@ def main():
     if any("Deneyimi" in v and "GeForce NOW" in v for v in h2 + h3):
         sorun.append("'GeForce NOW ile ... Deneyimi' başlığı kullanılmaz")
 
-    # Bağlantı hızı tablosu: GAME+ Türkiye ve NVIDIA global değerleri (eski 15/1080p/30 tablosu yanlıştı)
+    # Bağlantı hızı tablosu (28.09.2026 v2): Yayın kalitesi / Önerilen bağlantı hızı / Platform; NVIDIA
+    # değerleri "15 Mbps+" biçiminde; GAME+ Türkiye sütunu ve 360 FPS satırı yok; platformlar Win, Mac,
+    # Browser, Android, iOS, TV ile sınırlı.
     hiz = [v for t, v in g if t == "tablo" and any("Mbps" in str(h) for satir in v for h in satir)]
     if not hiz:
         sorun.append("bağlantı hızı tablosu yok")
     for tb in hiz:
+        baslik = [str(h) for h in tb[0]]
+        if baslik[:2] != ["Yayın kalitesi", "Önerilen bağlantı hızı"] or len(baslik) != 3:
+            sorun.append(f"hız tablosu başlıkları {baslik}; 'Yayın kalitesi | Önerilen bağlantı hızı | Platform' olmalı")
         duz_t = " | ".join(" / ".join(map(str, s_)) for s_ in tb)
-        for beklenen in ("720p / 60 FPS", "1080p / 60 FPS", "4K / 120 FPS", "45 Mbps"):
+        for beklenen in ("720p / 60 FPS", "1080p / 60 FPS", "4K / 120 FPS", "45 Mbps+"):
             if beklenen not in duz_t:
-                sorun.append(f"hız tablosunda '{beklenen}' yok (GAME+ / NVIDIA değerleri kullanılır)")
+                sorun.append(f"hız tablosunda '{beklenen}' yok")
+        if "360 FPS" in duz_t or "GAME+" in duz_t:
+            sorun.append("hız tablosunda 360 FPS satırı ya da GAME+ Türkiye sütunu kalmış")
+        for s_ in tb[1:]:
+            fazla = set(x.strip() for x in str(s_[-1]).split(",")) - {"Win", "Mac", "Browser", "Android", "iOS", "TV"}
+            if fazla:
+                sorun.append(f"hız tablosunda listeye girmeyen platform: {', '.join(sorted(fazla))}")
     for m in re.finditer(r"15 Mbps[^.;]{0,20}1080p|50 Mbps[^.;]{0,20}4K|35 Mbps[^.;]{0,20}1440p", tum):
         sorun.append(f"eski hız değeri: …{tum[max(0, m.start() - 30):m.end() + 20]}…")
+    for m in re.finditer(r"Aynı kütüphane[^.]{0,90}açılır", tum):
+        sorun.append(f"yapay cihaz cümlesi ('{{Oyun}} oyununa sahipsen … oynayabilirsin' kalıbı kullanılır): …{m.group(0)[:70]}…")
 
     # Oyun bölümlerinde GeForce NOW'a bağlanan cümleler (2-4 yer)
     bulut_bolum = ("GeForce NOW'da Nasıl Oynanır", "GAME+ ile Oynamak", "Bağlantı Hızı", "Sistem Gereksinimleri",

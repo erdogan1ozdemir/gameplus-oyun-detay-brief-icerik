@@ -109,6 +109,7 @@ veriyor. Taslak bittikten sonra her paragraf bu gözle bir kez daha okunur.
 | "GeForce NOW ile oynarken bu şart senin cihazına yüklenmez." | "GeForce NOW ile oynarken cihazında bu kadar bellek olması gerekmez." |
 | "Eleştirmenlerin oyunda en çok hemfikir olduğu nokta da dünyanın güzelliği oldu." (dövüş zaten "en çok övülen") | "Dövüşün yanında eleştirmenlerin hemfikir olduğu bir diğer nokta da dünyanın güzelliği ve ölçeği oldu." |
 | "İlerleme bu festival yapısı üzerinden ilerler." | "İlerleme bu festival yapısı üzerinden sağlanır." |
+| "Aynı kütüphane zayıf donanımlı bir dizüstünde, Mac'te, televizyonda ve akıllı telefonda açılır; yeni bir güncelleme çıktığında indirme beklemezsin." | "Battlefield 6 oyununa sahipsen GAME+ GeForce NOW ile zayıf donanımlı bir dizüstünde, Mac'te, televizyonda ve akıllı telefonda oynayabilirsin. Yeni bir güncelleme çıktığında indirme beklemezsin." |
 
 ## Yapı
 
@@ -276,23 +277,30 @@ biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil.
 
 Teknik değer kümeleri paragrafa gömülmez, tabloyla verilir. İki tipik tablo:
 
-**Bağlantı hızı** - üç sütun: yayın hedefi, GAME+ Türkiye bağlantı hızı, NVIDIA global bağlantı hızı.
+**Bağlantı hızı** - üç sütun: yayın kalitesi, önerilen bağlantı hızı, platform. Değerler NVIDIA'nın
+sistem gereksinimleri sayfasındaki platform bölümlerinden alınır ve "+" ile yazılır:
 
-| Yayın hedefi | GAME+ Türkiye | NVIDIA global |
+| Yayın kalitesi | Önerilen bağlantı hızı | Platform |
 |---|---|---|
-| 720p / 60 FPS | 15 Mbps | 15 Mbps |
-| 1080p / 60 FPS | 25 Mbps | 25 Mbps |
-| QHD / 120 FPS | Paylaşılmıyor | 35 Mbps |
-| 4K / 120 FPS | 45 Mbps | 45 Mbps |
-| QHD / 240 FPS | Paylaşılmıyor | 55 Mbps |
-| 1080p / 360 FPS | Paylaşılmıyor | 55 Mbps |
-| 5K / 120 FPS | Paylaşılmıyor | 65 Mbps |
+| 720p / 60 FPS | 15 Mbps+ | Win, Mac, Browser, Android, iOS, TV |
+| 1080p / 60 FPS | 25 Mbps+ | Win, Mac, Browser, Android, iOS, TV |
+| QHD / 120 FPS | 35 Mbps+ | Win, Mac, Browser, Android |
+| 4K / 120 FPS | 45 Mbps+ | Win, Mac, TV |
+| QHD / 240 FPS | 55 Mbps+ | Win, Mac |
+| 5K / 120 FPS | 65 Mbps+ | Win, Mac |
 
-Kaynaklar: GAME+ destek sayfası (Performance 720p/60 için 15, 1080p/60 için 25 Mbps; Ultimate 4K/120
-için en az 45 Mbps), NVIDIA sistem gereksinimleri sayfası (global değerler). Eski tablo (15 Mbps
-1080p/30, 35 Mbps 1440p/60, 50 Mbps 4K/60) iki kaynakla da uyuşmuyordu, kullanılmaz. Tablonun altında
-gecikme notu bulunur: GAME+ veri merkezine 80 ms'nin altında gecikme ister, en iyi deneyim için 40 ms'nin
-altını önerir; kablolu bağlantı ya da 5 GHz Wi-Fi, uygulamanın Ayarlar menüsündeki ağ testi.
+- Platform sütununda yalnız Win, Mac, Browser, Android, iOS ve TV (akıllı TV) yazılır; ChromeOS, Linux,
+  SHIELD, Android TV, Fire TV, VR başlıkları ve oyun el konsolları tabloya girmez (kullanıcı kararı).
+- GAME+ Türkiye için ayrı sütun açılmaz; 360 FPS satırı yazılmaz.
+- Eski tablolar kullanılmaz: 15 Mbps 1080p/30 - 35 Mbps 1440p/60 - 50 Mbps 4K/60 (yanlış) ve GAME+ /
+  NVIDIA iki sütunlu sürüm (kaldırıldı).
+- NVIDIA sayfası güncellenirse tablo ondan yeniden kurulur: her platform bölümünün "Internet
+  Requirements" listesi o platformun hangi kaliteye çıkabildiğini gösterir (iOS 1080p/60'ta kalır,
+  akıllı TV 4K/120'ye çıkar, QHD/240 ve 5K yalnız masaüstü uygulamalarındadır).
+
+Tablonun altında gecikme notu bulunur: GAME+ veri merkezine 80 ms'nin altında gecikme ister, en iyi
+deneyim için 40 ms'nin altını önerir; kablolu bağlantı ya da 5 GHz Wi-Fi, uygulamanın Ayarlar
+menüsündeki ağ testi.
 
 **Sistem gereksinimleri** - Steam'den alınan minimum ve önerilen sütunlarıyla: işletim sistemi,
 işlemci, bellek, ekran kartı, depolama. Tam tablo yerine bu beş satır yeterli; ayrıntı için blog
@@ -329,7 +337,9 @@ Hikâye süresi doğrulanabiliyorsa kaynağıyla yazılır.
    biliniyorsa beklenmeyen yük olarak burada geçer ("**150 GB'lık indirmeyi beklemeden**").
 2. **Bulutun ne değiştirdiği.** Oyunun NVIDIA sunucularında çalıştığı, kurulum, güncelleme ve donanım
    yükünün orada kaldığı. Bir kez söylenir.
-3. **Cihaz ve kontrol.** Aynı kütüphanenin dizüstünde, Mac'te, televizyonda ve telefonda açılması;
+3. **Cihaz ve kontrol.** Oyuna sahip olan okuyucunun GAME+ GeForce NOW ile dizüstünde, Mac'te,
+   televizyonda ve telefonda oynayabilmesi; cümle okuyucuya seslenir ("oyununa sahipsen …
+   oynayabilirsin"), "Aynı kütüphane … açılır" gibi nesneyi özne yapan kalıp kullanılmaz;
    katalogdaki `supportedControls` alanına göre gamepad, dokunmatik, direksiyon ya da uçuş kontrol
    desteği. Kısmi kumanda desteği (`GAMEPAD_PARTIAL`) ya da yalnız klavye-fare çalışan oyunlarda
    bu durum olduğu gibi yazılır; okuyucu televizyondan oynamayı planlıyor olabilir.
