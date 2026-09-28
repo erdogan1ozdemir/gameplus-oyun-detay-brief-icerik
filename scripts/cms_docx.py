@@ -5,10 +5,11 @@ FAQ (HTML + betik). Çıktı Word dosyasıdır; HTML kod olarak, satır satır v
 
 Kullanım:
     python3 cms_docx.py --json kaynak/battlefield-6.json --out "HTML battlefield-6-oyun-detay-sayfasi-icerik.docx"
-        [--onizleme onizleme-sss-battlefield-6.html] [--ad "Battlefield 6"] [--alan https://prp1.gameplus.com.tr]
+        [--ad "Battlefield 6"] [--onizleme onizleme-sss.html]   # önizleme yalnız kullanıcı isterse
 
 Kurallar (gameplus-oyun-detay-sayfasi-kurallari.docx ve CMS örnek dosyası, 28.09.2026):
-- URL: {alan}/gfn/oyunlar/oyun/{slug}. Yol CMS örneğindeki yapıdır; slug kural dokümanının slug kuralıyla
+- URL: https://gameplus.com.tr/gfn/oyun/{slug} (kullanıcı kararı 28.09.2026, kural dokümanıyla aynı; CMS örneğindeki
+  prp1 / oyunlar/oyun yolu kullanılmaz). Slug kural dokümanının slug kuralıyla
   GFN kaydının title alanından üretilir (® ™ temizlenir, & -> and, seri numarasındaki roma rakamı -> rakam,
   Türkçe harf ASCII'ye katlanır, küçük harf, tire).
 - Meta title: "{Oyun adı} - GeForce NOW | Gameplus".
@@ -181,14 +182,14 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--onizleme")
     ap.add_argument("--ad", help="GFN kaydını bulmak için oyun adı (varsayılan: JSON'daki oyun)")
-    ap.add_argument("--alan", default="https://prp1.gameplus.com.tr")
+    ap.add_argument("--alan", default="https://gameplus.com.tr")
     a = ap.parse_args()
     d = json.load(open(a.json, encoding="utf-8"))
     import dil_hucresi as dh
     g = dh.bul(a.ad or d["oyun"])
     if not g: raise SystemExit(f"GFN kaydı bulunamadı: {a.ad or d['oyun']}")
     ad = temiz_ad(g["title"])
-    url = f"{a.alan.rstrip('/')}/gfn/oyunlar/oyun/{slug(g['title'])}"
+    url = f"{a.alan.rstrip('/')}/gfn/oyun/{slug(g['title'])}"
     title = f"{ad} - GeForce NOW | Gameplus"
     tur = TUR.get((g.get("genres") or [None])[0])
     desc = f"{ad}, GeForce NOW powered by GAME+ kütüphanesinde." + (f" {tur} türündeki oyunu bulut üzerinden oyna." if tur else "")
