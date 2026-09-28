@@ -16,7 +16,7 @@ Kurallar (gameplus-oyun-detay-sayfasi-kurallari.docx ve CMS örnek dosyası, 28.
   üzerinden oyna." Tür, GFN kaydındaki genres[0] alanının karşılığıdır.
 - Uzun açıklama: gövdenin sade HTML'i (h2, h3, p, ul, ol, table, a, strong); belge başlığı ve SSS girmez,
   satır içi stil ve font yoktur.
-- FAQ: CMS örneğindeki buton + toggleFaq yapısı korunur, görünüm blog SSS'siyle aynıdır (kenarlıklı kart,
+- FAQ: başlık "{Oyun adı} Hakkında Sık Sorulan Sorular" (içerikteki oyun adı). CMS örneğindeki buton + toggleFaq yapısı korunur, görünüm blog SSS'siyle aynıdır (kenarlıklı kart,
   kalın soru, sarı nabız atan +, açılınca 45° döner). gp-content sınıfı ve <style> bloğu kullanılmaz;
   animasyon betikten çalışır. Lisanslı font gömülmez.
 """
@@ -103,7 +103,7 @@ SARI, SARI_KOYU, CIZGI = "#FFC900", "#f59e0b", "#29292b"
 def faq(d):
     L = ['<div style="width:100%; background:#0d0d0d; padding:clamp(20px, 4vw, 40px); font-family:inherit; box-sizing:border-box;">',
          "",
-         '  <h2 style="font-size:clamp(24px, 3.2vw, 32px); line-height:1.25; font-weight:600; color:#ffffff; margin:0 0 24px 0;">Sık Sorulan Sorular</h2>',
+         '  <h2 style="font-size:clamp(24px, 3.2vw, 32px); line-height:1.25; font-weight:600; color:#ffffff; margin:0 0 24px 0;">' + html.escape(d["oyun"], quote=False) + ' Hakkında Sık Sorulan Sorular</h2>',
          "",
          '  <div id="faq-list">']
     for q, a in d["sss"]:

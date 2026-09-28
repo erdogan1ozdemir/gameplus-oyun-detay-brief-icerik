@@ -122,7 +122,7 @@ def main():
 
     if d.get("sss"):
         p = doc.add_paragraph(); p.paragraph_format.space_before = Pt(20)
-        r = p.add_run("Sıkça Sorulan Sorular"); r.bold = True; r.font.size = Pt(13); r.font.name = FN; renk(r, TEAL)
+        r = p.add_run(f"{d['oyun']} Hakkında Sık Sorulan Sorular"); r.bold = True; r.font.size = Pt(13); r.font.name = FN; renk(r, TEAL)
         for soru, yanit in d["sss"]:
             p = doc.add_paragraph(); p.paragraph_format.space_before = Pt(9); p.paragraph_format.space_after = Pt(2)
             r = p.add_run(soru); r.bold = True; r.font.size = Pt(11); r.font.name = FN; renk(r, TEAL)
