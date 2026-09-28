@@ -342,6 +342,10 @@ Hikâye süresi doğrulanabiliyorsa kaynağıyla yazılır.
    olmak yeterli mi, ücretsiz mod varsa şartı ne. Mağazaya özgü hesap şartları burada yazılır (EA
    oyunlarında Steam hesabının EA hesabına bağlı olması gibi). Oyunun kaç GB indirme istediği
    biliniyorsa beklenmeyen yük olarak burada geçer ("**150 GB'lık indirmeyi beklemeden**").
+   Erişim iki kısa cümleyle ve olasılık kipiyle yazılır (28.09.2026 kullanıcı revizesi): "{Oyun}'ı Steam
+   ya da EA App üzerinden satın aldıysan, oyunu GeForce NOW powered by GAME+ kütüphanesinden
+   bulabilirsin. Hesabını bağlayıp **kurulum beklemeden** oynamaya başlayabilirsin." İki eylem tek
+   cümlede zincirlenmez ("kütüphanesinde bulur, hesabını bağlayıp … başlarsın" yazılmaz).
 2. **Bulutun ne değiştirdiği.** Oyunun NVIDIA sunucularında çalıştığı, kurulum, güncelleme ve donanım
    yükünün orada kaldığı. Bir kez söylenir.
 3. **Cihaz ve kontrol.** Oyuna sahip olan okuyucunun GAME+ GeForce NOW ile dizüstünde, Mac'te,

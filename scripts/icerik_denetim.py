@@ -147,6 +147,9 @@ def main():
             sorun.append(f"Türkçe cümlesinde mağaza farkı (içerikte yazılmaz): …{c_[:110]}…")
         if re.search(r"Türkçe (?:arayüz|seslendirme)", c_):
             uyari.append(f"Türkçe kapsamı menü / altyazı / Türkçe dublaj diye yazılır: …{c_[:90]}…")
+    for m in re.finditer(r"kütüphanesinde bulur[^.]{0,80}başlarsın", tum):
+        sorun.append("Erişim cümlesi iki cümleye bölünür: \"… kütüphanesinden bulabilirsin. Hesabını bağlayıp … "
+                     "oynamaya başlayabilirsin.\"")
     for m in re.finditer(r"Aynı kütüphane[^.]{0,90}açılır", tum):
         sorun.append(f"yapay cihaz cümlesi ('{{Oyun}} oyununa sahipsen … oynayabilirsin' kalıbı kullanılır): …{m.group(0)[:70]}…")
 
