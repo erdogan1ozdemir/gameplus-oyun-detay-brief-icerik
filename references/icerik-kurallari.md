@@ -133,26 +133,42 @@ Tipik iskelet (oyuna göre değişir):
    zaman çıktığını ve seri içindeki yerini söyler. İkinci paragraf oyunun kapsamını (çok oyunculu +
    tek oyunculu) verir, puanları **madde listesiyle** yazar ve resmi dil desteğini tek cümleyle
    belirtir.
-1. **{Oyun} Hikâyesi** - kurulum, oynanan karakter ya da birlik, geçtiği yerler, anlatı biçimi, süre.
-2. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, araçlar, harita yapısı, modlar; alt
+1. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - girişten hemen sonraki ilk H2: erişim yanıtı, bulutun ne
+   değiştirdiği, cihaz ve kontrol desteği.
+2. **{Oyun} Hikâyesi** - kurulum, oynanan karakter ya da birlik, geçtiği yerler, anlatı biçimi, süre.
+3. **{Oyun} Oynanışı ve Oyun Modları** - mekanikler, sınıflar, araçlar, harita yapısı, modlar; alt
    başlıkta çok oyunculu taraf ve varsa ücretsiz mod.
-3. **{Oyun} Atmosferi ve Ses Tasarımı** - ton, sanat tasarımı, ses, besteci, ödüller.
-4. **{Oyun}'da Öne Çıkan Özellikler** - oyunu ayıran başlıklar 6-8 maddelik listede.
-5. **{Oyun} GeForce NOW'da Nasıl Oynanır?** - erişim yanıtı ve bulutun ne değiştirdiği aynı bölümde;
-   altında iki H3 gelir: **{Oyun}'ı GAME+ ile Oynamak** ve **Bağlantı Hızı ve Görüntü Kalitesi**.
-6. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
-7. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
+4. **{Oyun} Atmosferi ve Ses Tasarımı** - ton, sanat tasarımı, ses, besteci, ödüller.
+5. **{Oyun}'da Öne Çıkan Özellikler** - oyunu ayıran başlıklar 6-8 maddelik listede.
+6. **{Oyun}'ı GAME+ ile Oynamak** - ayrı H2: hangi hesapla açıldığı ve paketlerin ne sunduğu; altında
+   H3 **Bağlantı Hızı ve Görüntü Kalitesi**.
+7. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
+8. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
    adımları ve kapanış çağrısı.
 
-**GeForce NOW tek bölümdür ve GAME+ H3'ünün hemen öncesinde durur.** Sayfa uzun süre iki ayrı
-bölümle yazıldı: başta kısa bir erişim başlığı ("kütüphanede yer alır, hesabını bağla, indirme
-gerekmez"), sonlara doğru da bir bulut deneyimi başlığı ("NVIDIA sunucularında çalışır, indirme ve
-donanım derdi yok"). İkisi aynı üç cümleyi farklı sırayla tekrarlıyordu. Bugünkü kural: erişim
-yanıtı, bulutun ne değiştirdiği, cihaz çeşitliliği ve kontrol desteği **tek H2 altında** toplanır,
-bu H2 GAME+ ve bağlantı hızı H3'lerinin hemen öncesine konur. Böylece bulut anlatısı tek yerde
-başlayıp paket, hız ve teknoloji ayrıntısıyla bitiyor ve hemen ardından gelen sistem gereksinimleri
-bölümüne doğal olarak bağlanıyor. Başlık her oyunda aynı kalıptadır: `{Oyun} GeForce NOW'da Nasıl
-Oynanır?`. "GeForce NOW ile {Oyun} Deneyimi" başlığı artık kullanılmaz.
+**GeForce NOW'da Nasıl Oynanır? ilk H2'dir; GAME+ ile Oynamak ayrı bir H2 olarak sonda kalır**
+(28.09.2026, markanın onayladığı Battlefield 6 demo sayfasıyla aynı düzen). Okuyucunun sayfaya
+geliş sorusu "bu oyun GeForce NOW'da oynanır mı?" olduğu için yanıt girişin hemen ardından verilir;
+paketler, bağlantı hızı ve gereksinimler gibi karar ayrıntıları ise oyun anlatıldıktan sonra gelir.
+Başlık her oyunda aynı kalıptadır: `{Oyun} GeForce NOW'da Nasıl Oynanır?`. İki bölüm aynı cümleleri
+tekrar etmez: erişim ve bulut anlatısı ilk H2'de bir kez söylenir, GAME+ H2'si hesap ve paketle açılır.
+"GeForce NOW ile {Oyun} Deneyimi" başlığı kullanılmaz.
+
+**Oyun bölümlerinde 2-4 yerde oynanış GeForce NOW'a bağlanır.** Sayfa bulut hizmetini satıyor;
+oyunu anlatan bölümler (hikâye, oynanış, atmosfer, çok oyunculu) de yer yer "bu GeForce NOW'da nasıl
+işliyor" sorusunu yanıtlar. Cümle oyunun o bölümde anlatılan somut özelliğine bağlanır ve bulutun
+ne yaptığını açıklar:
+
+- Kontrol döngüsü: tuşa bastığında komutun sunucudaki oyuna gidip sonucun görüntü olarak döndüğü.
+- Görüntü işleme: yoğun sahneleri (yıkım, duman, ışın izleme) NVIDIA'nın sunucusundaki ekran kartının
+  çizdiği, cihazın yalnız gelen görüntüyü oynattığı.
+- Eşleşme: GeForce NOW PC sürümünü çalıştırdığı için çok oyunculu maçlarda PC sunucularına bağlanıldığı.
+- Cihazdan bağımsızlık: aynı hesapla dizüstünden televizyona geçiş (kayıt eşitlemesi doğrulanmadan
+  "kaldığın yerden" denmez).
+
+Aynı fikir iki yerde tekrarlanmaz, her yazıda kalıp cümle kopyalanmaz; demo sayfadaki ("Oyun uzaktaki
+bir sistemde çalışıyor. Görüntü ve ses, kullanıcının cihazına internet üzerinden aktarılıyor...")
+cümleler birebir alınmaz, oyunun kendi anlatısıyla yeniden kurulur. Beşten fazla yer anlatıyı böler.
 
 Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
 sayılmaz) ve yalnız o durumda kendi H2'sini alır. Destek yoksa ayrı bölüm açılmaz, girişte tek
@@ -260,8 +276,23 @@ biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil.
 
 Teknik değer kümeleri paragrafa gömülmez, tabloyla verilir. İki tipik tablo:
 
-**Bağlantı hızı** - sayfadaki hız bloğuyla tutarlı: 15 Mbps / 1080p / 30 FPS, 35 Mbps / 1440p /
-60 FPS, 50 Mbps / 4K / 60 FPS.
+**Bağlantı hızı** - üç sütun: yayın hedefi, GAME+ Türkiye bağlantı hızı, NVIDIA global bağlantı hızı.
+
+| Yayın hedefi | GAME+ Türkiye | NVIDIA global |
+|---|---|---|
+| 720p / 60 FPS | 15 Mbps | 15 Mbps |
+| 1080p / 60 FPS | 25 Mbps | 25 Mbps |
+| QHD / 120 FPS | Paylaşılmıyor | 35 Mbps |
+| 4K / 120 FPS | 45 Mbps | 45 Mbps |
+| QHD / 240 FPS | Paylaşılmıyor | 55 Mbps |
+| 1080p / 360 FPS | Paylaşılmıyor | 55 Mbps |
+| 5K / 120 FPS | Paylaşılmıyor | 65 Mbps |
+
+Kaynaklar: GAME+ destek sayfası (Performance 720p/60 için 15, 1080p/60 için 25 Mbps; Ultimate 4K/120
+için en az 45 Mbps), NVIDIA sistem gereksinimleri sayfası (global değerler). Eski tablo (15 Mbps
+1080p/30, 35 Mbps 1440p/60, 50 Mbps 4K/60) iki kaynakla da uyuşmuyordu, kullanılmaz. Tablonun altında
+gecikme notu bulunur: GAME+ veri merkezine 80 ms'nin altında gecikme ister, en iyi deneyim için 40 ms'nin
+altını önerir; kablolu bağlantı ya da 5 GHz Wi-Fi, uygulamanın Ayarlar menüsündeki ağ testi.
 
 **Sistem gereksinimleri** - Steam'den alınan minimum ve önerilen sütunlarıyla: işletim sistemi,
 işlemci, bellek, ekran kartı, depolama. Tam tablo yerine bu beş satır yeterli; ayrıntı için blog
@@ -290,20 +321,24 @@ müzik ve ödüller kısa bir paragrafta toplanır. Tek oyunculu taraftan **"kam
 ya da oyunun kendi adı kullanılır. Sebebi kampanya kelimesinin promosyon kampanyasıyla karışması.
 Hikâye süresi doğrulanabiliyorsa kaynağıyla yazılır.
 
-**GeForce NOW bölümü.** Sayfanın ayrıştığı yer ve bulutla ilgili tek bölüm. Sırası şu:
+**GeForce NOW'da Nasıl Oynanır? bölümü (ilk H2).** Sayfanın ayrıştığı yer. Sırası şu:
 
 1. **Erişim yanıtı (ilk cümle).** Oyun kütüphanede mi, hangi mağaza hesabıyla açılıyor, satın almış
-   olmak yeterli mi, ücretsiz mod varsa şartı ne. Oyunun kaç GB indirme istediği biliniyorsa
-   beklenmeyen yük olarak burada geçer ("**150 GB'lık indirmeyi beklemeden**").
+   olmak yeterli mi, ücretsiz mod varsa şartı ne. Mağazaya özgü hesap şartları burada yazılır (EA
+   oyunlarında Steam hesabının EA hesabına bağlı olması gibi). Oyunun kaç GB indirme istediği
+   biliniyorsa beklenmeyen yük olarak burada geçer ("**150 GB'lık indirmeyi beklemeden**").
 2. **Bulutun ne değiştirdiği.** Oyunun NVIDIA sunucularında çalıştığı, kurulum, güncelleme ve donanım
-   yükünün orada kaldığı. Bu, ikinci paragrafta yeniden anlatılmaz; bir kez söylenir.
+   yükünün orada kaldığı. Bir kez söylenir.
 3. **Cihaz ve kontrol.** Aynı kütüphanenin dizüstünde, Mac'te, televizyonda ve telefonda açılması;
    katalogdaki `supportedControls` alanına göre gamepad, dokunmatik, direksiyon ya da uçuş kontrol
    desteği. Kısmi kumanda desteği (`GAMEPAD_PARTIAL`) ya da yalnız klavye-fare çalışan oyunlarda
    bu durum olduğu gibi yazılır; okuyucu televizyondan oynamayı planlıyor olabilir.
-4. **H3 {Oyun}'ı GAME+ ile Oynamak** - hangi hesapla açıldığı ve paketlerin ne sunduğu. Paketlerin ne
-   sunduğu anlatılabilir; **"bu oyun için X paketi gerekir" denmez.**
-5. **H3 Bağlantı Hızı ve Görüntü Kalitesi** - hız tablosu ve oyunun desteklediği teknolojiler.
+
+**GAME+ ile Oynamak bölümü (H2, oyun bölümlerinden sonra).** İlk cümle GAME+ ile oynamak için neye
+ihtiyaç olduğunu söyler: oyunun desteklenen mağazadaki kopyası ve bir GeForce NOW paketi. Erişim
+cümleleri ilk H2'yi tekrar etmez. Paketlerin ne sunduğu anlatılabilir; **"bu oyun için X paketi
+gerekir" denmez.** Altında H3 **Bağlantı Hızı ve Görüntü Kalitesi**: hız tablosu, gecikme notu ve
+oyunun desteklediği teknolojiler.
 
 **HDR, RTX ve NVIDIA Reflex desteği yazılır.** Bu üç bayrak katalog JSON'unda mağaza variantı
 düzeyinde durur (`HDR_ENABLED`, `RTX_ENABLED`, `REFLEX_ENABLED`) ve okuyucunun bulutta ne
@@ -315,9 +350,9 @@ görünmeyen teknoloji yazılmaz. Paket cümlesindeki "4K HDR akış" hizmetin �
 desteği değildir; ikisi karıştırılmaz.
 
 **Sistem gereksinimleri bölümü.** Karşıtlık üzerine kurulur: PC tarafında ne gerekiyor, bulutta
-bunların hiçbiri gerekmiyor. "Bilgisayarım kaldırır mı" sorusu burada karşılanır. Bölüm GeForce NOW
-bölümünün hemen ardından geldiği için **kapanış cümlesi bir önceki bölümü tekrar etmez**: "indirmen
-gerekmez, SSD'de yer açman gerekmez" listesi yukarıda verildi. Burada yalnız eşik cevaplanır:
+bunların hiçbiri gerekmiyor. "Bilgisayarım kaldırır mı" sorusu burada karşılanır. **Kapanış cümlesi
+GeForce NOW bölümünü tekrar etmez**: "indirmen gerekmez, SSD'de yer açman gerekmez" listesi ilk H2'de
+verildi. Burada yalnız eşik cevaplanır:
 bilgisayarın bu değerlerin altında kalsa da oyunun açıldığı ve görüntü kalitesini cihazın değil
 bağlantı hızının belirlediği.
 

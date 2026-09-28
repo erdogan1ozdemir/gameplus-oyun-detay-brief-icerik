@@ -31,20 +31,21 @@ H2'lerini alır; bölüm başına 130-180 kelime düşer. Oyunun yapısı bir b�
 olmayan çok oyunculu bir oyun gibi) o başlık açılmaz, yerine oyunun gerçekten sahip olduğu konu gelir.
 Başlık en fazla iki konu taşır.
 
-**Sıra sabittir: oyun önce, GeForce NOW sonra.** Oyuna ait başlıklar (hikâye, oynanış, atmosfer, öne
-çıkan özellikler) baştan verilir; bulutla ilgili her şey tek bir H2'de toplanır ve sona yakın durur:
+**Sıra sabittir.** Bulut sorusunun yanıtı önce, oyun anlatısı ortada, karar ayrıntıları sonda
+(28.09.2026, Battlefield 6 demo sayfasındaki düzen):
 
 ```
-H2: {Oyun} GeForce NOW'da Nasıl Oynanır?
-H3: {Oyun}'ı GAME+ ile Oynamak
+H2: {Oyun} GeForce NOW'da Nasıl Oynanır?      <- girişten sonraki ilk başlık
+H2: {Oyun} Hikâyesi / Oynanışı / ...          <- oyuna ait başlıklar
+H2: {Oyun}'da Öne Çıkan Özellikler
+H2: {Oyun}'ı GAME+ ile Oynamak                <- ayrı H2, oyun bölümlerinden sonra
 H3: Bağlantı Hızı ve Görüntü Kalitesi
 H2: {Oyun} Sistem Gereksinimleri ve İndirme
 H2: {Oyun} Ücretsiz mi, Nasıl Başlanır?
 ```
 
-Başta ayrı bir erişim H2'si ve sonda ayrı bir "GeForce NOW ile {Oyun} Deneyimi" H2'si açılmaz; iki
-başlık da aynı üç cümleyi (kütüphanede yer alır, hesabını bağla, indirme ve donanım derdi yok)
-tekrarlıyordu. Gerekçenin tamamı `icerik-kurallari.md`'deki Yapı bölümünde.
+"GeForce NOW ile {Oyun} Deneyimi" başlığı açılmaz. Gerekçenin tamamı `icerik-kurallari.md`'deki Yapı
+bölümünde.
 
 **İçerik Kurgusu** - şu sırayla yazılır:
 
@@ -53,15 +54,15 @@ TON: Sayfanın kime, hangi beklentiyle yazıldığı; hitap baştan sona "sen" (
 
 AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel olarak tanıtır, puanlar madde listesiyle verilir, resmi dil desteği tek cümleyle belirtilir. Sayfada H1 bulunduğu için bu girişe başlık konmaz.
 
+H2 · {Oyun} GeForce NOW'da Nasıl Oynanır: İlk H2. Erişim yanıtı (kütüphane, mağaza hesabı, indirme boyutu) ve bulutun kazandırdıkları; cihaz çeşitliliği ve kontrol desteği (gamepad / dokunmatik / direksiyon / kısmi).
 H2 · Başlık: Bu bölümde ne anlatılır, hangi kelime nerede karşılanır, hangi biçim kullanılır.
 H2 · Başlık: ...
-H2 · {Oyun} GeForce NOW'da Nasıl Oynanır: Erişim yanıtı (kütüphane, mağaza hesabı, indirme boyutu) ve bulutun kazandırdıkları tek bölümde; cihaz çeşitliliği ve kontrol desteği (gamepad / dokunmatik / direksiyon / kısmi).
-H3 · GAME+ ile Oynamak: Hangi hesapla açıldığı, satın alma durumu; paketlerin sunduğu değerler anlatılır, gereken paket yazılmaz.
-H3 · Bağlantı Hızı ve Görüntü Kalitesi: 15 Mbps 1080p/30, 35 Mbps 1440p/60, 50 Mbps 4K/60 FPS tablosu; oyunun HDR / RTX / NVIDIA Reflex desteği.
+H2 · GAME+ ile Oynamak: Hangi hesapla açıldığı, satın alma durumu; paketlerin sunduğu değerler anlatılır, gereken paket yazılmaz.
+H3 · Bağlantı Hızı ve Görüntü Kalitesi: GAME+ Türkiye / NVIDIA global hız tablosu (720p/60 15, 1080p/60 25, 4K/120 45 Mbps) ve gecikme notu (80 ms altı, ideal 40 ms); oyunun HDR / RTX / NVIDIA Reflex desteği.
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
 
-BİÇİM: Sınıflar, modlar, puanlar ve öne çıkan özellikler madde listesiyle; teknik değer kümeleri tabloyla verilir. Önemli terim ve değerler kalın yazılır. Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini alır; hikâyeden spoiler verilmeden bahsedilir. Son bölümün ardından kısa bir kapanış çağrısı gelir; kapanışta oyunu oynamak için GeForce NOW Ultimate ya da Performance paketlerinden birinin seçilebileceğini söyleyen bir iki cümlelik satın alma çağrısı bulunur, fiyat ve paket özelliği yazılmaz.
+BİÇİM: Sınıflar, modlar, puanlar ve öne çıkan özellikler madde listesiyle; teknik değer kümeleri tabloyla verilir. Oyun bölümlerinde 2-4 yerde oynanış GeForce NOW'a bağlanır. Önemli terim ve değerler kalın yazılır. Hikâye, atmosfer-ses-müzik ve öne çıkan özellikler kendi bölümlerini alır; hikâyeden spoiler verilmeden bahsedilir. Son bölümün ardından kısa bir kapanış çağrısı gelir; kapanışta oyunu oynamak için GeForce NOW Ultimate ya da Performance paketlerinden birinin seçilebileceğini söyleyen bir iki cümlelik satın alma çağrısı bulunur, fiyat ve paket özelliği yazılmaz.
 UZUNLUK: Ortalama 1200-1500 kelime gövde. Paragraf en fazla 3-4 cümle; teknik değerler rakamla.
 DİKKAT: Yazılmayacaklar, doğrulanacaklar, hacim uyarısı.
 ```

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""İçerik JSON'unu teslimden önce denetler: yapı, biçim, link, SSS ve teknoloji bayrakları.
+"""İçerik JSON'unu teslimden önce denetler: yapı, biçim, link, SSS, hız tablosu ve teknoloji bayrakları.
 
 Kullanım:
     python3 icerik_denetim.py --json /tmp/icerik.json
@@ -16,7 +16,8 @@ Bulgu varsa çıkış kodu 1 olur; docx üretmeden önce çalıştırılır.
 import argparse, json, os, re, sys, unicodedata
 from collections import Counter
 
-VARSAYILAN_KATALOG = [os.path.expanduser("~/Downloads/inbound/all_games_1.json"),
+VARSAYILAN_KATALOG = [os.path.expanduser("~/Desktop/Claude Projects/Game+  copy/Veri Dosyaları/gfn_apps_TR.json"),
+                      os.path.expanduser("~/Downloads/inbound/all_games_1.json"),
                       os.path.expanduser("~/Downloads/all_games_1.json")]
 
 BICIM = [("—", "uzun tire"), ("–", "en tire"), (r"(?<=\S)  +(?=\S)", "çift boşluk"),
@@ -101,19 +102,49 @@ def main():
     if any(t == "p" and re.match(r"Gövde \d+ kelime", i) for t, i in g):
         sorun.append("künye/meta satırı gövdeye basılmış")
 
-    # GeForce NOW bölümü tek başlıktır ve GAME+ H3'ünün hemen öncesindedir
-    gfn = [k for k, (t, v) in enumerate(g) if t == "H2" and "GeForce NOW" in v]
+    # Yapı (28.09.2026): GeForce NOW'da Nasıl Oynanır? girişten sonraki ilk H2; GAME+ ile Oynamak ayrı H2,
+    # oyun bölümlerinden sonra; Bağlantı Hızı ve Görüntü Kalitesi onun altında H3.
+    gfn = [k for k, (t, v) in enumerate(g) if t == "H2" and "GeForce NOW'da Nasıl Oynanır" in v]
+    ilk_h2 = next((k for k, (t, v) in enumerate(g) if t == "H2"), None)
     if len(gfn) != 1:
-        sorun.append(f"GeForce NOW H2'si {len(gfn)} kez geçiyor; erişim ve bulut deneyimi tek başlıkta toplanır")
+        sorun.append(f"'{oyun} GeForce NOW'da Nasıl Oynanır?' H2'si {len(gfn)} kez geçiyor; bir kez olmalı")
+    elif gfn[0] != ilk_h2:
+        sorun.append("GeForce NOW'da Nasıl Oynanır? H2'si girişten sonraki ilk başlık değil")
+    gp = [k for k, (t, v) in enumerate(g) if t in ("H2", "H3") and "GAME+ ile Oynamak" in v]
+    if len(gp) != 1 or g[gp[0]][0] != "H2":
+        sorun.append(f"'{oyun}'ı GAME+ ile Oynamak' bir kez ve H2 olarak geçmeli")
     else:
-        k = gfn[0]
-        if not g[k][1].endswith("GeForce NOW'da Nasıl Oynanır?"):
-            sorun.append(f"GeForce NOW başlığı '{g[k][1]}'; '{oyun} GeForce NOW'da Nasıl Oynanır?' olmalı")
-        sonraki_h3 = next((v for t, v in g[k + 1:] if t in ("H2", "H3")), "")
-        if "GAME+ ile Oynamak" not in sonraki_h3:
-            sorun.append(f"GeForce NOW H2'sinden sonra '{oyun}'ı GAME+ ile Oynamak' H3'ü gelmiyor ({sonraki_h3 or 'yok'})")
+        sonraki = next(((t, v) for t, v in g[gp[0] + 1:] if t in ("H2", "H3")), ("", ""))
+        if not (sonraki[0] == "H3" and "Bağlantı Hızı" in sonraki[1]):
+            sorun.append("GAME+ ile Oynamak H2'sinin altında 'Bağlantı Hızı ve Görüntü Kalitesi' H3'ü yok")
     if any("Deneyimi" in v and "GeForce NOW" in v for v in h2 + h3):
-        sorun.append("'GeForce NOW ile ... Deneyimi' başlığı kaldırıldı; tek başlık kullanılır")
+        sorun.append("'GeForce NOW ile ... Deneyimi' başlığı kullanılmaz")
+
+    # Bağlantı hızı tablosu: GAME+ Türkiye ve NVIDIA global değerleri (eski 15/1080p/30 tablosu yanlıştı)
+    hiz = [v for t, v in g if t == "tablo" and any("Mbps" in str(h) for satir in v for h in satir)]
+    if not hiz:
+        sorun.append("bağlantı hızı tablosu yok")
+    for tb in hiz:
+        duz_t = " | ".join(" / ".join(map(str, s_)) for s_ in tb)
+        for beklenen in ("720p / 60 FPS", "1080p / 60 FPS", "4K / 120 FPS", "45 Mbps"):
+            if beklenen not in duz_t:
+                sorun.append(f"hız tablosunda '{beklenen}' yok (GAME+ / NVIDIA değerleri kullanılır)")
+    for m in re.finditer(r"15 Mbps[^.;]{0,20}1080p|50 Mbps[^.;]{0,20}4K|35 Mbps[^.;]{0,20}1440p", tum):
+        sorun.append(f"eski hız değeri: …{tum[max(0, m.start() - 30):m.end() + 20]}…")
+
+    # Oyun bölümlerinde GeForce NOW'a bağlanan cümleler (2-4 yer)
+    bulut_bolum = ("GeForce NOW'da Nasıl Oynanır", "GAME+ ile Oynamak", "Bağlantı Hızı", "Sistem Gereksinimleri",
+                   "Nasıl Başlanır", "Türkçe")
+    bolum, adet = "", 0
+    for t, v in g:
+        if t in ("H2", "H3"):
+            bolum = v; continue
+        if bolum and t in ("p", "mad") and not any(x in bolum for x in bulut_bolum) and "GeForce NOW" in v:
+            adet += 1
+    if adet < 2:
+        sorun.append(f"oyun bölümlerinde GeForce NOW'a bağlanan cümle {adet} yerde; 2-4 yerde olmalı")
+    elif adet > 5:
+        uyari.append(f"oyun bölümlerinde {adet} yerde GeForce NOW geçiyor; 2-4 yeterli, fazlası anlatıyı böler")
 
     # linkler
     kull = re.findall(r"\[LINK\d+\]", " ".join(i for t, i in g if t != "tablo"))

@@ -6,8 +6,9 @@
 - [ ] Yeni çıkmış oyunda son üç ayın ortalaması DİKKAT satırına yazıldı mı?
 - [ ] İkincil kelimelerde fiyat, satın alma, platform ve anahtar kelimeleri var mı? (olmamalı)
 - [ ] Başlık sayısı 1200-1500 kelimeye uygun mu? (7-9 H2, az sayıda H3)
-- [ ] Başlık sırası doğru mu: oyun başlıkları önce, tek GeForce NOW H2'si GAME+ ve bağlantı hızı H3'lerinin hemen öncesinde, ardından sistem gereksinimleri?
-- [ ] Başta ayrı erişim H2'si ya da sonda "GeForce NOW ile {Oyun} Deneyimi" başlığı kalmış mı? (kalmamalı)
+- [ ] Başlık sırası doğru mu: `{Oyun} GeForce NOW'da Nasıl Oynanır?` ilk H2; oyun başlıkları; `{Oyun}'ı GAME+ ile Oynamak` H2 ve altında Bağlantı Hızı H3'ü; sistem gereksinimleri; başlama?
+- [ ] "GeForce NOW ile {Oyun} Deneyimi" başlığı kalmış mı? (kalmamalı)
+- [ ] Bağlantı hızı satırında GAME+ / NVIDIA değerleri (720p/60 15, 1080p/60 25, 4K/120 45 Mbps) ve gecikme notu var mı? BİÇİM'de "2-4 yerde GeForce NOW" notu var mı?
 - [ ] Bağlantı hızı H3'ünün satırında oyunun HDR / RTX / Reflex desteği yazılı mı? Bayrağı olmayan oyunda "söz edilmez" notu var mı?
 - [ ] İçerik kurgusunda başlık yanına kelime sayısı yazılmış mı? (yazılmamalı)
 - [ ] Hangi GAME+ paketinin gerektiğine dair başlık, soru ya da cümle var mı? (olmamalı)
@@ -22,8 +23,11 @@
 ## İçerik
 
 - [ ] Belgede H1 var mı? (olmamalı; sayfadaki H1 oyun adıdır)
-- [ ] GeForce NOW tek H2'de mi toplanmış, adı `{Oyun} GeForce NOW'da Nasıl Oynanır?` mı, GAME+ H3'ünün hemen öncesinde mi duruyor?
-- [ ] Erişim yanıtı ile bulut anlatısı aynı bölümde mi, yoksa iki yerde aynı cümleler mi tekrarlanıyor? ("NVIDIA sunucularında çalışır", "indirme ve donanım derdi yok")
+- [ ] `{Oyun} GeForce NOW'da Nasıl Oynanır?` girişten sonraki ilk H2 mi? `{Oyun}'ı GAME+ ile Oynamak` ayrı H2 mi, altında Bağlantı Hızı H3'ü var mı?
+- [ ] GAME+ H2'si ilk H2'deki erişim cümlelerini tekrar ediyor mu? ("kütüphanede bulur, hesabını bağlar" iki yerde geçmemeli)
+- [ ] Oyun bölümlerinde 2-4 yerde oynanış GeForce NOW'a bağlanmış mı? Cümleler oyunun o bölümdeki somut özelliğine mi dayanıyor, demo cümleleri birebir mi kopyalanmış? Aynı fikir iki yerde mi?
+- [ ] Hız tablosu üç sütunlu (yayın hedefi / GAME+ Türkiye / NVIDIA global) ve güncel değerlerde mi? Eski 15 Mbps 1080p/30, 50 Mbps 4K/60 değerleri gövdede ya da SSS'de kalmış mı?
+- [ ] Gecikme notu (80 ms altı, ideal 40 ms), kablolu / 5 GHz bağlantı ve uygulamadaki ağ testi yazılmış mı?
 - [ ] Sistem gereksinimleri bölümünün kapanışı bir önceki bölümü tekrar ediyor mu? (etmemeli: yalnız eşik cevaplanır)
 - [ ] Kelime sayısı 1200-1500 bandında mı?
 - [ ] Gövde başlıksız 1-2 paragraflık girişle mi açılıyor, giriş ilk H2'nin işini üstlenmiş mi?

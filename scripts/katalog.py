@@ -11,12 +11,14 @@ birden fazla eşleşme varsa hepsi listelenir ve seçim kullanıcıya bırakıl�
 import argparse, json, os, sys, unicodedata, re
 
 VARSAYILAN = [
+    os.path.expanduser("~/Desktop/Claude Projects/Game+  copy/Veri Dosyaları/GFN Oyun Kataloğu.xlsx"),
     os.path.expanduser("~/Desktop/Claude Projects/Game+  copy/gameplus-oyun-katalogu-ve-top100.xlsx"),
     os.path.expanduser("~/Downloads/gameplus-oyun-katalogu-ve-top100.xlsx"),
 ]
 ALANLAR = ["Oyun", "Aratılacak oyun adı", "2026 avg search vol.", "2026 clickstream arama hacmi",
            "Türler", "Yayıncı", "Geliştirici", "Mağazalar", "GFN optimizasyon", "Üyelik seviyesi",
-           "RTX", "HDR", "Reflex", "NVIDIA teknolojileri", "Kontroller", "Maks. çevrimiçi oyuncu",
+           "RTX", "HDR", "Reflex", "NVIDIA teknolojileri", "Kontroller", "Türkçe dil desteği", "Dil sayısı",
+           "Arayüz dilleri", "Altyazı dilleri", "Seslendirme dilleri", "Maks. çevrimiçi oyuncu",
            "Derecelendirme", "Yaş sınıfı", "En erken çıkış tarihi", "Mağaza satış tarihi",
            "Türkçe anahtar kelime sayısı", "Oyuna özgü tagler", "Kısa açıklama", "id", "cmsId"]
 

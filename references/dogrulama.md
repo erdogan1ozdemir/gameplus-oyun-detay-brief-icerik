@@ -9,7 +9,7 @@ aşağıdaki sıra izlenir. Üstteki kaynak alttakini ezer.
 |---|---|---|---|
 | Sistem gereksinimleri | Steam `appdetails` (`pc_requirements`) | EA / yayıncı sayfası | Steam Türkçe çeviriyle döner, doğrudan kullanılabilir |
 | Kurulum boyutu | Steam gereksinimleri (min ve önerilen ayrı) | Yayıncının resmi sayfası; resmi değer yoksa en az iki güncel kaynaktan ortalama aralık | Minimum ve önerilen farklıysa ikisi de yazılır; aralık verilirse resmi değer olmadığı belirtilir |
-| Resmi dil desteği | Steam `supported_languages` | Yayıncının mağaza sayfası (Epic, Battle.net) | Türkçe oyunda resmi dil olarak yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz. "Türkçe mi?" SSS sorusu her durumda açılır |
+| Resmi dil desteği | Steam `supported_languages` | Katalog `gfn_apps_TR.json` variant dil listesi (`katalog_json.py`), yayıncının mağaza sayfası (Epic, Battle.net) | Türkçe oyunda resmi dil olarak yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz. "Türkçe mi?" SSS sorusu her durumda açılır |
 | Metacritic puanı | metacritic.com platform dökümündeki **PC** satırı | Steam `metacritic` alanı (zaten PC) | Sayfa başlığındaki puan PC'ninki olmayabilir |
 | Hikâye modu süresi | HowLongToBeat | Oyun basını (GamesRadar, IGN) | İki bağımsız kaynak örtüşmüyorsa süre yazılmaz |
 | GFN paket ve sunucu değerleri | `gameplus.com.tr/gfn/paketler` | - | **Tek geçerli kaynak budur** |
@@ -78,7 +78,15 @@ iç bilgidir; okuyucuya bir şey ifade etmiyor ve NVIDIA bu durumu sessizce değ
 **Sezon içeriği yazılmaz.** Sezon adı ve o sezonun haritaları yazılırsa sayfa her sezonda eskir.
 "Haritalar sezon güncellemeleriyle genişliyor" düzeyinde genel kalınır.
 
-**Katalog JSON'unda dil desteği alanı yoktur.** 2.174 oyunluk kayıtta dil, altyazı ya da seslendirme alanı bulunmaz.
+**Dil listesi yalnız Türkiye dökümünde vardır ve mağazaya göre ayrışabilir.** Eski `all_games_1.json`
+(2.174 oyun) dil alanı taşımaz. 25.09.2026 tarihli `gfn_apps_TR.json` (2.228 oyun) her mağaza variantında
+`supportedLanguages` verir: dil kodu ve `availableFeatures` (`ux` arayüz, `subtitles` altyazı, `speech`
+seslendirme). Steam variantı olan 110 oyunluk örneklemde 107 oyun Steam'in kendi listesiyle birebir
+tuttu; 3 oyunda Türkçe Steam'e sonradan eklendiği için JSON'da görünmüyordu, JSON'da olup Steam'de
+olmayan Türkçe çıkmadı. Mağazalar ayrışabiliyor: Hearts of Iron IV'te Türkçe yalnız Xbox listesinde,
+Clair Obscur: Expedition 33'te yalnız Steam listesinde, 007 First Light'ta Türkçe seslendirme yalnız
+Xbox listesinde görünüyor. Bu yüzden katalog ilk sinyaldir, karar Steam ya da oyun içiyle verilir;
+mağazalar ayrışıyorsa içerikte hangi sürümde olduğu yazılır ya da yayından önce oyun içinden doğrulanır.
 `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye, Açık Dünya) NVIDIA'nın çevrilmiş tür
 etiketleridir; Türkçesi olmayan Resident Evil Requiem ve Battlefield 6 kayıtlarında da yer alır, yani dil
 sinyali değildir. Ayrıca `contentRatings` **USK** (Almanya) derecesidir; Türkiye için PEGI ayrıca bakılır.

@@ -12,17 +12,24 @@ taşır (ilerleme sistemi, mod ve bölge adları, yoldaş ve düşman adları, e
 İçerik yazmadan önce bu metin de okunur; içeriğe giren her bilgi yine kaynağıyla doğrulanır.
 
 Bilinmesi gerekenler:
-- **JSON'da dil desteği alanı yoktur.** `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye)
-  NVIDIA'nın çevrilmiş tür etiketleridir; Türkçesi olmayan oyunlarda da görünür, dil sinyali değildir.
-  Türkçe desteği Steam `supported_languages` ya da yayıncı mağazasından doğrulanır.
+- **Dil desteği yalnız yeni dökümde vardır.** `gfn_apps_TR.json` (Türkiye mağazası dökümü, 25.09.2026)
+  mağaza variantı başına `supportedLanguages` taşır: dil + `availableFeatures` (ux = arayüz,
+  subtitles = altyazı, speech = seslendirme). Eski `all_games_1.json`'da bu alan yoktur. Steam
+  variantlarında 110 oyunluk örneklemde Steam'le %97 uyumlu; birkaç oyunda Türkçe sonradan eklendiği
+  için JSON'da görünmüyor, bazı oyunlarda da mağazalar ayrışıyor (HoI4: Xbox'ta var, Steam'de yok).
+  Bu yüzden Türkçe durumu yine Steam ya da yayıncı mağazasından doğrulanır.
+- `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye) NVIDIA'nın çevrilmiş tür
+  etiketleridir; dil sinyali değildir.
 - `contentRatings` **USK** (Almanya) derecesidir. Türkiye için PEGI ayrıca kontrol edilir.
 - Teknoloji bayrakları oyun düzeyinde değil, mağaza variantı düzeyindedir: `HDR_ENABLED`,
   `RTX_ENABLED`, `REFLEX_ENABLED`.
 """
 import argparse, json, os, re, sys, unicodedata
 
-VARSAYILAN = [os.path.expanduser("~/Downloads/inbound/all_games_1.json"),
+VARSAYILAN = [os.path.expanduser("~/Desktop/Claude Projects/Game+  copy/Veri Dosyaları/gfn_apps_TR.json"),
+              os.path.expanduser("~/Downloads/inbound/all_games_1.json"),
               os.path.expanduser("~/Downloads/all_games_1.json")]
+DIL = {"ux": "arayüz", "subtitles": "altyazı", "speech": "seslendirme"}
 
 
 def normalize(s):
@@ -68,13 +75,18 @@ def main():
             bayrak = {f["key"]: f["value"] for f in gf.get("features") or []}
             print(f"  variant: {v['appStore']:10} {gf.get('optimizationStatus',''):18}"
                   f" {gf.get('releaseDate','')[:10]}  {bayrak}")
+            diller = gf.get("supportedLanguages")
+            if diller is not None:
+                tr = [l for l in diller if l["language"].lower() == "tr_tr"]
+                kapsam = ", ".join(DIL.get(f, f) for f in (tr[0].get("availableFeatures") or [])) if tr else "yok"
+                print(f"            dil: {len(diller)} · Türkçe: {kapsam}")
             if v.get("storeUrl"):
                 print(f"            {v['storeUrl']}")
         print("\nKISA AÇIKLAMA:\n" + (g.get("shortDescription") or "-"))
         uzun = re.sub(r"\n{2,}", "\n", g.get("longDescription") or "-")
         print("\nUZUN AÇIKLAMA:\n" + (uzun if a.tam else uzun[:4000]))
-        print("\nNot: JSON'da dil desteği alanı yok; keywords alanı çevrilmiş tür etiketidir. "
-              "Yaş sınırı USK'dır, PEGI ayrıca kontrol edilir.")
+        print("\nNot: Türkçe durumu Steam ya da yayıncı mağazasından doğrulanır (mağazalar ayrışabilir); "
+              "keywords alanı çevrilmiş tür etiketidir. Yaş sınırı USK'dır, PEGI ayrıca kontrol edilir.")
 
 
 if __name__ == "__main__":
