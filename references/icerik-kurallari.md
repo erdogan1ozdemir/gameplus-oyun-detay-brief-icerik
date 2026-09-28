@@ -141,17 +141,18 @@ Tipik iskelet (oyuna göre değişir):
    başlıkta çok oyunculu taraf ve varsa ücretsiz mod.
 4. **{Oyun} Atmosferi ve Ses Tasarımı** - ton, sanat tasarımı, ses, besteci, ödüller.
 5. **{Oyun}'da Öne Çıkan Özellikler** - oyunu ayıran başlıklar 6-8 maddelik listede.
-6. **{Oyun}'ı GAME+ ile Oynamak** - ayrı H2: hangi hesapla açıldığı ve paketlerin ne sunduğu; altında
+6. **{Oyun}'ı GAME+ GeForce NOW ile Oynamak** - ayrı H2: hangi hesapla açıldığı ve paketlerin ne sunduğu; altında
    H3 **Bağlantı Hızı ve Görüntü Kalitesi**.
 7. **{Oyun} Sistem Gereksinimleri ve İndirme** - PC gereksinimleri tablosu, ardından bulut karşıtlığı.
 8. **{Oyun} Ücretsiz mi, Nasıl Başlanır?** - erişim modeli, desteklenen mağazalar, numaralı başlama
    adımları ve kapanış çağrısı.
 
-**GeForce NOW'da Nasıl Oynanır? ilk H2'dir; GAME+ ile Oynamak ayrı bir H2 olarak sonda kalır**
+**GeForce NOW'da Nasıl Oynanır? ilk H2'dir; GAME+ GeForce NOW ile Oynamak ayrı bir H2 olarak sonda kalır**
 (28.09.2026, markanın onayladığı Battlefield 6 demo sayfasıyla aynı düzen). Okuyucunun sayfaya
 geliş sorusu "bu oyun GeForce NOW'da oynanır mı?" olduğu için yanıt girişin hemen ardından verilir;
 paketler, bağlantı hızı ve gereksinimler gibi karar ayrıntıları ise oyun anlatıldıktan sonra gelir.
-Başlık her oyunda aynı kalıptadır: `{Oyun} GeForce NOW'da Nasıl Oynanır?`. İki bölüm aynı cümleleri
+Başlık her oyunda aynı kalıptadır: `{Oyun} GeForce NOW'da Nasıl Oynanır?`; paket bölümünün başlığı da
+`{Oyun}'ı GAME+ GeForce NOW ile Oynamak` olur (28.09.2026 kullanıcı kararı: hizmet adı başlıkta tam geçsin). İki bölüm aynı cümleleri
 tekrar etmez: erişim ve bulut anlatısı ilk H2'de bir kez söylenir, GAME+ H2'si hesap ve paketle açılır.
 "GeForce NOW ile {Oyun} Deneyimi" başlığı kullanılmaz.
 
@@ -262,7 +263,7 @@ biter ("hesabını bağla, Oynat'a bas"), pazarlama sıfatıyla değil.
   gerekir" gibi bir gereklilik kurulmaz.
 - Fiyat yazılmaz; fiyat değiştiğinde sayfa eskir.
 - Paket özelliği (çözünürlük, FPS, oturum süresi, sunucu sınıfı) bu cümlelerde geçmez. Farkı
-  anlatmak paketler sayfasının ve varsa GAME+ ile Oynamak alt başlığının işi.
+  anlatmak paketler sayfasının ve varsa GAME+ GeForce NOW ile Oynamak alt başlığının işi.
 - `/gfn/paketler` linki gövdede başka bir yerde verildiyse burada tekrarlanmaz; verilmediyse anchor
   ("GeForce NOW paketleri") bu cümlenin içine yerleşir.
 
@@ -344,7 +345,7 @@ Hikâye süresi doğrulanabiliyorsa kaynağıyla yazılır.
    desteği. Kısmi kumanda desteği (`GAMEPAD_PARTIAL`) ya da yalnız klavye-fare çalışan oyunlarda
    bu durum olduğu gibi yazılır; okuyucu televizyondan oynamayı planlıyor olabilir.
 
-**GAME+ ile Oynamak bölümü (H2, oyun bölümlerinden sonra).** İlk cümle GAME+ ile oynamak için neye
+**GAME+ GeForce NOW ile Oynamak bölümü (H2, oyun bölümlerinden sonra).** İlk cümle GAME+ ile oynamak için neye
 ihtiyaç olduğunu söyler: oyunun desteklenen mağazadaki kopyası ve bir GeForce NOW paketi. Erişim
 cümleleri ilk H2'yi tekrar etmez. Paketlerin ne sunduğu anlatılabilir; **"bu oyun için X paketi
 gerekir" denmez.** Altında H3 **Bağlantı Hızı ve Görüntü Kalitesi**: hız tablosu, gecikme notu ve

@@ -102,7 +102,7 @@ def main():
     if any(t == "p" and re.match(r"Gövde \d+ kelime", i) for t, i in g):
         sorun.append("künye/meta satırı gövdeye basılmış")
 
-    # Yapı (28.09.2026): GeForce NOW'da Nasıl Oynanır? girişten sonraki ilk H2; GAME+ ile Oynamak ayrı H2,
+    # Yapı (28.09.2026): GeForce NOW'da Nasıl Oynanır? girişten sonraki ilk H2; GAME+ GeForce NOW ile Oynamak ayrı H2,
     # oyun bölümlerinden sonra; Bağlantı Hızı ve Görüntü Kalitesi onun altında H3.
     gfn = [k for k, (t, v) in enumerate(g) if t == "H2" and "GeForce NOW'da Nasıl Oynanır" in v]
     ilk_h2 = next((k for k, (t, v) in enumerate(g) if t == "H2"), None)
@@ -110,13 +110,13 @@ def main():
         sorun.append(f"'{oyun} GeForce NOW'da Nasıl Oynanır?' H2'si {len(gfn)} kez geçiyor; bir kez olmalı")
     elif gfn[0] != ilk_h2:
         sorun.append("GeForce NOW'da Nasıl Oynanır? H2'si girişten sonraki ilk başlık değil")
-    gp = [k for k, (t, v) in enumerate(g) if t in ("H2", "H3") and "GAME+ ile Oynamak" in v]
+    gp = [k for k, (t, v) in enumerate(g) if t in ("H2", "H3") and "GAME+ GeForce NOW ile Oynamak" in v]
     if len(gp) != 1 or g[gp[0]][0] != "H2":
-        sorun.append("'{Oyun}'ı GAME+ ile Oynamak' başlığı bir kez ve H2 olarak geçmeli")
+        sorun.append("'{Oyun}'ı GAME+ GeForce NOW ile Oynamak' başlığı bir kez ve H2 olarak geçmeli")
     else:
         sonraki = next(((t, v) for t, v in g[gp[0] + 1:] if t in ("H2", "H3")), ("", ""))
         if not (sonraki[0] == "H3" and "Bağlantı Hızı" in sonraki[1]):
-            sorun.append("GAME+ ile Oynamak H2'sinin altında 'Bağlantı Hızı ve Görüntü Kalitesi' H3'ü yok")
+            sorun.append("GAME+ GeForce NOW ile Oynamak H2'sinin altında 'Bağlantı Hızı ve Görüntü Kalitesi' H3'ü yok")
     if any("Deneyimi" in v and "GeForce NOW" in v for v in h2 + h3):
         sorun.append("'GeForce NOW ile ... Deneyimi' başlığı kullanılmaz")
 
@@ -146,7 +146,7 @@ def main():
         sorun.append(f"yapay cihaz cümlesi ('{{Oyun}} oyununa sahipsen … oynayabilirsin' kalıbı kullanılır): …{m.group(0)[:70]}…")
 
     # Oyun bölümlerinde GeForce NOW'a bağlanan cümleler (2-4 yer)
-    bulut_bolum = ("GeForce NOW'da Nasıl Oynanır", "GAME+ ile Oynamak", "Bağlantı Hızı", "Sistem Gereksinimleri",
+    bulut_bolum = ("GeForce NOW'da Nasıl Oynanır", "GAME+ GeForce NOW ile Oynamak", "Bağlantı Hızı", "Sistem Gereksinimleri",
                    "Nasıl Başlanır", "Türkçe")
     bolum, adet = "", 0
     for t, v in g:

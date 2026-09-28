@@ -38,7 +38,7 @@ Başlık en fazla iki konu taşır.
 H2: {Oyun} GeForce NOW'da Nasıl Oynanır?      <- girişten sonraki ilk başlık
 H2: {Oyun} Hikâyesi / Oynanışı / ...          <- oyuna ait başlıklar
 H2: {Oyun}'da Öne Çıkan Özellikler
-H2: {Oyun}'ı GAME+ ile Oynamak                <- ayrı H2, oyun bölümlerinden sonra
+H2: {Oyun}'ı GAME+ GeForce NOW ile Oynamak                <- ayrı H2, oyun bölümlerinden sonra
 H3: Bağlantı Hızı ve Görüntü Kalitesi
 H2: {Oyun} Sistem Gereksinimleri ve İndirme
 H2: {Oyun} Ücretsiz mi, Nasıl Başlanır?
@@ -57,7 +57,7 @@ AÇILIŞ: Gövde başlıksız 1-2 paragraflık girişle açılır; oyunu genel o
 H2 · {Oyun} GeForce NOW'da Nasıl Oynanır: İlk H2. Erişim yanıtı (kütüphane, mağaza hesabı, indirme boyutu) ve bulutun kazandırdıkları; cihaz çeşitliliği ve kontrol desteği (gamepad / dokunmatik / direksiyon / kısmi).
 H2 · Başlık: Bu bölümde ne anlatılır, hangi kelime nerede karşılanır, hangi biçim kullanılır.
 H2 · Başlık: ...
-H2 · GAME+ ile Oynamak: Hangi hesapla açıldığı, satın alma durumu; paketlerin sunduğu değerler anlatılır, gereken paket yazılmaz.
+H2 · GAME+ GeForce NOW ile Oynamak: Hangi hesapla açıldığı, satın alma durumu; paketlerin sunduğu değerler anlatılır, gereken paket yazılmaz.
 H3 · Bağlantı Hızı ve Görüntü Kalitesi: Önerilen bağlantı hızı tablosu (yayın kalitesi / hız / platform; 720p/60 15, 1080p/60 25, 4K/120 45 Mbps+) ve gecikme notu (80 ms altı, ideal 40 ms); oyunun HDR / RTX / NVIDIA Reflex desteği.
 
 SSS: Sayfanın ayrı modülünde yer alır ve gövde kelime sayısına dahil değildir.
