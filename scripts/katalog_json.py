@@ -17,7 +17,7 @@ Bilinmesi gerekenler:
   subtitles = altyazı, speech = seslendirme). Eski `all_games_1.json`'da bu alan yoktur. Steam
   variantlarında 110 oyunluk örneklemde Steam'le %97 uyumlu; birkaç oyunda Türkçe sonradan eklendiği
   için JSON'da görünmüyor, bazı oyunlarda da mağazalar ayrışıyor (HoI4: Xbox'ta var, Steam'de yok).
-  Bu yüzden Türkçe durumu yine Steam ya da yayıncı mağazasından doğrulanır.
+  Kaynak GeForce NOW kaydıdır (kullanıcı kararı, 28.09.2026); kayıt eksik görünüyorsa kullanıcıya söylenir.
 - `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye) NVIDIA'nın çevrilmiş tür
   etiketleridir; dil sinyali değildir.
 - `contentRatings` **USK** (Almanya) derecesidir. Türkiye için PEGI ayrıca kontrol edilir.
@@ -85,7 +85,7 @@ def main():
         print("\nKISA AÇIKLAMA:\n" + (g.get("shortDescription") or "-"))
         uzun = re.sub(r"\n{2,}", "\n", g.get("longDescription") or "-")
         print("\nUZUN AÇIKLAMA:\n" + (uzun if a.tam else uzun[:4000]))
-        print("\nNot: Türkçe durumu Steam ya da yayıncı mağazasından doğrulanır (mağazalar ayrışabilir); "
+        print("\nNot: Türkçe durumu bu kayıttan okunur, mağazalar ayrışabilir (brief hücresi: dil_hucresi.py); "
               "keywords alanı çevrilmiş tür etiketidir. Yaş sınırı USK'dır, PEGI ayrıca kontrol edilir.")
 
 

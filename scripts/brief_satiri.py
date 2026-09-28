@@ -17,16 +17,17 @@ satir.json biçimi (dokuz alanın hepsi zorunlu, çok satırlı metinler "\n" il
   "kurgu_kalin": "Koşullu uyarı cümlesi (isteğe bağlı, kalın basılır)",
   "link": "1. anchor : https://...\n   yerleşeceği bölüm",
   "sss": "1. Soru?\n   Yanıtta: ...",
-  "yanit": "• Her yanıt ort. 20-60 kelimedir."
+  "yanit": "• Her yanıt ort. 20-60 kelimedir.",
+  "dil": "Türkçe: ... (isteğe bağlı; yoksa dil_hucresi.py ile GeForce NOW kaydından üretilir)"
 }
-Dosya yoksa şablon başlık satırıyla oluşturulur.
+Dosya yoksa şablon başlık satırıyla oluşturulur; 10. sütun (Resmi Dil Desteği) yoksa eklenir.
 """
 import argparse, json, math, os, sys
 
 INK, HEAD, FN = "FF10332F", "434343", "Calibri"
 BASLIK = ["Oyun Adı", "Main KW", "Main KW Hacim", "İkincil Kelimeler", "Alt Başlıklar",
-          "İçerik Kurgusu", "Link Verilecek Sayfalar", "SSS'ler", "Yanıt Biçimi"]
-GENISLIK = [22, 20, 12, 38, 48, 134, 72, 66, 58]
+          "İçerik Kurgusu", "Link Verilecek Sayfalar", "SSS'ler", "Yanıt Biçimi", "Resmi Dil Desteği (GeForce NOW)"]
+GENISLIK = [22, 20, 12, 38, 48, 134, 72, 66, 58, 60]
 ANAHTAR = ["oyun", "main_kw", "hacim", "ikincil", "basliklar", "kurgu", "link", "sss", "yanit"]
 
 
@@ -49,10 +50,18 @@ def main():
     eksik = [k for k in ANAHTAR if k not in d]
     if eksik:
         sys.exit(f"satir.json içinde eksik alan: {', '.join(eksik)}")
+    if not d.get("dil"):
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import dil_hucresi
+        d["dil"] = dil_hucresi.hucre(dil_hucresi.bul(d["oyun"]))
 
     if os.path.exists(a.xlsx):
         wb = load_workbook(a.xlsx, rich_text=True)
-        ws = wb.active
+        ws = wb["Oyun Detay Briefleri"] if "Oyun Detay Briefleri" in wb.sheetnames else wb.active
+        if ws.cell(row=1, column=10).value != BASLIK[9]:
+            import copy as _c
+            ws.cell(row=1, column=10, value=BASLIK[9])._style = _c.copy(ws.cell(row=1, column=9)._style)
+            ws.column_dimensions["J"].width = GENISLIK[9]
     else:
         wb = Workbook(); ws = wb.active; ws.title = "Oyun Detay Briefleri"
         for c, b in enumerate(BASLIK, start=1):
@@ -68,7 +77,7 @@ def main():
     r = ws.max_row + 1
     if ws.cell(row=ws.max_row, column=1).value in (None, ""):
         r = ws.max_row
-    for c, k in enumerate(ANAHTAR, start=1):
+    for c, k in enumerate(ANAHTAR + ["dil"], start=1):
         deger = d[k]
         if k == "kurgu" and d.get("kurgu_kalin"):
             deger = CellRichText([
@@ -81,7 +90,7 @@ def main():
         if k == "hacim":
             cell.number_format = "#,##0"
 
-    metinler = [str(d[k]) + str(d.get("kurgu_kalin", "") if k == "kurgu" else "") for k in ANAHTAR]
+    metinler = [str(d[k]) + str(d.get("kurgu_kalin", "") if k == "kurgu" else "") for k in ANAHTAR + ["dil"]]
     en = max(satir_sayisi(m, GENISLIK[i]) for i, m in enumerate(metinler))
     ws.row_dimensions[r].height = min(409, max(30, round(en * 13.2)))
     wb.save(a.xlsx)

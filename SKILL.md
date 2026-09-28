@@ -40,7 +40,7 @@ python3 scripts/katalog_json.py "Forza Horizon 6"
 
 Uzun tanıtım metni, Steam ve Wikipedia'da bulunmayan ayrıntıları taşır (ilerleme sistemi, mod ve bölge adları, yoldaş ve düşman adları, erişilebilirlik seçenekleri) ve içerik yazılmadan önce okunur; taslak bittikten sonra bir kez daha okunup "burada olup içerikte olmayan ne var" diye karşılaştırılır. `keywords` çevrilmiş tür etiketidir, dil sinyali değildir.
 
-Aynı çıktı mağaza variantı başına **resmi dil listesini** (Türkiye dökümü `gfn_apps_TR.json`, `ux` arayüz / `subtitles` altyazı / `speech` seslendirme) ve **teknoloji bayraklarını** da verir. Dil listesi Steam'le büyük ölçüde uyumlu ama mağazalar ayrışabiliyor; Türkçe yine Steam ya da yayıncı mağazasından doğrulanır. Teknoloji bayrakları: `HDR_ENABLED`, `RTX_ENABLED`, `REFLEX_ENABLED` mağaza variantı düzeyinde durur ve hem briefe hem içeriğe girer (bağlantı hızı bölümünde). Bayrağı olmayan teknoloji yazılmaz.
+Resmi dil desteği için `python3 scripts/dil_hucresi.py "Forza Horizon 6"` brief'in 10. sütununa girecek hücreyi üretir; kaynak GeForce NOW'un kendi kaydıdır (kullanıcı kararı, 28.09.2026). Aynı çıktı mağaza variantı başına **resmi dil listesini** (Türkiye dökümü `gfn_apps_TR.json`, `ux` arayüz / `subtitles` altyazı / `speech` seslendirme) ve **teknoloji bayraklarını** da verir. Mağazalar ayrışabiliyor; içerikte hangi sürümde olduğu yazılır. Kayıt eksik görünüyorsa (Albion Online gibi) kullanıcıya söylenir. Teknoloji bayrakları: `HDR_ENABLED`, `RTX_ENABLED`, `REFLEX_ENABLED` mağaza variantı düzeyinde durur ve hem briefe hem içeriğe girer (bağlantı hızı bölümünde). Bayrağı olmayan teknoloji yazılmaz.
 
 Katalog Excel'i bulunamazsa kullanıcıdan dosya yolunu iste.
 
@@ -150,4 +150,5 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 | `references/icerik-kurallari.md` | Faz 4'te, içeriği yazmadan önce. |
 | `references/ic-link-haritasi.md` | Link seçerken. Mevcut sayfa envanteri ve seçim kuralları. |
 | `references/kontrol-listesi.md` | Faz 5'te, teslimden önce. Otomatik denetim betiği de burada anlatılıyor. |
+| `scripts/dil_hucresi.py` | Brief'in "Resmi Dil Desteği (GeForce NOW)" sütunu ve içerikteki Türkçe cümlesi için. |
 | `examples/` | Battlefield 6 brief satırı ve içeriği. Yeni oyun yazarken biçim referansı. |

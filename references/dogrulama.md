@@ -9,7 +9,7 @@ aşağıdaki sıra izlenir. Üstteki kaynak alttakini ezer.
 |---|---|---|---|
 | Sistem gereksinimleri | Steam `appdetails` (`pc_requirements`) | EA / yayıncı sayfası | Steam Türkçe çeviriyle döner, doğrudan kullanılabilir |
 | Kurulum boyutu | Steam gereksinimleri (min ve önerilen ayrı) | Yayıncının resmi sayfası; resmi değer yoksa en az iki güncel kaynaktan ortalama aralık | Minimum ve önerilen farklıysa ikisi de yazılır; aralık verilirse resmi değer olmadığı belirtilir |
-| Resmi dil desteği | Steam `supported_languages` | Katalog `gfn_apps_TR.json` variant dil listesi (`katalog_json.py`), yayıncının mağaza sayfası (Epic, Battle.net) | Türkçe oyunda resmi dil olarak yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz. "Türkçe mi?" SSS sorusu her durumda açılır |
+| Resmi dil desteği | GeForce NOW katalog dökümü `gfn_apps_TR.json` (`dil_hucresi.py`, `katalog_json.py`; kullanıcı kararı 28.09.2026) | Steam `supported_languages`, yayıncının mağaza sayfası (GFN kaydı eksik göründüğünde karşılaştırma için) | Türkçe oyunda resmi dil olarak yoksa **yok** demektir; topluluk yaması resmi destek sayılmaz. "Türkçe mi?" SSS sorusu her durumda açılır |
 | Metacritic puanı | metacritic.com platform dökümündeki **PC** satırı | Steam `metacritic` alanı (zaten PC) | Sayfa başlığındaki puan PC'ninki olmayabilir |
 | Hikâye modu süresi | HowLongToBeat | Oyun basını (GamesRadar, IGN) | İki bağımsız kaynak örtüşmüyorsa süre yazılmaz |
 | GFN paket ve sunucu değerleri | `gameplus.com.tr/gfn/paketler` | - | **Tek geçerli kaynak budur** |
@@ -85,8 +85,10 @@ seslendirme). Steam variantı olan 110 oyunluk örneklemde 107 oyun Steam'in ken
 tuttu; 3 oyunda Türkçe Steam'e sonradan eklendiği için JSON'da görünmüyordu, JSON'da olup Steam'de
 olmayan Türkçe çıkmadı. Mağazalar ayrışabiliyor: Hearts of Iron IV'te Türkçe yalnız Xbox listesinde,
 Clair Obscur: Expedition 33'te yalnız Steam listesinde, 007 First Light'ta Türkçe seslendirme yalnız
-Xbox listesinde görünüyor. Bu yüzden katalog ilk sinyaldir, karar Steam ya da oyun içiyle verilir;
-mağazalar ayrışıyorsa içerikte hangi sürümde olduğu yazılır ya da yayından önce oyun içinden doğrulanır.
+Xbox listesinde görünüyor. **Kaynak GeForce NOW kaydıdır** (kullanıcı kararı, 28.09.2026: veri GeForce NOW'dan geldiği için). Mağazalar
+ayrışıyorsa içerikte hangi sürümde olduğu yazılır ("Battle.net sürümünde Türkçe arayüz, altyazı ve
+seslendirme bulunur"). Kayıt belirgin biçimde eksik görünüyorsa (dil listesi boş ya da Steam'in listelediği
+Türkçeyi göstermiyor: Albion Online) içerik yazılmadan önce kullanıcıya sorulur.
 `keywords` alanındaki Türkçe etiketler (Aksiyon, Zengin Hikâye, Açık Dünya) NVIDIA'nın çevrilmiş tür
 etiketleridir; Türkçesi olmayan Resident Evil Requiem ve Battlefield 6 kayıtlarında da yer alır, yani dil
 sinyali değildir. Ayrıca `contentRatings` **USK** (Almanya) derecesidir; Türkiye için PEGI ayrıca bakılır.

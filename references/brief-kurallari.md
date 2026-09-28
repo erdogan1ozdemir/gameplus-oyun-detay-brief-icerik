@@ -8,7 +8,7 @@ Brief, oyun başına **tek satır** olarak ortak Excel'e eklenir. Dosya adı
 Tablo başlığı **1. satırda**, veri **2. satırdan** başlar. Üstte başlık ya da not bloğu yoktur,
 birleştirilmiş hücre kullanılmaz, dondurma A2'dedir. Başlık satırı Calibri 11 kalın beyaz `#434343`
 dolgulu; gövde Calibri 10 `#10332F`, sola ve dikeyde ortalı, kaydırmalı. Sütun genişlikleri sırayla
-22, 20, 12, 38, 48, 134, 72, 66, 58.
+22, 20, 12, 38, 48, 134, 72, 66, 58, 60 (10. sütun: Resmi Dil Desteği).
 
 `scripts/brief_satiri.py` bu biçimi kendisi kuruyor; elle hücre biçimlendirmeye gerek yok.
 
@@ -79,6 +79,24 @@ geçiyor. "32 GB RAM şartının bulutta cihaza yüklenmediği" yazılırsa içe
 yüklenmez" cümlesi çıkıyor; doğrusu "32 GB RAM'in bulutta oyuncunun cihazında aranmadığı". H2 başına 1-2 ekran satırı hedeflenir. Toplu brief
 hazırlanırken ortak satırlar (TON, GeForce NOW H2 ve H3'leri, BİÇİM, UZUNLUK) tek yerden üretilir,
 oyuna özgü satırlar ayrı yazılır.
+
+**Resmi Dil Desteği (GeForce NOW)** - 10. sütun. Veri GeForce NOW'un kendi katalog dökümünden
+(`gfn_apps_TR.json`) gelir, Steam'den değil (kullanıcı kararı, 28.09.2026). `scripts/dil_hucresi.py "{Oyun}"`
+hücreyi üretir, `brief_satiri.py` satırda `dil` alanı yoksa kendisi çağırır:
+
+```
+Türkçe: Arayüz + Altyazı (Seslendirme yalnız Xbox)
+
+Arayüz (13): İngilizce, Fransızca, ... · Steam sürümünde +1 dil
+Altyazı (13): ...
+Seslendirme (1): İngilizce · Xbox sürümünde +13 dil
+```
+
+Türkçe satırı mağazalar ayrışıyorsa hangi sürümde olduğunu yazar ("yalnız Battle.net", "Altyazı yalnız
+Epic"). Listeler tüm mağaza sürümlerinde ortak dillerdir; bir mağazadaki fazlalık ayrıca not düşülür, böylece
+yazar Xbox listesine bakıp "14 dilde seslendirme" yazmaz. Kurgudaki AÇILIŞ satırı ve "Türkçe mi?" SSS notu bu
+sütunla çelişmez. GeForce NOW kaydı eksik görünüyorsa (Albion Online: kayıtta 7 dil var, Steam'de Türkçe tam
+sesli listeleniyor) brief sessizce değiştirilmez, durum kullanıcıya söylenir.
 
 **Link Verilecek Sayfalar** - numaralı liste, her link iki satır:
 

@@ -17,6 +17,7 @@
 - [ ] Aynı niyeti karşılayan iki sayfaya birden link verilmiş mi? (verilmemeli)
 - [ ] `/gfn/sistem-gereksinimleri` linki var mı? (olmamalı)
 - [ ] SSS soruları PAA ve arama önerilerinden mi geliyor? "Türkçe mi?" sorusu listede var mı?
+- [ ] 10. sütunda (Resmi Dil Desteği) GeForce NOW kaydından üretilen hücre var mı? AÇILIŞ satırı ve Türkçe SSS notu bu hücreyle çelişiyor mu? Kayıt eksik görünüyorsa kullanıcıya söylendi mi?
 - [ ] Yanıt biçimi metni olduğu gibi kopyalandı mı?
 - [ ] Künye ve katalog verisi briefe sızmış mı? (sızmamalı)
 

@@ -172,7 +172,8 @@ Aynı fikir iki yerde tekrarlanmaz, her yazıda kalıp cümle kopyalanmaz; demo 
 bir sistemde çalışıyor. Görüntü ve ses, kullanıcının cihazına internet üzerinden aktarılıyor...")
 cümleler birebir alınmaz, oyunun kendi anlatısıyla yeniden kurulur. Beşten fazla yer anlatıyı böler.
 
-Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
+Türkçe durumu GeForce NOW kaydından okunur (`scripts/dil_hucresi.py`, brief'in 10. sütunu); mağazaya göre
+değişiyorsa hangi sürümde olduğu cümleye girer. Türkçe dil desteği yalnız oyunda **resmi dil olarak** varsa "var" sayılır (topluluk yaması ve mod
 sayılmaz) ve yalnız o durumda kendi H2'sini alır. Destek yoksa ayrı bölüm açılmaz, girişte tek
 cümleyle belirtilir. Her iki durumda da SSS'de "{Oyun} Türkçe mi?" sorusu yer alır (bkz. SSS
 yanıtları). Okuyucunun bunu öğrenmek için sayfayı taraması gerekmemeli.
