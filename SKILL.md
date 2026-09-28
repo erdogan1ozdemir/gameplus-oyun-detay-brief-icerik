@@ -151,6 +151,7 @@ Bunlar ekip tarafından defalarca düzeltildi, her oyunda geçerli:
 | `references/icerik-kurallari.md` | Faz 4'te, içeriği yazmadan önce. |
 | `references/ic-link-haritasi.md` | Link seçerken. Mevcut sayfa envanteri ve seçim kuralları. |
 | `references/kontrol-listesi.md` | Faz 5'te, teslimden önce. Otomatik denetim betiği de burada anlatılıyor. |
+| `scripts/cms_docx.py` | İçerik onaylandıktan sonra CMS giriş dosyası (`HTML {slug}-oyun-detay-sayfasi-icerik.docx`): URL, Meta title, Meta description, Uzun açıklama (sade HTML) ve blog görünümlü FAQ (buton + toggleFaq betiği, satır içi stil). `--onizleme` ile SSS önizlemesi. |
 | `scripts/dil_teyit.py` | Her brief'te Türkçe durumunu PC listesinden (GFN PC sürümleri + Steam dil tablosu) teyit etmek için. |
 | `scripts/dil_hucresi.py` | Brief'in "Resmi Dil Desteği (PC)" sütunu ve içerikteki Türkçe cümlesi için. |
 | `examples/` | Battlefield 6 brief satırı ve içeriği. Yeni oyun yazarken biçim referansı. |
