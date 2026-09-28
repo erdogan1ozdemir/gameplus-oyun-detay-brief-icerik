@@ -112,7 +112,7 @@ def main():
         sorun.append("GeForce NOW'da Nasıl Oynanır? H2'si girişten sonraki ilk başlık değil")
     gp = [k for k, (t, v) in enumerate(g) if t in ("H2", "H3") and "GAME+ ile Oynamak" in v]
     if len(gp) != 1 or g[gp[0]][0] != "H2":
-        sorun.append(f"'{oyun}'ı GAME+ ile Oynamak' bir kez ve H2 olarak geçmeli")
+        sorun.append("'{Oyun}'ı GAME+ ile Oynamak' başlığı bir kez ve H2 olarak geçmeli")
     else:
         sonraki = next(((t, v) for t, v in g[gp[0] + 1:] if t in ("H2", "H3")), ("", ""))
         if not (sonraki[0] == "H3" and "Bağlantı Hızı" in sonraki[1]):
