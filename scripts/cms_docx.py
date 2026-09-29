@@ -40,7 +40,7 @@ def temiz_ad(title):
 
 
 def slug(ad):
-    s = temiz_ad(ad)
+    s = temiz_ad(ad).replace("'", "").replace("’", "")   # kesme işareti silinir: assassin's > assassins
     s = re.sub(r"\b(?:[A-Za-z]\.){2,}", lambda m: m.group(0).replace(".", ""), s)   # S.T.A.L.K.E.R. -> STALKER
     s = s.replace(".", " ").replace("&", " and ")
     s = re.sub(r"(\d),(\d{3})", r"\1\2", s)
